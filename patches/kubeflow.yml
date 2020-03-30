@@ -1,0 +1,68 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  labels:
+    app.kubernetes.io/component: webhook
+    app.kubernetes.io/instance: webhook-v1.0.0
+    app.kubernetes.io/managed-by: kfctl
+    app.kubernetes.io/name: webhook
+    app.kubernetes.io/part-of: kubeflow
+    app.kubernetes.io/version: v1.0.0
+  name: admission-webhook-cert
+  namespace: kubeflow
+spec:
+  commonName: admission-webhook-service.kubeflow.svc
+  dnsNames:
+  - admission-webhook-service.kubeflow.svc
+  - admission-webhook-service.kubeflow.svc.cluster.local
+  isCA: true
+  issuerRef:
+    kind: ClusterIssuer
+    name: kubeflow-self-signing-issuer
+  secretName: webhook-certs
+---
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  labels:
+    app: seldon
+    app.kubernetes.io/component: seldon
+    app.kubernetes.io/instance: seldon-1.15
+    app.kubernetes.io/managed-by: kfctl
+    app.kubernetes.io/name: seldon-core-operator
+    app.kubernetes.io/part-of: kubeflow
+    app.kubernetes.io/version: "1.15"
+  name: seldon-serving-cert
+  namespace: kubeflow
+spec:
+  commonName: seldon-webhook-service.kubeflow.svc
+  dnsNames:
+  - seldon-webhook-service.kubeflow.svc.cluster.local
+  - seldon-webhook-service.kubeflow.svc
+  issuerRef:
+    kind: Issuer
+    name: seldon-selfsigned-issuer
+  secretName: seldon-webhook-server-cert
+---
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Issuer
+metadata:
+  labels:
+    app: seldon
+    app.kubernetes.io/component: seldon
+    app.kubernetes.io/instance: seldon-1.15
+    app.kubernetes.io/managed-by: kfctl
+    app.kubernetes.io/name: seldon-core-operator
+    app.kubernetes.io/part-of: kubeflow
+    app.kubernetes.io/version: "1.15"
+  name: seldon-selfsigned-issuer
+  namespace: kubeflow
+spec:
+  selfSigned: {}
+---
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: ClusterIssuer
+metadata:
+  name: kubeflow-self-signing-issuer
+spec:
+  selfSigned: {}
