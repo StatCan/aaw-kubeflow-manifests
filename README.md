@@ -52,16 +52,24 @@ images:
   newName: gcr.io/ml-pipeline/frontend
 ```
 
-4. To correct an issue with using an older cert-manager run the following commands.
+In `kustomize/notebook-controller/base/deployment.yaml`
 
-```sh
-kubectl apply -f patches/kubeflow.yml
+```yaml
+env:
+  ...
+  - name: ENABLE_CULLING
+    value: "true"
+  - name: IDLE_TIME
+    value: "1440"
+  - name: CULLING_CHECK_PERIOD
+    value: "1"
 ```
 
-5. Run the following commands to deploy and configure Kubeflow.
+4. Run the following commands to deploy and configure Kubeflow.
 
 ```sh
-kubectl apply
-kubectl scale statefulset -n kubeflow admission-webhook-bootstrap-stateful-set --replicas=0
-kubectl -n kubeflow patch --type=json gateway kubeflow-ingressgateway -p '[{"op":"replace","path":"/spec/selector/istio","value":"ingressgateway-kubeflow"}]'
+kfctl apply
+kubectl -n kubeflow patch --type=json gateway kubeflow-gateway -p '[{"op":"replace","path":"/spec/selector/istio","value":"ingressgateway-kubeflow"}]'
+kubectl apply -f patches/kubeflow.yml
+kubectl annotate mutatingwebhookconfigurations.admissionregistration.k8s.io admission-webhook-mutating-webhook-configuration certmanager.k8s.io/inject-ca-from=kubeflow/admission-webhook-cert --overwrite
 ```
