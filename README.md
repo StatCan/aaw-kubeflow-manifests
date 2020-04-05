@@ -30,6 +30,22 @@ spec:
     imagePullPolicy: Always
     imagePullSecrets:
     - name: <acr-registry>-registry-connection
+    ports:
+    - name: http-api
+      containerPort: 8080
+    env:
+      - name: USERID_HEADER
+        value: $(userid-header)
+      - name: USERID_PREFIX
+        value: $(userid-prefix)
+      - name: USERID_CLAIM
+        value: preferred_username
+      - name: OIDC_PROVIDER
+        value: $(oidc_provider)
+      - name: OIDC_AUTH_URL
+        value: $(oidc_auth_url)
+      - name: OIDC_SCOPES
+        value: "profile email"
 ```
 
 In `kustomize/oidc-authservice/base/envoy-filter.yaml`
