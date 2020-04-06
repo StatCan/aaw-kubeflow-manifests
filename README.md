@@ -81,6 +81,41 @@ env:
     value: "1"
 ```
 
+In `kustomize/jupyter-web-app/base/config-map.yaml`
+
+```yaml
+spawnerFormDefaults:
+  image:
+    # The container Image for the user's Jupyter Notebook
+    # If readonly, this value must be a member of the list below
+    value: <acr-registry>.azurecr.io/tensorflow-2.1.0-notebook-cpu:master
+    # The list of available standard container Images
+    options:
+      - <acr-registry>.azurecr.io/tensorflow-2.1.0-notebook-cpu:master
+      - <acr-registry>.azurecr.io/tensorflow-2.1.0-notebook-gpu:master
+      - <acr-registry>.azurecr.io/r-notebook:master
+    # By default, custom container Images are allowed
+    # Uncomment the following line to only enable standard container Images
+    readOnly: true
+```
+
+In `kustomize/webhook/base/deployment.yaml`
+
+```yaml
+spec:
+  template:
+    spec:
+      containers:
+      - image: <acr-registry>.azurecr.io/admission-webhook:latest
+        name: admission-webhook
+        volumeMounts:
+        - mountPath: /etc/webhook/certs
+          name: webhook-cert
+          readOnly: true
+      imagePullSecrets:
+        - name: <acr-registry>-registry-connection
+```
+
 4. Run the following commands to deploy and configure Kubeflow.
 
 ```sh

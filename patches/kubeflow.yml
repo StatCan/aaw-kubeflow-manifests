@@ -66,3 +66,31 @@ metadata:
   name: kubeflow-self-signing-issuer
 spec:
   selfSigned: {}
+---
+apiVersion: rbac.istio.io/v1alpha1
+kind: ClusterRbacConfig
+metadata:
+  name: default
+spec:
+  mode: "ON_WITH_EXCLUSION"
+  exclusion:
+    namespaces:
+      - azure-databricks-operator-system
+      - cert-manager
+      - ci
+      - daaas
+      - default
+      - dsd-seldon
+      - elastic-system
+      - esd
+      - gatekeeper-system
+      - gpu-resources
+      - istio-system
+      - knative-serving
+      - kube-node-lease
+      - kube-public
+      - kube-system
+      - kubeflow
+      - monitoring
+      - pachyderm
+      - velero
