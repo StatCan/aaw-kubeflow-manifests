@@ -88,15 +88,16 @@ spawnerFormDefaults:
   image:
     # The container Image for the user's Jupyter Notebook
     # If readonly, this value must be a member of the list below
-    value: <acr-registry>.azurecr.io/tensorflow-2.1.0-notebook-cpu:master
+    value: <acr-registry>.azurecr.io/minimal-notebook:c8ad62c1678fe022858f2c410bdc336add6ac928
     # The list of available standard container Images
     options:
-      - <acr-registry>.azurecr.io/tensorflow-2.1.0-notebook-cpu:master
-      - <acr-registry>.azurecr.io/tensorflow-2.1.0-notebook-gpu:master
-      - <acr-registry>.azurecr.io/r-notebook:master
+      - <acr-registry>.azurecr.io/minimal-notebook:c8ad62c1678fe022858f2c410bdc336add6ac928
+      - <acr-registry>.azurecr.io/r-notebook:c8ad62c1678fe022858f2c410bdc336add6ac928
+      - <acr-registry>.azurecr.io/tensorflow-notebook-cpu:c8ad62c1678fe022858f2c410bdc336add6ac928
+      - <acr-registry>.azurecr.io/tensorflow-notebook-gpu:c8ad62c1678fe022858f2c410bdc336add6ac928
     # By default, custom container Images are allowed
     # Uncomment the following line to only enable standard container Images
-    readOnly: true
+    readOnly: false
 ```
 
 In `kustomize/webhook/base/deployment.yaml`
