@@ -88,13 +88,16 @@ spawnerFormDefaults:
   image:
     # The container Image for the user's Jupyter Notebook
     # If readonly, this value must be a member of the list below
-    value: <acr-registry>.azurecr.io/minimal-notebook:c8ad62c1678fe022858f2c410bdc336add6ac928
+    value: <acr-registry>.azurecr.io/minimal-notebook-cpu:<git-sha>
     # The list of available standard container Images
     options:
-      - <acr-registry>.azurecr.io/minimal-notebook:c8ad62c1678fe022858f2c410bdc336add6ac928
-      - <acr-registry>.azurecr.io/r-notebook:c8ad62c1678fe022858f2c410bdc336add6ac928
-      - <acr-registry>.azurecr.io/tensorflow-notebook-cpu:c8ad62c1678fe022858f2c410bdc336add6ac928
-      - <acr-registry>.azurecr.io/tensorflow-notebook-gpu:c8ad62c1678fe022858f2c410bdc336add6ac928
+      - <acr-registry>.azurecr.io/base-notebook-cpu:<git-sha>
+      - <acr-registry>.azurecr.io/base-notebook-gpu:<git-sha>
+      - <acr-registry>.azurecr.io/minimal-notebook-cpu:<git-sha>
+      - <acr-registry>.azurecr.io/minimal-notebook-gpu:<git-sha>
+      - <acr-registry>.azurecr.io/geomatics-notebook-cpu:<git-sha>
+      - <acr-registry>.azurecr.io/machine-learning-notebook-cpu:<git-sha>
+      - <acr-registry>.azurecr.io/machine-learning-gpu:<git-sha>
     # By default, custom container Images are allowed
     # Uncomment the following line to only enable standard container Images
     readOnly: false
