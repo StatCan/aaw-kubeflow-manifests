@@ -129,10 +129,39 @@ spec:
         - name: <acr-registry>-registry-connection
 ```
 
+Until cert-manager is upgraded, make the following changes:
+
+  - Find and replace `cert-manager.io/v1alpha2` with `certmanager.k8s.io/v1alpha1`
+  - Find and replace `cert-manager.io/inject-ca-from` with `certmanager.k8s.io/inject-ca-from`
+
+In `kustomize/webhook/overlays/cert-manager/kustomizations.yaml`,
+
+```yaml
+- name: cert_name
+  objref:
+      kind: Certificate
+      group: certmanager.k8s.io
+      version: v1alpha1
+      name: admission-webhook-cert
+```
+
+In `kustomize/webhook/kustomization.yaml`:
+
+```yaml
+- fieldref:
+    fieldPath: metadata.name
+  name: cert_name
+  objref:
+    group: certmanager.k8s.io
+    kind: Certificate
+    name: admission-webhook-cert
+    version: v1alpha1
+```
+
 4. Run the following commands to deploy and configure Kubeflow.
 
 ```sh
-kfctl apply
+kfctl apply -f kfctl_k8s_istio.v1.0.1.yaml
 kubectl -n kubeflow patch --type=json gateway kubeflow-gateway -p '[{"op":"replace","path":"/spec/selector/istio","value":"ingressgateway-kubeflow"}]'
 kubectl apply -f patches/kubeflow.yml
 kubectl annotate mutatingwebhookconfigurations.admissionregistration.k8s.io admission-webhook-mutating-webhook-configuration certmanager.k8s.io/inject-ca-from=kubeflow/admission-webhook-cert --overwrite
