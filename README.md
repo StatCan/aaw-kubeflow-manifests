@@ -59,6 +59,15 @@ spec:
     istio: ingressgateway-kubeflow
 ```
 
+In `kustomize/api-service/base.yaml`
+
+```yaml
+images:
+- name: gcr.io/ml-pipeline/api-server
+  newTag: 0.2.5
+  newName: gcr.io/ml-pipeline/api-server
+```
+
 In `kustomize/pipelines-ui/base/kustomization.yaml`
 
 ```yaml
