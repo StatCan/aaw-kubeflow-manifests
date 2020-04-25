@@ -2,7 +2,7 @@
 
 The installation manifest for Kubeflow.
 
-## Steps
+## kfctl
 
 1. Run the following commands to pass the OIDC parameters to the `kfctl` template
 
@@ -201,4 +201,14 @@ kfctl apply -f kfctl_k8s_istio.v1.0.1.yaml
 kubectl -n kubeflow patch --type=json gateway kubeflow-gateway -p '[{"op":"replace","path":"/spec/selector/istio","value":"ingressgateway-kubeflow"}]'
 kubectl apply -f patches/kubeflow.yml
 kubectl annotate mutatingwebhookconfigurations.admissionregistration.k8s.io admission-webhook-mutating-webhook-configuration certmanager.k8s.io/inject-ca-from=kubeflow/admission-webhook-cert --overwrite
+```
+
+## Argo
+
+When working with Pipelines and Kubeflow you should have the `argo` client.
+
+```sh
+kubectl get workflow -o name | grep ${prefix} | cut -d'/' -f2 | xargs argo -n kubeflow delete
+
+argo delete -n kubeflow --older 1d
 ```
