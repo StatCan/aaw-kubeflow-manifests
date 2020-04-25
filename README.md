@@ -158,6 +158,42 @@ In `kustomize/webhook/kustomization.yaml`:
     version: v1alpha1
 ```
 
+
+In `kustomize/argo/base/configmap.yaml`
+
+```yaml
+kind: ConfigMap
+metadata:
+  name: workflow-controller-configmap
+  namespace: kubeflow
+data:
+  config: |
+    {
+    executorImage: $(executorImage),
+    containerRuntimeExecutor: $(containerRuntimeExecutor),
+    archive: true
+    artifactRepository:
+```
+
+In `kustomize/pipelines-ui/base/deployment.yaml`
+
+```yaml
+    spec:
+      containers:
+      - name: ml-pipeline-ui
+        image: gcr.io/ml-pipeline/frontend
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: ARGO_ARCHIVE_LOGS
+          value: "true"
+        - name: ARGO_ARCHIVE_ARTIFACTORY
+          value: minio
+        - name: ARGO_ARCHIVE_BUCKETNAME
+          value: mlpipeline
+        - name: ARGO_ARCHIVE_PREFIX
+          value: logs
+```
+
 4. Run the following commands to deploy and configure Kubeflow.
 
 ```sh
