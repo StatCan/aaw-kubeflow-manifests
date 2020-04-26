@@ -14,3 +14,16 @@ yq w -i ${CONFIG_FILE} 'spec.applications[1].kustomizeConfig.parameters[3].value
 yq w -i ${CONFIG_FILE} 'spec.applications[1].kustomizeConfig.parameters[4].value' ${OIDC_AUTH_URL}
 yq w -i ${CONFIG_FILE} 'spec.applications[1].kustomizeConfig.parameters[5].value' ${CLIENT_ID}
 yq w -i ${CONFIG_FILE} 'spec.applications[1].kustomizeConfig.parameters[6].value' ${APPLICATION_SECRET}
+
+$(cat <<EOF >kustomize/oidc-authservice/base/params.env
+client_id=${CLIENT_ID}
+oidc_provider=${OIDC_PROVIDER}
+oidc_redirect_uri=${OIDC_REDIRECT_URI}
+oidc_auth_url=${OIDC_AUTH_URL}
+application_secret=${APPLICATION_SECRET}
+skip_auth_uri=
+userid-header=kubeflow-userid
+userid-prefix=
+namespace=istio-system
+EOF
+)

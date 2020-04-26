@@ -15,6 +15,12 @@ spec:
             value: "false"
           - name: POD_LABELS
             value: $(POD_LABELS)
+          - name: ENABLE_CULLING
+            value: "true"
+          - name: IDLE_TIME
+            value: "1440"
+          - name: CULLING_CHECK_PERIOD
+            value: "1"
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
