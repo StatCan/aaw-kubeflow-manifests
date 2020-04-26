@@ -28,8 +28,6 @@ spec:
   - name: authservice
     image: <acr-registry>.azurecr.io/oidc-authservice:latest
     imagePullPolicy: Always
-    imagePullSecrets:
-    - name: <acr-registry>-registry-connection
     ports:
     - name: http-api
       containerPort: 8080
@@ -46,6 +44,9 @@ spec:
         value: $(oidc_auth_url)
       - name: OIDC_SCOPES
         value: "profile email"
+    ...
+    imagePullSecrets:
+    - name: <acr-registry>-registry-connection
 ```
 
 In `kustomize/oidc-authservice/base/envoy-filter.yaml`
@@ -173,6 +174,21 @@ data:
     containerRuntimeExecutor: $(containerRuntimeExecutor),
     archive: true
     artifactRepository:
+```
+
+In `kustomize/argo/base/cluster-role.yaml`
+
+```yaml
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  - pods/exec
+  verbs:
+  - update
+  - patch
+  - delete
 ```
 
 In `kustomize/pipelines-ui/base/deployment.yaml`

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+spec:
+  template:
+    spec:
+      containers:
+      - image: k8scc01covidacr.azurecr.io/admission-webhook:latest
+        name: admission-webhook
+        volumeMounts:
+        - mountPath: /etc/webhook/certs
+          name: webhook-cert
+          readOnly: true
+      imagePullSecrets:
+        - name: k8scc01covidacr-registry-connection
+      volumes:
+      - name: webhook-cert
+        secret:
+          secretName: webhook-certs
+      serviceAccountName: service-account
