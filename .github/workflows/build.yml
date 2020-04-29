@@ -24,14 +24,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+
+    # Get Kubeconfig Context
     - name: Write Kubeconfig
       env:
         KUBECONFIG: ${{ secrets.KUBECONFIG }}
       run: |
         mkdir -p /home/runner/work/_temp/_github_home/.kube
         echo "$KUBECONFIG" | base64 --decode > /home/runner/work/_temp/_github_home/.kube/config
+
+    # Run Kustomize with kfctl
     - name: Kustomize
-      uses: statcan/kubeflow-manifest@master
+      uses: statcan/actions/kubeflow-manifest@master
       env:
         OIDC_PROVIDER: "${{ secrets.OIDC_PROVIDER }}"
         OIDC_REDIRECT_URI: "${{ secrets.OIDC_REDIRECT_URI }}"

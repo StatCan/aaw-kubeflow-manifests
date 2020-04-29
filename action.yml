@@ -1,9 +1,0 @@
-name: 'yq + envsubst'
-description: 'Runs yq + envsubst dependencies before Kustomize'
-author: 'Statistics Canada'
-branding:
-  icon: 'terminal'
-  color: 'purple'
-runs:
-  using: 'docker'
-  image: './Dockerfile'
