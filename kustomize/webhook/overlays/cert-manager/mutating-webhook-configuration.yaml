@@ -3,5 +3,4 @@ kind: MutatingWebhookConfiguration
 metadata:
   name: mutating-webhook-configuration
   annotations:
-    cert-manager.io/inject-ca-from: $(namespace)/$(cert_name)
-  
+    certmanager.k8s.io/inject-ca-from: $(namespace)/$(cert_name)
