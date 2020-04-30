@@ -8,7 +8,7 @@ data:
     {
     executorImage: $(executorImage),
     containerRuntimeExecutor: $(containerRuntimeExecutor),
-    archive: true
+    archive: true,
     artifactRepository:
     {
         s3: {
