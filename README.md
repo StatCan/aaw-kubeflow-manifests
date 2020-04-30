@@ -210,6 +210,22 @@ In `kustomize/pipelines-ui/base/deployment.yaml`
           value: logs
 ```
 
+In `kustomize/jupyter-web-app/base/kustomization.yaml`:
+
+```yaml
+images:
+- name: gcr.io/kubeflow-images-public/jupyter-web-app
+  newName: <acr-registry>.azurecr.io/jupyter-web-app
+  newTag: 0.5.0-3
+```
+
+In `kustomize/jupyter-web-app/base/deployment.yaml`:
+
+```yaml
+      imagePullSecrets:
+      - name: <acr-registry>-registry-connection
+```
+
 4. Run the following commands to deploy and configure Kubeflow.
 
 ```sh
