@@ -35,3 +35,5 @@ spec:
       - configMap:
           name: config
         name: config-volume
+      imagePullSecrets:
+      - name: k8scc01covidacr-registry-connection
