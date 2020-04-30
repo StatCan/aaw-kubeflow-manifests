@@ -16,6 +16,18 @@ spec:
         path: istio/cluster-local-gateway
     name: cluster-local-gateway
   - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: application/application-crds
+    name: application-crds
+  - kustomizeConfig:
+      overlays:
+      - application
+      repoRef:
+        name: manifests
+        path: application/application
+    name: application
+  - kustomizeConfig:
       overlays:
       - application
       parameters:
