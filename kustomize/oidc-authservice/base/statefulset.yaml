@@ -28,7 +28,7 @@ spec:
           - name: USERID_PREFIX
             value: $(userid-prefix)
           - name: USERID_CLAIM
-            value: email
+            value: preferred_username
           - name: OIDC_PROVIDER
             value: $(oidc_provider)
           - name: OIDC_AUTH_URL
