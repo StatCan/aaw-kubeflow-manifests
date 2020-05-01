@@ -72,3 +72,14 @@ spec:
       mode: SIMPLE
       privateKey: sds
       serverCertificate: sds
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: default
+  namespace: kubeflow
+spec:
+  host: '*.kubeflow.svc.cluster.local'
+  trafficPolicy:
+    tls:
+      mode: DISABLE
