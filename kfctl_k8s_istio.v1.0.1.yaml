@@ -50,6 +50,14 @@ spec:
         path: istio/oidc-authservice
     name: oidc-authservice
   - kustomizeConfig:
+      parameters:
+      - name: namespace
+        value: istio-system
+      repoRef:
+        name: manifests
+        path: istio/istio
+    name: istio
+  - kustomizeConfig:
       overlays:
       - istio
       - application
