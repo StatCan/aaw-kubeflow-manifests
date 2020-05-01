@@ -29,6 +29,7 @@ spec:
       - ci
       - daaas
       - default
+      - dremio
       - dsd-seldon
       - elastic-system
       - esd
@@ -39,10 +40,17 @@ spec:
       - kube-node-lease
       - kube-public
       - kube-system
+      - kubecost
       - kubeflow
+      - minio
+      - minio-operator-ns
+      - mlflow
       - monitoring
       - pachyderm
+      - vault
       - velero
+      - volcano-system
+      - web
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
