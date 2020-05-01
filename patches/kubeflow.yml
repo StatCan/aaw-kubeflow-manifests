@@ -43,3 +43,32 @@ spec:
       - monitoring
       - pachyderm
       - velero
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: kubeflow-gateway
+  namespace: kubeflow
+spec:
+  selector:
+    istio: ingressgateway-kubeflow
+  servers:
+  - hosts:
+    - kubeflow.covid.cloud.statcan.ca
+    port:
+      name: http
+      number: 80
+      protocol: HTTP2
+    tls:
+      httpsRedirect: true
+  - hosts:
+    - kubeflow.covid.cloud.statcan.ca
+    port:
+      name: https
+      number: 443
+      protocol: HTTPS
+    tls:
+      credentialName: wildcard-tls
+      mode: SIMPLE
+      privateKey: sds
+      serverCertificate: sds
