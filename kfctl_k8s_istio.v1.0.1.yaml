@@ -51,8 +51,8 @@ spec:
     name: oidc-authservice
   - kustomizeConfig:
       parameters:
-      - name: namespace
-        value: istio-system
+      - name: gatewaySelector
+        value: ingressgateway-kubeflow
       repoRef:
         name: manifests
         path: istio/istio
