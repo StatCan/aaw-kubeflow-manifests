@@ -3,6 +3,4 @@ kind: Kustomization
 bases:
 - ../../base
 patchesStrategicMerge:
-- deployment.yaml
-resources:
-- configmap.yaml
+- cluster-role-binding.yaml

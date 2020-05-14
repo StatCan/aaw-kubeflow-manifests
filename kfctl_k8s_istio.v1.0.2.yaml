@@ -8,14 +8,6 @@ metadata:
 spec:
   applications:
   - kustomizeConfig:
-      parameters:
-      - name: namespace
-        value: istio-system
-      repoRef:
-        name: manifests
-        path: istio/cluster-local-gateway
-    name: cluster-local-gateway
-  - kustomizeConfig:
       repoRef:
         name: manifests
         path: application/application-crds
@@ -27,6 +19,14 @@ spec:
         name: manifests
         path: application/application
     name: application
+  - kustomizeConfig:
+      parameters:
+      - name: namespace
+        value: istio-system
+      repoRef:
+        name: manifests
+        path: istio/cluster-local-gateway
+    name: cluster-local-gateway
   - kustomizeConfig:
       overlays:
       - application
@@ -179,7 +179,7 @@ spec:
       - name: usageId
         value: <randomly-generated-id>
       - name: reportUsage
-        value: "false"
+        value: 'false'
       repoRef:
         name: manifests
         path: common/spartakus
@@ -310,5 +310,5 @@ spec:
     name: seldon-core-operator
   repos:
   - name: manifests
-    uri: https://github.com/kubeflow/manifests/archive/v1.0.1.tar.gz
-  version: v1.0.1
+    uri: https://github.com/kubeflow/manifests/archive/v1.0.2.tar.gz
+  version: v1.0.2

@@ -26,8 +26,8 @@ vars:
 - name: cert_name
   objref:
       kind: Certificate
-      group: certmanager.k8s.io
-      version: v1alpha1
+      group: cert-manager.io
+      version: v1alpha2
       name: admission-webhook-cert
   fieldref:
     fieldpath: metadata.name
