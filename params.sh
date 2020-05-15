@@ -6,7 +6,7 @@ export OIDC_REDIRECT_URI="${OIDC_REDIRECT_URI:-default}"
 export OIDC_AUTH_URL="${OIDC_AUTH_URL:-default}"
 export CLIENT_ID="${CLIENT_ID:-default}"
 export APPLICATION_SECRET="${APPLICATION_SECRET:-default}"
-export CONFIG_FILE="${CONFIG_FILE:-kfctl_k8s_istio.v1.0.2.yaml}"
+export CONFIG_FILE="${CONFIG_FILE:-kfctl_k8s_istio.yaml}"
 
 yq w -i ${CONFIG_FILE} 'metadata.clusterName' ${CLUSTER_NAME}
 yq w -i ${CONFIG_FILE} 'spec.applications[1].kustomizeConfig.parameters[2].value' ${OIDC_PROVIDER}

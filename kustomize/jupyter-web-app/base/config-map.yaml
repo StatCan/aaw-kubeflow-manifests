@@ -28,7 +28,7 @@ data:
           - k8scc01covidacr.azurecr.io/minimal-notebook-gpu:e2981d65b5ceecaea3d161704632f4a881f18de2
           - k8scc01covidacr.azurecr.io/geomatics-notebook-cpu:e2981d65b5ceecaea3d161704632f4a881f18de2
           - k8scc01covidacr.azurecr.io/machine-learning-notebook-cpu:e2981d65b5ceecaea3d161704632f4a881f18de2
-          - k8scc01covidacr.azurecr.io/machine-learning-gpu:e2981d65b5ceecaea3d161704632f4a881f18de2
+          - k8scc01covidacr.azurecr.io/machine-learning-notebook-gpu:e2981d65b5ceecaea3d161704632f4a881f18de2
           - k8scc01covidacr.azurecr.io/ml-workspace-cpu:f05e40724d31c88153255b02c07eae6a6916b092
           - k8scc01covidacr.azurecr.io/ml-workspace-gpu:f05e40724d31c88153255b02c07eae6a6916b092
         # By default, custom container Images are allowed
