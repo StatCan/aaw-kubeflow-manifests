@@ -8,7 +8,6 @@ data:
     {
     executorImage: $(executorImage),
     containerRuntimeExecutor: $(containerRuntimeExecutor),
-    archive: true,
     artifactRepository:
     {
         s3: {
@@ -24,7 +23,8 @@ data:
                 name: $(artifactRepositorySecretKeySecretName),
                 key: $(artifactRepositorySecretKeySecretKey)
             }
-        }
+        },
+        archiveLogs: true
     }
     }
 
