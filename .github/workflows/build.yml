@@ -79,7 +79,7 @@ jobs:
         CLIENT_ID: "${{ secrets.CLIENT_ID }}"
         APPLICATION_SECRET: "${{ secrets.APPLICATION_SECRET }}"
         
-    # Run kubectl: Remove control-plane label to prevent OPA from managing the namespace 
+    # Run kubectl: Remove control-plane label to allow OPA to manage the namespace 
     - name: kubectl
       uses: statcan/actions/kubectl@master
       with:
