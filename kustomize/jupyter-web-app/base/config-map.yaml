@@ -29,7 +29,8 @@ data:
           - k8scc01covidacr.azurecr.io/geomatics-notebook-cpu:562fa4a2899eeb9ae345c51c2491447ec31a87d7
           - k8scc01covidacr.azurecr.io/machine-learning-notebook-cpu:562fa4a2899eeb9ae345c51c2491447ec31a87d7
           - k8scc01covidacr.azurecr.io/machine-learning-notebook-gpu:562fa4a2899eeb9ae345c51c2491447ec31a87d7
-          - k8scc01covidacr.azurecr.io/ml-workspace-rstudio:397fa71aaff9f01cb4638f858799d82566a927fa
+          - k8scc01covidacr.azurecr.io/ml-workspace-rstudio:d81c6b205139f12a03b94fd2e407b3d796eebfff
+          - k8scc01covidacr.azurecr.io/ml-workspace-geomatics:d81c6b205139f12a03b94fd2e407b3d796eebfff
           - k8scc01covidacr.azurecr.io/r-studio-cpu:937eb8bf35fae5cd303b8d02c5bd7fd71b270fd7
         # By default, custom container Images are allowed
         # Uncomment the following line to only enable standard container Images
