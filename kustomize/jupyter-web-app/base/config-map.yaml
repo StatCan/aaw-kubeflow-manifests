@@ -35,6 +35,8 @@ data:
         # By default, custom container Images are allowed
         # Uncomment the following line to only enable standard container Images
         readOnly: false
+        hideRegistry: true
+        hideVersion: true
       cpu:
         # CPU for user's Notebook
         value: '0.5'
