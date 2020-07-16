@@ -27,7 +27,7 @@ spec:
         - name: ARGO_ARCHIVE_BUCKETNAME
           value: mlpipeline
         - name: ARGO_ARCHIVE_PREFIX
-          value: logs
+          value: artifacts
         ports:
         - containerPort: 3000
       serviceAccountName: ml-pipeline-ui
