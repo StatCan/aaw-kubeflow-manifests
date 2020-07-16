@@ -207,7 +207,7 @@ In `kustomize/pipelines-ui/base/deployment.yaml`
         - name: ARGO_ARCHIVE_BUCKETNAME
           value: mlpipeline
         - name: ARGO_ARCHIVE_PREFIX
-          value: logs
+          value: artifacts
 ```
 
 In `kustomize/jupyter-web-app/base/kustomization.yaml`:
