@@ -10,7 +10,7 @@ metadata:
   name: istio-ingressgateway-kubeflow
   namespace: istio-system
 spec:
-  externalTrafficPolicy: Cluster
+  externalTrafficPolicy: Local
   ports:
   - name: status-port
     port: 15020
