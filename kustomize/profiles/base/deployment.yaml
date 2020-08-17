@@ -44,3 +44,5 @@ spec:
           initialDelaySeconds: 30
           periodSeconds: 30
       serviceAccountName: controller-service-account
+      imagePullSecrets:
+      - name: k8scc01covidacr-registry-connection
