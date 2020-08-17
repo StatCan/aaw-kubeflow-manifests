@@ -12,6 +12,7 @@ rules:
   - list
   - create
   - delete
+  - watch
 - apiGroups:
   - authorization.k8s.io
   resources:
@@ -29,6 +30,7 @@ rules:
   - list
   - create
   - delete
+  - watch
 - apiGroups:
   - ""
   resources:
@@ -38,12 +40,14 @@ rules:
   - delete
   - get
   - list
+  - watch
 - apiGroups:
   - ""
   resources:
   - events
   verbs:
   - list
+  - watch
 - apiGroups:
   - storage.k8s.io
   resources:
