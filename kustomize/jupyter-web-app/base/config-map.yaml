@@ -21,15 +21,15 @@ data:
       image:
         # The container Image for the user's Jupyter Notebook
         # If readonly, this value must be a member of the list below
-        value: k8scc01covidacr.azurecr.io/minimal-notebook-cpu:d58600076b0c188364d8651d3986ee0d37ecb4ad
+        value: k8scc01covidacr.azurecr.io/minimal-notebook-cpu:efa8c2bad6e04b8004d14ca8c7190bcbc99e7338
         # The list of available standard container Images
         options:
-          - k8scc01covidacr.azurecr.io/minimal-notebook-cpu:d58600076b0c188364d8651d3986ee0d37ecb4ad
-          - k8scc01covidacr.azurecr.io/minimal-notebook-gpu:d58600076b0c188364d8651d3986ee0d37ecb4ad
-          - k8scc01covidacr.azurecr.io/geomatics-notebook-cpu:d58600076b0c188364d8651d3986ee0d37ecb4ad
-          - k8scc01covidacr.azurecr.io/machine-learning-notebook-cpu:d58600076b0c188364d8651d3986ee0d37ecb4ad
-          - k8scc01covidacr.azurecr.io/machine-learning-notebook-gpu:d58600076b0c188364d8651d3986ee0d37ecb4ad
-          - k8scc01covidacr.azurecr.io/r-studio-cpu:d58600076b0c188364d8651d3986ee0d37ecb4ad
+          - k8scc01covidacr.azurecr.io/minimal-notebook-cpu:efa8c2bad6e04b8004d14ca8c7190bcbc99e7338
+          - k8scc01covidacr.azurecr.io/minimal-notebook-gpu:efa8c2bad6e04b8004d14ca8c7190bcbc99e7338
+          - k8scc01covidacr.azurecr.io/geomatics-notebook-cpu:efa8c2bad6e04b8004d14ca8c7190bcbc99e7338
+          - k8scc01covidacr.azurecr.io/machine-learning-notebook-cpu:efa8c2bad6e04b8004d14ca8c7190bcbc99e7338
+          - k8scc01covidacr.azurecr.io/machine-learning-notebook-gpu:efa8c2bad6e04b8004d14ca8c7190bcbc99e7338
+          - k8scc01covidacr.azurecr.io/r-studio-cpu:efa8c2bad6e04b8004d14ca8c7190bcbc99e7338
           - k8scc01covidacr.azurecr.io/remote-desktop-r:6fb4bcafdfc4f754d62fa7de66f05f889dab7428
           - k8scc01covidacr.azurecr.io/remote-desktop-geomatics:6fb4bcafdfc4f754d62fa7de66f05f889dab7428
         # By default, custom container Images are allowed
