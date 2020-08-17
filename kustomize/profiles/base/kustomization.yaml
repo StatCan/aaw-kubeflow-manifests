@@ -16,8 +16,8 @@ configMapGenerator:
   name: profiles-parameters
 images:
 - name: gcr.io/kubeflow-images-public/kfam
-  newName: gcr.io/kubeflow-images-public/kfam
-  newTag: v1.0.0-gf3e09203
+  newName: k8scc01covidacr.azurecr.io/kfam
+  newTag: latest
 - name: gcr.io/kubeflow-images-public/profile-controller
   newName: gcr.io/kubeflow-images-public/profile-controller
   newTag: v1.0.0-ge50a8531
