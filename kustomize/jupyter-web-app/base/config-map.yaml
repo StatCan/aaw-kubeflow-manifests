@@ -30,8 +30,8 @@ data:
           - k8scc01covidacr.azurecr.io/machine-learning-notebook-cpu:5ef877ea13789f64594c219ef0a302dc97c21bb4
           - k8scc01covidacr.azurecr.io/machine-learning-notebook-gpu:5ef877ea13789f64594c219ef0a302dc97c21bb4
           - k8scc01covidacr.azurecr.io/r-studio-cpu:5ef877ea13789f64594c219ef0a302dc97c21bb4
-          - k8scc01covidacr.azurecr.io/remote-desktop-r:6fb4bcafdfc4f754d62fa7de66f05f889dab7428
-          - k8scc01covidacr.azurecr.io/remote-desktop-geomatics:6fb4bcafdfc4f754d62fa7de66f05f889dab7428
+          - k8scc01covidacr.azurecr.io/remote-desktop-r:337a31292531e2ff56be3f07987aab0847d26b53
+          - k8scc01covidacr.azurecr.io/remote-desktop-geomatics:337a31292531e2ff56be3f07987aab0847d26b53
         # By default, custom container Images are allowed
         # Uncomment the following line to only enable standard container Images
         readOnly: false
