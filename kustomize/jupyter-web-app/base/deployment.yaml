@@ -22,11 +22,6 @@ spec:
           value: $(userid-header)
         - name: USERID_PREFIX
           value: $(userid-prefix)
-        - name: LISTEN_ADDRESS
-          valueFrom:
-            configMapKeyRef:
-              name: parameters
-              key: LISTEN_ADDRESS
         image: gcr.io/kubeflow-images-public/jupyter-web-app:v0.5.0
         imagePullPolicy: $(policy)
         name: jupyter-web-app
