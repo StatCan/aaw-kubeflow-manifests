@@ -17,7 +17,7 @@ commonLabels:
 images:
 - name: gcr.io/kubeflow-images-public/jupyter-web-app
   newName: k8scc01covidacr.azurecr.io/jupyter-apis
-  newTag: 3c844b43b96119beea3a110689ec97b0b3d85993
+  newTag: 0d174a06cc0acce49c44b29d72ea30b52d03e790
 configMapGenerator:
 - envs:
   - params.env
