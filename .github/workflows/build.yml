@@ -58,7 +58,7 @@ jobs:
       uses: statcan/actions/kubectl@master
       with:
         kubeconfig: ${{ secrets.KUBECONFIG }}
-        args: apply -f patches/kubeflow.yml -f patches/istio
+        args: apply -f patches/kubeflow.yml
       env:
         OIDC_PROVIDER: "${{ secrets.OIDC_PROVIDER }}"
         OIDC_REDIRECT_URI: "${{ secrets.OIDC_REDIRECT_URI }}"
