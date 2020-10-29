@@ -35,5 +35,3 @@ spec:
         - name: PROFILES_KFAM_SERVICE_HOST
           value: profiles-kfam.kubeflow
       serviceAccountName: centraldashboard
-      imagePullSecrets:
-      - name: k8scc01covidacr-registry-connection
