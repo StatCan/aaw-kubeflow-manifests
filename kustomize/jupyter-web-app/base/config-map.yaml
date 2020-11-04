@@ -21,17 +21,17 @@ data:
       image:
         # The container Image for the user's Jupyter Notebook
         # If readonly, this value must be a member of the list below
-        value: k8scc01covidacr.azurecr.io/minimal-notebook-cpu:591bd650dc666f8a41550b7cd5f39a47824964e7
+        value: k8scc01covidacr.azurecr.io/minimal-notebook-cpu:18d1fb7a40fed543dd4ff2f05a9388a3ff9f3263
         # The list of available standard container Images
         options:
-          - k8scc01covidacr.azurecr.io/minimal-notebook-cpu:591bd650dc666f8a41550b7cd5f39a47824964e7
-          - k8scc01covidacr.azurecr.io/minimal-notebook-gpu:591bd650dc666f8a41550b7cd5f39a47824964e7
-          - k8scc01covidacr.azurecr.io/geomatics-notebook-cpu:591bd650dc666f8a41550b7cd5f39a47824964e7
-          - k8scc01covidacr.azurecr.io/machine-learning-notebook-cpu:591bd650dc666f8a41550b7cd5f39a47824964e7
-          - k8scc01covidacr.azurecr.io/machine-learning-notebook-gpu:591bd650dc666f8a41550b7cd5f39a47824964e7
-          - k8scc01covidacr.azurecr.io/r-studio-cpu:591bd650dc666f8a41550b7cd5f39a47824964e7
-          - k8scc01covidacr.azurecr.io/remote-desktop-r:9e05d858dcf414415e4637c0e11cbc69d55571a7
-          - k8scc01covidacr.azurecr.io/remote-desktop-geomatics:9e05d858dcf414415e4637c0e11cbc69d55571a7
+          - k8scc01covidacr.azurecr.io/minimal-notebook-cpu:18d1fb7a40fed543dd4ff2f05a9388a3ff9f3263
+          - k8scc01covidacr.azurecr.io/minimal-notebook-gpu:18d1fb7a40fed543dd4ff2f05a9388a3ff9f3263
+          - k8scc01covidacr.azurecr.io/geomatics-notebook-cpu:18d1fb7a40fed543dd4ff2f05a9388a3ff9f3263
+          - k8scc01covidacr.azurecr.io/machine-learning-notebook-cpu:18d1fb7a40fed543dd4ff2f05a9388a3ff9f3263
+          - k8scc01covidacr.azurecr.io/machine-learning-notebook-gpu:18d1fb7a40fed543dd4ff2f05a9388a3ff9f3263
+          - k8scc01covidacr.azurecr.io/r-studio-cpu:18d1fb7a40fed543dd4ff2f05a9388a3ff9f3263
+          - k8scc01covidacr.azurecr.io/remote-desktop-r:5e67ecb21efece51727c39c8ef75682cf5af12ac
+          - k8scc01covidacr.azurecr.io/remote-desktop-geomatics:5e67ecb21efece51727c39c8ef75682cf5af12ac
         # By default, custom container Images are allowed
         # Uncomment the following line to only enable standard container Images
         readOnly: false
