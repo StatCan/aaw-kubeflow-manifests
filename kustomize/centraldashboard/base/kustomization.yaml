@@ -14,7 +14,7 @@ commonLabels:
 images:
 - name: gcr.io/kubeflow-images-public/centraldashboard
   newName: k8scc01covidacr.azurecr.io/kubeflow/centraldashboard
-  newTag: 0e8fa86c736e8889270a2c4040e9c7bcf19c0fa4
+  newTag: cb2964cb4f5562b60c97f89b7ee79e4cb179216a
 configMapGenerator:
 - envs:
   - params.env
