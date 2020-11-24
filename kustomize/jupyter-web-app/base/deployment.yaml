@@ -3,14 +3,14 @@ kind: Deployment
 metadata:
   name: deployment
 spec:
-  replicas: 1
+  replicas: 3
   template:
     metadata:
       annotations:
         sidecar.istio.io/inject: "false"
     spec:
       containers:
-      - image: gcr.io/kubeflow-images-public/jupyter-web-app        
+      - image: gcr.io/kubeflow-images-public/jupyter-web-app
         name: jupyter-web-app
         ports:
         - containerPort: 5000
@@ -22,3 +22,5 @@ spec:
       - configMap:
           name: jupyter-web-app-config
         name: config-volume
+      imagePullSecrets:
+      - name: k8scc01covidacr-registry-connection

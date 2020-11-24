@@ -25,3 +25,8 @@ spec:
           value: $(userid-header)
         - name: USERID_PREFIX
           value: $(userid-prefix)
+        - name: KUBECOST_URL
+          valueFrom:
+            configMapKeyRef:
+              name: parameters
+              key: KUBECOST_URL

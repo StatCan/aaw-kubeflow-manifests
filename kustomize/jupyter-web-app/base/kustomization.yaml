@@ -1,4 +1,4 @@
-# TODO(https://github.com/kubeflow/manifests/issues/774): 
+# TODO(https://github.com/kubeflow/manifests/issues/774):
 # This is a legacy package. Hopefully we can get rid of it once
 # 774 is complete.
 apiVersion: kustomize.config.k8s.io/v1beta1
@@ -21,8 +21,8 @@ commonLabels:
   kustomize.component: jupyter-web-app
 images:
 - name: gcr.io/kubeflow-images-public/jupyter-web-app
-  newName: gcr.io/kubeflow-images-public/jupyter-web-app
-  newTag: vmaster-gd9be4b9e
+  newName: k8scc01covidacr.azurecr.io/jupyter-apis
+  newTag: f938db9495db669b280529482c82ff518effaec5
 configMapGenerator:
 - envs:
   - params.env

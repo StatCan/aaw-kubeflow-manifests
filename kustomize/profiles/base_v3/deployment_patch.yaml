@@ -7,12 +7,12 @@ spec:
     spec:
       containers:
       - command:
-        - /manager 
-        - -userid-header 
-        - $(USERID_HEADER) 
-        - -userid-prefix 
-        - $(USERID_PREFIX) 
-        - -workload-identity 
+        - /manager
+        - -userid-header
+        - $(USERID_HEADER)
+        - -userid-prefix
+        - $(USERID_PREFIX)
+        - -workload-identity
         - $(WORKLOAD_IDENTITY)
         args: []
         name: manager
@@ -33,10 +33,10 @@ spec:
               name: profiles-config
               key: gcp-sa
       - command:
-        - /access-management 
-        - -cluster-admin 
-        - $(CLUSTER_ADMIN) 
-        - -userid-prefix 
+        - /access-management
+        - -cluster-admin
+        - $(CLUSTER_ADMIN)
+        - -userid-prefix
         - $(USERID_PREFIX)
         args: []
         name: kfam
@@ -56,3 +56,5 @@ spec:
             configMapKeyRef:
               name: profiles-config
               key: admin
+      imagePullSecrets:
+      - name: k8scc01covidacr-registry-connection

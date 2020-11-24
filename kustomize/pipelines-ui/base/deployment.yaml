@@ -22,6 +22,14 @@ spec:
         env:
         - name: ALLOW_CUSTOM_VISUALIZATIONS
           value: "true"
+        - name: ARGO_ARCHIVE_LOGS
+          value: "true"
+        - name: ARGO_ARCHIVE_ARTIFACTORY
+          value: minio
+        - name: ARGO_ARCHIVE_BUCKETNAME
+          value: mlpipeline
+        - name: ARGO_ARCHIVE_PREFIX
+          value: artifacts
         ports:
         - containerPort: 3000
       serviceAccountName: ml-pipeline-ui

@@ -12,4 +12,4 @@ spec:
   selector:
     app: argo-ui
   sessionAffinity: None
-  type: NodePort
+  type: ClusterIP

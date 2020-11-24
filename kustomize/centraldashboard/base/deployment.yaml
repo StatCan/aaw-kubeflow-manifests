@@ -30,3 +30,5 @@ spec:
         - containerPort: 8082
           protocol: TCP
       serviceAccountName: centraldashboard
+      imagePullSecrets:
+      - name: k8scc01covidacr-registry-connection

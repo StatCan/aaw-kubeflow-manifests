@@ -23,7 +23,8 @@ data:
                 name: $(artifactRepositorySecretKeySecretName),
                 key: $(artifactRepositorySecretKeySecretKey)
             }
-        }
+        },
+        archiveLogs: true
     }
     }
 

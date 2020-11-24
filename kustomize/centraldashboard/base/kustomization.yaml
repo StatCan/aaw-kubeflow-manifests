@@ -16,8 +16,8 @@ commonLabels:
   kustomize.component: centraldashboard
 images:
 - name: gcr.io/kubeflow-images-public/centraldashboard
-  newName: gcr.io/kubeflow-images-public/centraldashboard
-  newTag: v1.1.0-g35d7484a
+  newName: k8scc01covidacr.azurecr.io/kubeflow/centraldashboard
+  newTag: cb2964cb4f5562b60c97f89b7ee79e4cb179216a
 configMapGenerator:
 - envs:
   - params.env
