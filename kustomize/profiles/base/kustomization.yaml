@@ -1,3 +1,7 @@
+# TODO(jlewi): This kustomization.yaml is deprecated. We want the
+# base_v3 version. This version uses a bunch of problematic patterns e.g.
+# i) Using vars to do command line substitution
+# ii) Not using a configmap to make application and global config available
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
@@ -16,11 +20,11 @@ configMapGenerator:
   name: profiles-parameters
 images:
 - name: gcr.io/kubeflow-images-public/kfam
-  newName: k8scc01covidacr.azurecr.io/kfam
-  newTag: latest
+  newName: gcr.io/kubeflow-images-public/kfam
+  newTag: vmaster-gf3e09203
 - name: gcr.io/kubeflow-images-public/profile-controller
   newName: gcr.io/kubeflow-images-public/profile-controller
-  newTag: v1.0.0-ge50a8531
+  newTag: vmaster-ga49f658f
 vars:
 - fieldref:
     fieldPath: data.admin

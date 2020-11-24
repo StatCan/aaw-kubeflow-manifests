@@ -6,10 +6,13 @@ webhooks:
 - clientConfig:
     caBundle: ""
     service:
-      name: $(serviceName)
-      namespace: $(namespace)
+      name: $(podDefaultsServiceName)
+      namespace: $(podDefaultsNamespace)
       path: /apply-poddefault
-  name: $(deploymentName).kubeflow.org
+  name: $(podDefaultsDeploymentName).kubeflow.org
+  namespaceSelector:
+    matchLabels:
+      app.kubernetes.io/part-of: kubeflow-profile
   rules:
   - apiGroups:
     - ""

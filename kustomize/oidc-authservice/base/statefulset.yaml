@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: authservice
-        image: k8scc01covidacr.azurecr.io/oidc-authservice:latest
+        image: gcr.io/arrikto/kubeflow/oidc-authservice:6ac9400
         imagePullPolicy: Always
         ports:
         - name: http-api
@@ -28,13 +28,13 @@ spec:
           - name: USERID_PREFIX
             value: $(userid-prefix)
           - name: USERID_CLAIM
-            value: preferred_username
+            value: email
           - name: OIDC_PROVIDER
             value: $(oidc_provider)
           - name: OIDC_AUTH_URL
             value: $(oidc_auth_url)
           - name: OIDC_SCOPES
-            value: "profile email"
+            value: "profile email groups"
           - name: REDIRECT_URL
             value: $(oidc_redirect_uri)
           - name: SKIP_AUTH_URI
@@ -56,9 +56,7 @@ spec:
               port: 8081
       securityContext:
         fsGroup: 111
-      imagePullSecrets:
-        - name: k8scc01covidacr-registry-connection
       volumes:
         - name: data
           persistentVolumeClaim:
-              claimName: authservice-pvc
+              claimName: authservice-pvc          

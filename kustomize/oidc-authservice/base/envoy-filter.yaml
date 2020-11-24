@@ -4,7 +4,7 @@ metadata:
   name: authn-filter
 spec:
   workloadLabels:
-    istio: ingressgateway-kubeflow
+    istio: ingressgateway
   filters:
   - filterConfig:
       httpService:
