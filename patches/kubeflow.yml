@@ -43,7 +43,10 @@ spec:
       - kubecost
       - kubeflow
       - minio
+      - minio-operator
       - minio-operator-ns
+      - minio-premium-tenant-1
+      - minio-standard-tenant-1
       - mlflow
       - monitoring
       - pachyderm
