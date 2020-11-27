@@ -6,6 +6,8 @@ commonLabels:
   app.kubernetes.io/name: notebook-controller
 configMapGenerator:
 - behavior: merge
+  envs:
+  - overlays/istio/params.env
   name: parameters
 generatorOptions:
   disableNameSuffixHash: true

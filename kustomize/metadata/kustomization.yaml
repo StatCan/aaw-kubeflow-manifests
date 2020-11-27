@@ -7,6 +7,8 @@ commonLabels:
   kustomize.component: metadata
 configMapGenerator:
 - behavior: unspecified
+  envs:
+  - overlays/db/params.env
   name: metadata-db-parameters
 configurations:
 - overlays/istio/params.yaml
@@ -30,7 +32,7 @@ resources:
 secretGenerator:
 - behavior: unspecified
   envs:
-  - secrets.env
+  - overlays/db/secrets.env
   name: metadata-db-secrets
 vars:
 - fieldref:
