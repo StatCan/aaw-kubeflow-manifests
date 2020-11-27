@@ -58,6 +58,11 @@ spec:
         path: istio/istio
     name: istio
   - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: metacontroller
+    name: metacontroller
+  - kustomizeConfig:
       overlays:
       - istio
       - application
@@ -83,7 +88,13 @@ spec:
     name: centraldashboard
   - kustomizeConfig:
       overlays:
-      - cert-manager
+      - application
+      repoRef:
+        name: manifests
+        path: admission-webhook/bootstrap
+    name: bootstrap
+  - kustomizeConfig:
+      overlays:
       - application
       repoRef:
         name: manifests
@@ -310,5 +321,5 @@ spec:
     name: seldon-core-operator
   repos:
   - name: manifests
-    uri: https://github.com/kubeflow/manifests/archive/v1.0.2.tar.gz
-  version: v1.0.2
+    uri: https://github.com/kubeflow/manifests/archive/v1.1.0.tar.gz
+  version: v1.1.0

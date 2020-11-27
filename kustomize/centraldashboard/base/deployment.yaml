@@ -13,6 +13,8 @@ spec:
     metadata:
       labels:
         app: centraldashboard
+      annotations:
+        sidecar.istio.io/inject: "false"
     spec:
       containers:
       - image: gcr.io/kubeflow-images-public/centraldashboard
@@ -27,13 +29,6 @@ spec:
         ports:
         - containerPort: 8082
           protocol: TCP
-        env:
-        - name: USERID_HEADER
-          value: $(userid-header)
-        - name: USERID_PREFIX
-          value: $(userid-prefix)
-        - name: PROFILES_KFAM_SERVICE_HOST
-          value: profiles-kfam.kubeflow
       serviceAccountName: centraldashboard
       imagePullSecrets:
       - name: k8scc01covidacr-registry-connection

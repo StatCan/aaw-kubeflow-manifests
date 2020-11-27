@@ -5,6 +5,9 @@ metadata:
 spec:
   replicas: 1
   template:
+    metadata:
+      annotations:
+        sidecar.istio.io/inject: "false"
     spec:
       containers:
       - command:
@@ -25,6 +28,10 @@ spec:
             port: 8080
           initialDelaySeconds: 30
           periodSeconds: 30
+        ports:
+        - containerPort: 8080
+          name: manager-http
+          protocol: TCP
       - command:
         - /access-management
         args:
@@ -43,6 +50,10 @@ spec:
             port: 8081
           initialDelaySeconds: 30
           periodSeconds: 30
+        ports:
+        - containerPort: 8081
+          name: kfam-http
+          protocol: TCP
       serviceAccountName: controller-service-account
       imagePullSecrets:
       - name: k8scc01covidacr-registry-connection

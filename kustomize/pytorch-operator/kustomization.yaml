@@ -3,11 +3,7 @@ bases:
 - base
 commonLabels:
   app.kubernetes.io/component: pytorch
-  app.kubernetes.io/instance: pytorch-operator-v1.0.0
-  app.kubernetes.io/managed-by: kfctl
   app.kubernetes.io/name: pytorch-operator
-  app.kubernetes.io/part-of: kubeflow
-  app.kubernetes.io/version: v1.0.0
 kind: Kustomization
 namespace: kubeflow
 resources:
