@@ -21,15 +21,15 @@ spawnerFormDefaults:
     value: k8scc01covidacr.azurecr.io/jupyterlab-cpu:7e4fd7e6233f3b8b13c4fe0cd23c2a5071a1d70e
     # The list of available standard container Images
     options:
+      - k8scc01covidacr.azurecr.io/jupyterlab-cpu:7e4fd7e6233f3b8b13c4fe0cd23c2a5071a1d70e
+      - k8scc01covidacr.azurecr.io/jupyterlab-spark:7e4fd7e6233f3b8b13c4fe0cd23c2a5071a1d70e
+      - k8scc01covidacr.azurecr.io/jupyterlab-pytorch:7e4fd7e6233f3b8b13c4fe0cd23c2a5071a1d70e
+      - k8scc01covidacr.azurecr.io/jupyterlab-tensorflow:7e4fd7e6233f3b8b13c4fe0cd23c2a5071a1d70e
       - k8scc01covidacr.azurecr.io/rstudio:7e4fd7e6233f3b8b13c4fe0cd23c2a5071a1d70e
       - k8scc01covidacr.azurecr.io/vscode-cpu:7e4fd7e6233f3b8b13c4fe0cd23c2a5071a1d70e
       - k8scc01covidacr.azurecr.io/vscode-spark:7e4fd7e6233f3b8b13c4fe0cd23c2a5071a1d70e
       - k8scc01covidacr.azurecr.io/vscode-pytorch:7e4fd7e6233f3b8b13c4fe0cd23c2a5071a1d70e
       - k8scc01covidacr.azurecr.io/vscode-tensorflow:7e4fd7e6233f3b8b13c4fe0cd23c2a5071a1d70e
-      - k8scc01covidacr.azurecr.io/jupyterlab-cpu:7e4fd7e6233f3b8b13c4fe0cd23c2a5071a1d70e
-      - k8scc01covidacr.azurecr.io/jupyterlab-spark:7e4fd7e6233f3b8b13c4fe0cd23c2a5071a1d70e
-      - k8scc01covidacr.azurecr.io/jupyterlab-pytorch:7e4fd7e6233f3b8b13c4fe0cd23c2a5071a1d70e
-      - k8scc01covidacr.azurecr.io/jupyterlab-tensorflow:7e4fd7e6233f3b8b13c4fe0cd23c2a5071a1d70e
     # By default, custom container Images are allowed
     # Uncomment the following line to only enable standard container Images
     readOnly: false
