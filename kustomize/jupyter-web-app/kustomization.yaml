@@ -1,7 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
-bases:
-- base
-- overlays/istio
-- overlays/application
 kind: Kustomization
-namespace: kubeflow
+patchesStrategicMerge:
+- cluster-role.yaml
+- deployment.yaml
+- deployment_patch.yaml
+resources:
+- ../../.cache/manifests/manifests-1.2-branch/stacks/azure/application/jupyter-web-app

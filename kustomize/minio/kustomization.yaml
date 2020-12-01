@@ -1,10 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
-bases:
-- base
-commonLabels:
-  app.kubernetes.io/component: minio
-  app.kubernetes.io/name: minio
 kind: Kustomization
-namespace: kubeflow
+patchesStrategicMerge:
+- persistent-volume-claim.yaml
 resources:
-- overlays/application/application.yaml
+- ../../.cache/manifests/manifests-1.2-branch/pipeline/minio/installs/generic

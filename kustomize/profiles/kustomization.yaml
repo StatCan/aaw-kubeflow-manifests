@@ -1,13 +1,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
-bases:
-- base
-commonLabels:
-  app.kubernetes.io/component: profiles
-  app.kubernetes.io/name: profiles
-configurations:
-- overlays/istio/params.yaml
+images:
+- name: gcr.io/kubeflow-images-public/kfam
+  newName: k8scc01covidacr.azurecr.io/kfam
+  newTag: latest
 kind: Kustomization
-namespace: kubeflow
+patchesStrategicMerge:
+- deployment.yaml
 resources:
-- overlays/application/application.yaml
-- overlays/istio/virtual-service.yaml
+- ../../.cache/manifests/manifests-1.2-branch/profiles/base_v3

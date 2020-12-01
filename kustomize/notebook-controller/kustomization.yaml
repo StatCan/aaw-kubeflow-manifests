@@ -1,19 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
-bases:
-- base
-commonLabels:
-  app.kubernetes.io/component: notebook-controller
-  app.kubernetes.io/name: notebook-controller
-configMapGenerator:
-- behavior: merge
-  envs:
-  - overlays/istio/params.env
-  name: parameters
-generatorOptions:
-  disableNameSuffixHash: true
 kind: Kustomization
-namespace: kubeflow
 patchesStrategicMerge:
-- overlays/istio/deployment.yaml
+- deployment.yaml
 resources:
-- overlays/application/application.yaml
+- ../../.cache/manifests/manifests-1.2-branch/jupyter/notebook-controller/base_v3
