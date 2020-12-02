@@ -1,0 +1,55 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: kubeflow
+resources:
+  - ../../application/admission-webhook
+  - ../../application/argo
+  - ../../application/centraldashboard
+  - ../../application/jupyter-web-app
+  - ../../application/katib
+  - ../../application/kfserving
+  - ../../application/knative
+  - ../../application/kubeflow-roles
+  - ../../application/metadata
+  - ../../application/minio
+  - ../../application/mpi-job
+  - ../../application/mxnet-job
+  - ../../application/mysql
+  - ../../application/notebook-controller
+  - ../../application/pipeline
+  - ../../application/profiles
+  - ../../application/pytorch-job
+  - ../../application/spark-operator
+  - ../../application/tf-training
+configMapGenerator:
+- name: workflow-controller-parameters
+  behavior: merge
+  literals:
+  - containerRuntimeExecutor=pns
+- name: kubeflow-config
+  envs:
+  - ./config/params.env
+vars:
+# We need to define vars at the top level otherwise we will get
+# conflicts.
+- fieldref:
+    fieldPath: data.clusterDomain
+  name: clusterDomain
+  objref:
+    apiVersion: v1
+    kind: ConfigMap
+    name: kubeflow-config
+- fieldref:
+    fieldPath: metadata.namespace
+  name: namespace
+  objref:
+    apiVersion: v1
+    kind: ConfigMap
+    name: kubeflow-config
+- fieldref:
+    fieldpath: metadata.namespace
+  name: katib-ui-namespace
+  objref:
+    kind: Service
+    name: katib-ui
+    apiVersion: v1

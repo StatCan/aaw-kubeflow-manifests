@@ -1,0 +1,5 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../../../.cache/manifests/manifests-1.2-branch/pytorch-job/pytorch-job-crds/overlays/application
+- ../../../.cache/manifests/manifests-1.2-branch/pytorch-job/pytorch-operator/overlays/application

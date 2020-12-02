@@ -1,11 +1,11 @@
 apiVersion: kfdef.apps.kubeflow.org/v1
 kind: KfDef
 metadata:
+  clusterName: k8s-cancentral-01-default-aks
   name: kubeflowmanifests
   namespace: kubeflow
 spec:
   applications:
-  # Istio installed in istio-system
   - kustomizeConfig:
       repoRef:
         name: manifests
@@ -21,122 +21,16 @@ spec:
         name: manifests
         path: metacontroller/base
     name: metacontroller
-  # - kustomizeConfig:
-  #     repoRef:
-  #       name: manifests
-  #       path: stacks/azure
-  #   name: kubeflow-apps
   - kustomizeConfig:
       repoRef:
-        name: manifests
-        path: stacks/azure/application/centraldashboard
-    name: centraldashboard
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: stacks/azure/application/jupyter-web-app
-    name: jupyter-web-app
+        name: daaas
+        path: stacks/daaas
+    name: kubeflow-apps
   - kustomizeConfig:
       repoRef:
         name: manifests
         path: stacks/azure/application/oidc-authservice
     name: oidc-authservice
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: stacks/azure/application/spark-operator
-    name: spark-operator
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: stacks/azure/application/spartakus
-    name: spartakus
-  # Components
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: admission-webhook/webhook/v3
-    name: admission-webhook
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: argo/base_v3
-    name: argo
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: jupyter/notebook-controller/base_v3
-    name: notebook-controller
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: katib/installs/katib-standalone
-    name: katib
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: knative/installs/generic
-    name: knative
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: kfserving/installs/generic
-    name: kfserving
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: kubeflow-roles/base
-    name: kubeflow-roles
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: metadata/v3
-    name: metadata
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: pipeline/minio/installs/generic
-    name: minio
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: mpi-job/mpi-operator/overlays/application
-    name: mpi-job
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: mxnet-job/mxnet-operator/overlays/application
-    name: mxnet-job
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: pipeline/mysql/installs/generic
-    name: mysql
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: pipeline/installs/generic
-    name: pipeline
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: pipeline/pipelines-ui/overlays/istio
-    name: pipelines-ui
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: profiles/base_v3
-    name: profiles
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: pytorch-job
-    name: pytorch-job
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: tf-training
-    name: tf-training
   repos:
   - name: manifests
     uri: https://github.com/kubeflow/manifests/archive/v1.2-branch.tar.gz
@@ -145,3 +39,5 @@ status:
   reposCache:
   - localPath: '".cache/manifests/manifests-1.2-branch"'
     name: manifests
+  - localPath: '"kustomize"'
+    name: daaas
