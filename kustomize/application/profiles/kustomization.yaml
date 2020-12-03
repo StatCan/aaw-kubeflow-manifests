@@ -4,6 +4,7 @@ images:
   newName: k8scc01covidacr.azurecr.io/kfam
   newTag: latest
 kind: Kustomization
+namespace: kubeflow
 patchesStrategicMerge:
 - deployment.yaml
 resources:

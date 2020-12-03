@@ -7,8 +7,6 @@ resources:
   - ../../application/centraldashboard
   - ../../application/jupyter-web-app
   - ../../application/katib
-  - ../../application/kfserving
-  - ../../application/knative
   - ../../application/kubeflow-roles
   - ../../application/metadata
   - ../../application/minio
