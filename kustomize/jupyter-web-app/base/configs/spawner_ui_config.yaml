@@ -41,7 +41,7 @@ spawnerFormDefaults:
     readOnly: false
   memory:
     # Memory for user's Notebook
-    value: 2.0Gi
+    value: 4.0Gi
     readOnly: false
   workspaceVolume:
     # Workspace Volume to be attached to user's Notebook
@@ -60,7 +60,7 @@ spawnerFormDefaults:
         value: 'workspace-{notebook-name}'
       size:
         # The Size of the Workspace Volume (in Gi)
-        value: '10Gi'
+        value: '16Gi'
       mountPath:
         # The Path that the Workspace Volume will be mounted
         value: /home/jovyan
@@ -69,7 +69,7 @@ spawnerFormDefaults:
         # Supported values: 'ReadWriteOnce', 'ReadWriteMany', 'ReadOnlyMany'
         value: ReadWriteOnce
       class:
-        # The StrageClass the PVC will use if type is New. Special values are:
+        # The StorageClass the PVC will use if type is New. Special values are:
         # {none}: default StorageClass
         # {empty}: empty string ""
         value: '{none}'
