@@ -32,7 +32,7 @@ jobs:
       with:
         kubeconfig: ${{ secrets.KUBECONFIG }}
         app: kfctl
-        args: apply -f kfctl_k8s_istio.yaml
+        args: apply -f kfctl_azure.yaml
       env:
         OIDC_PROVIDER: "${{ secrets.OIDC_PROVIDER }}"
         OIDC_REDIRECT_URI: "${{ secrets.OIDC_REDIRECT_URI }}"
