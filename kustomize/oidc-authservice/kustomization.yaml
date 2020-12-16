@@ -1,10 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
-bases:
-- base
-commonLabels:
-  app.kubernetes.io/component: oidc-authservice
-  app.kubernetes.io/name: oidc-authservice
 kind: Kustomization
-namespace: istio-system
+patchesStrategicMerge:
+- configmap.yaml
+- envoy-filter.yaml
+- statefulset.yaml
 resources:
-- overlays/application/application.yaml
+- ../../.cache/manifests/manifests-1.2-branch/stacks/azure/application/oidc-authservice

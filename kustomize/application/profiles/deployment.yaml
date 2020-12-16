@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment
+spec:
+  template:
+    spec:
+      imagePullSecrets:
+      - name: k8scc01covidacr-registry-connection

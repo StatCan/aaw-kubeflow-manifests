@@ -45,6 +45,7 @@ spec:
       - minio
       - minio-operator
       - minio-operator-ns
+      - minio-hackathon-tenant-1
       - minio-premium-tenant-1
       - minio-standard-tenant-1
       - mlflow

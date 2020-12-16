@@ -1,0 +1,53 @@
+apiVersion: kfdef.apps.kubeflow.org/v1
+kind: KfDef
+metadata:
+  clusterName: k8s-cancentral-01-default-aks
+  name: kubeflowmanifests
+  namespace: kubeflow
+spec:
+  applications:
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: namespaces/base
+    name: namespaces
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: application/v3
+    name: application
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: metacontroller/base
+    name: metacontroller
+  - kustomizeConfig:
+      repoRef:
+        name: daaas
+        path: stacks/daaas
+    name: kubeflow-apps
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: knative/installs/generic
+    name: knative
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: kfserving/installs/generic
+    name: kfserving
+  - kustomizeConfig:
+      repoRef:
+        name: manifests
+        path: stacks/azure/application/oidc-authservice
+    name: oidc-authservice
+  repos:
+  - name: manifests
+    uri: https://github.com/kubeflow/manifests/archive/v1.2-branch.tar.gz
+  version: v1.2-branch
+status:
+  reposCache:
+  - localPath: '".cache/manifests/manifests-1.2-branch"'
+    name: manifests
+  - localPath: '"kustomize"'
+    name: daaas
