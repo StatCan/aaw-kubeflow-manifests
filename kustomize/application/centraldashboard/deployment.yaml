@@ -9,7 +9,7 @@ spec:
   template:
     spec:
       containers:
-      - image: k8scc01covidacr.azurecr.io/kubeflow/centraldashboard:cb2964cb4f5562b60c97f89b7ee79e4cb179216a
+      - image: k8scc01covidacr.azurecr.io/kubeflow/centraldashboard:9726cae464d5ef87846bdaff606ad26bd673cd36
         imagePullPolicy: IfNotPresent
         name: centraldashboard
       serviceAccountName: centraldashboard

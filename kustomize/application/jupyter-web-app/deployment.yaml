@@ -10,7 +10,7 @@ spec:
         sidecar.istio.io/inject: "false"
     spec:
       containers:
-      - image: k8scc01covidacr.azurecr.io/jupyter-apis:f938db9495db669b280529482c82ff518effaec5
+      - image: k8scc01covidacr.azurecr.io/jupyter-apis:0fba437b5f3965c141407dd5bd51ac2289570faa
         name: jupyter-web-app
         ports:
         - containerPort: 5000
