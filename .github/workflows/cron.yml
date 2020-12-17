@@ -31,7 +31,7 @@ jobs:
       with:
         kubeconfig: ${{ secrets.KUBECONFIG }}
         app: argo
-        args: delete -n kubeflow --older 5d
+        args: delete --all-namespaces -l "scheduledworkflows.kubeflow.org/isOwnedByScheduledWorkflow=true" --older 5d
       env:
         OIDC_PROVIDER: "${{ secrets.OIDC_PROVIDER }}"
         OIDC_REDIRECT_URI: "${{ secrets.OIDC_REDIRECT_URI }}"

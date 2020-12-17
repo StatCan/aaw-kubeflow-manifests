@@ -5,5 +5,5 @@ metadata:
   namespace: kubeflow
 spec:
   ports:
-  - name: tcp-http
+  - name: http
     port: 8888
