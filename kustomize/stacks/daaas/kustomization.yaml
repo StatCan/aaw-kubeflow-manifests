@@ -23,7 +23,7 @@ configMapGenerator:
 - name: workflow-controller-parameters
   behavior: merge
   literals:
-  - containerRuntimeExecutor=pns
+  - containerRuntimeExecutor=docker
 - name: kubeflow-config
   envs:
   - ./config/params.env
