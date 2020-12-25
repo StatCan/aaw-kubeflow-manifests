@@ -3,5 +3,10 @@ kind: Kustomization
 patchesStrategicMerge:
 - deployment.yaml
 - service.yaml
+configMapGenerator:
+- name: kubeflow-pipelines-profile-controller-code
+  behavior: replace
+  files:
+  - sync.py
 resources:
 - ../../../.cache/manifests/manifests-1.2-branch/pipeline/installs/multi-user

@@ -18,3 +18,5 @@ spec:
           value: mlpipeline
         - name: ARGO_ARCHIVE_PREFIX
           value: artifacts
+        - name: DISABLE_GKE_METADATA
+          value: 'true'
