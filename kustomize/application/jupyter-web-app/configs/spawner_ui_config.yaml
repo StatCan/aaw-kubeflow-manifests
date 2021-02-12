@@ -21,10 +21,10 @@ spawnerFormDefaults:
     value: k8scc01covidacr.azurecr.io/jupyterlab-cpu:ee176847
     # The list of available standard container Images
     options:
-      - k8scc01covidacr.azurecr.io/rstudio:ee176847
-      - k8scc01covidacr.azurecr.io/jupyterlab-cpu:ee176847
-      - k8scc01covidacr.azurecr.io/jupyterlab-pytorch:ee176847
-      - k8scc01covidacr.azurecr.io/jupyterlab-tensorflow:ee176847
+      - k8scc01covidacr.azurecr.io/rstudio:0dba370d
+      - k8scc01covidacr.azurecr.io/jupyterlab-cpu:0dba370d
+      - k8scc01covidacr.azurecr.io/jupyterlab-pytorch:0dba370d
+      - k8scc01covidacr.azurecr.io/jupyterlab-tensorflow:0dba370d
       - k8scc01covidacr.azurecr.io/remote-desktop-r:fc37cc9b41cf8b7f7b7bcbef9a48927c346fe5e9
       - k8scc01covidacr.azurecr.io/remote-desktop-geomatics:fc37cc9b41cf8b7f7b7bcbef9a48927c346fe5e9
     # By default, custom container Images are allowed
