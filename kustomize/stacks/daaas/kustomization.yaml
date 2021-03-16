@@ -17,6 +17,7 @@ resources:
   - ../../application/pipeline
   - ../../application/profiles
   - ../../application/pytorch-job
+  - ../../application/seldon
   - ../../application/spark-operator
   - ../../application/tf-training
 configMapGenerator:
