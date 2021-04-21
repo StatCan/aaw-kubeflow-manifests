@@ -34,6 +34,7 @@ spec:
       - elastic-system
       - esd
       - gatekeeper-system
+      - geo
       - gpu-resources
       - istio-system
       - knative-serving
