@@ -18,13 +18,13 @@ spawnerFormDefaults:
   image:
     # The container Image for the user's Jupyter Notebook
     # If readonly, this value must be a member of the list below
-    value: k8scc01covidacr.azurecr.io/jupyterlab-cpu:dee04931
+    value: k8scc01covidacr.azurecr.io/jupyterlab-cpu:3c7dcfb5
     # The list of available standard container Images
     options:
-      - k8scc01covidacr.azurecr.io/rstudio:dee04931
-      - k8scc01covidacr.azurecr.io/jupyterlab-cpu:dee04931
-      - k8scc01covidacr.azurecr.io/jupyterlab-pytorch:dee04931
-      - k8scc01covidacr.azurecr.io/jupyterlab-tensorflow:dee04931
+      - k8scc01covidacr.azurecr.io/rstudio:3c7dcfb5
+      - k8scc01covidacr.azurecr.io/jupyterlab-cpu:3c7dcfb5
+      - k8scc01covidacr.azurecr.io/jupyterlab-pytorch:3c7dcfb5
+      - k8scc01covidacr.azurecr.io/jupyterlab-tensorflow:3c7dcfb5
       - k8scc01covidacr.azurecr.io/remote-desktop-r:68e12a3b2fb14307cd9a4cf5989e34ad057da7c5
       - k8scc01covidacr.azurecr.io/remote-desktop-geomatics:68e12a3b2fb14307cd9a4cf5989e34ad057da7c5
     # By default, custom container Images are allowed
