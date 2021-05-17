@@ -18,3 +18,4 @@ spec:
           value: mlpipeline
         - name: ARGO_ARCHIVE_PREFIX
           value: artifacts
+        image: k8scc01covidacr.azurecr.io/kubeflow-pipeline/kubeflow-pipeline:5c41c42f
