@@ -31,6 +31,7 @@ spec:
       - default
       - dremio
       - dsd-seldon
+      - disclosure-vetting
       - elastic-system
       - esd
       - gatekeeper-system
