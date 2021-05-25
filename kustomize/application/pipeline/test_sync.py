@@ -2,7 +2,7 @@ import os
 from unittest import mock
 import threading
 from http.server import BaseHTTPRequestHandler, HTTPServer
-from sync_modified import Controller
+from sync import Controller
 import json
 import time 
 
