@@ -21,11 +21,11 @@ spawnerFormDefaults:
     value: k8scc01covidacr.azurecr.io/jupyterlab-cpu:a3870fcc
     # The list of available standard container Images
     options:
-      - k8scc01covidacr.azurecr.io/rstudio:a3870fcc
       - k8scc01covidacr.azurecr.io/jupyterlab-cpu:a3870fcc
+      - k8scc01covidacr.azurecr.io/rstudio:a3870fcc
+      - k8scc01covidacr.azurecr.io/remote-desktop:a3870fcc
       - k8scc01covidacr.azurecr.io/jupyterlab-pytorch:a3870fcc
       - k8scc01covidacr.azurecr.io/jupyterlab-tensorflow:a3870fcc
-      - k8scc01covidacr.azurecr.io/remote-desktop:a3870fcc
     # By default, custom container Images are allowed
     # Uncomment the following line to only enable standard container Images
     readOnly: false
