@@ -75,30 +75,30 @@ tasks:
     cmds:
     - "echo TBD"
 
-  stack:aaw:
+  stack:aaw:preview:
     prefix: stacks > aaw
     desc: install the AAW Stack
     dir: ./kustomize
     cmds:
-    - "{{.KUSTOMIZE}} stacks/aaw"
+    - "{{.KUSTOMIZE}} stacks/aaw --output=../manifests/aaw.yaml"
 
-  stack:argo:
+  stack:argo:preview:
     prefix: stacks > argo
     desc: install the Argo Stack
     dir: ./kustomize
     cmds:
-    - "{{.KUSTOMIZE}} stacks/argo"
+    - "{{.KUSTOMIZE}} stacks/argo --output=../manifests/argo.yaml"
 
-  stack:local:
+  stack:local:preview:
     prefix: stacks > local
     desc: install the Local Stack
     dir: ./kustomize
     cmds:
-    - "{{.KUSTOMIZE}} stacks/local"
+    - "{{.KUSTOMIZE}} stacks/local --output=../manifests/local.yaml"
 
-  stack:upstream:
+  stack:upstream:preview:
     prefix: stacks > upstream
     desc: install the Upstream Stack
     dir: ./kustomize
     cmds:
-    - "{{.KUSTOMIZE}} stacks/upstream"
+    - "{{.KUSTOMIZE}} stacks/upstream --output=../manifests/upstream.yaml"
