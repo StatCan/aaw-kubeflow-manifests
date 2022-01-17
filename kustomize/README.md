@@ -11,17 +11,58 @@ While the upstream location is organized under three (3) main directories we hav
 | `apps`    | Kubeflow's official components, as maintained by the respective Kubeflow WGs                          |
 | `common`  | Common services, as maintained by the Manifests WG                                                    |
 | `contrib` | 3rd party contributed applications, which are maintained externally and are not part of a Kubeflow WG |
-| `stacks`  | Different type of configurations for Kubeflow and its dependencies (`aaw`, `argo`, `upstream`)        |
 
-## Stacks
+## Application Sets
+
+All the applications can be deployed at once using an `ApplicationSet`. See `examples/` for versions. The following deploys all apps, but lets you configure the version and overlay of each app.
+
+```yaml
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: kubeflow
+  namespace: argocd
+spec:
+  generators:
+  - list:
+      elements:
+      - app: katib
+        folder: apps
+        overlay: aaw
+        version: main
+
+      - app: kfserving
+        folder: apps
+        overlay: aaw
+        version: main
+      # truncated...
+  template:
+    metadata:
+      name: 'kubeflow-{{app}}'
+      namespace: argocd
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/statcan/aaw-kubeflow-manifests.git
+        targetRevision: {{version}}
+        path: kustomize/{{folder}}/{{app}}/overlays/{{overlay}}
+      destination:
+        server: https://kubernetes.default.svc
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+```
+
+## Overlays
 
 Different type of configurations for Kubeflow and its dependencies.
 
-| Directory  | Purpose                                                                       |
+| Overlay    | Purpose                                                                       |
 | ---------- | ----------------------------------------------------------------------------- |
-| `aaw`      | Installs Kubeflow on top of Statistics Canada Cloud Native Platform           |
-| `argo`     | Provides ArgoCD Project Metadata to facilitate a GitOps deployment model      |
 | `upstream` | Installs a generalized Kubeflow useful for testing and accessing new features |
+| `aaw`      | Installs Kubeflow on top of Statistics Canada Cloud Native Platform           |
+| `local-dev`| Builds on `aaw` but allows patching suitable for local development            |
 
 <!-- Links Referenced -->
 
