@@ -9,6 +9,7 @@ silent: true
 vars:
   CLUSTER_NAME: kubeflow
   CONTEXT_NAME: "k3d-{{.CLUSTER_NAME}}"
+  ARGOCD_MANIFEST: argoproj-labs/applicationset/v0.3.0/manifests/install-with-argo-cd.yaml
   KUBECTL: "kubectl --context={{.CONTEXT_NAME}}"
   KUBEAPPLY: "{{.KUBECTL}} apply"
   KUSTOMIZE: "{{.KUBECTL}} kustomize"
@@ -49,7 +50,9 @@ tasks:
     prefix: k3d > create
     desc: create k3d cluster
     cmds:
-    - k3d cluster create --config=cluster/config.yaml
+    - "k3d cluster create --config=cluster/config.yaml"
+    - "{{.KUBECTL}} create namespace argocd"
+    - "{{.KUBECTL}} apply -n argocd -f https://raw.githubusercontent.com/{{.ARGOCD_MANIFEST}}"
 
   k3d:destroy:
     prefix: k3d > destroy
@@ -75,23 +78,23 @@ tasks:
     cmds:
     - "echo TBD"
 
+  stack:upstream:
+    prefix: stacks > upstream
+    desc: install the Upstream manifests
+    dir: ./examples
+    cmds:
+    - "{{.KUBEAPPLY}} -f kubeflow-appset-aaw.yaml"
+
   stack:aaw:
     prefix: stacks > aaw
-    desc: install the AAW Stack
-    dir: ./kustomize
+    desc: install the AAW overlay
+    dir: ./examples
     cmds:
-    - "{{.KUSTOMIZE}} stacks/aaw"
-
-  stack:argo:
-    prefix: stacks > argo
-    desc: install the Argo Stack
-    dir: ./kustomize
-    cmds:
-    - "{{.KUSTOMIZE}} stacks/argo"
+    - "{{.KUBEAPPLY}} -f kubeflow-appset-aaw.yaml"
 
   stack:local:
     prefix: stacks > local
-    desc: install the Local Stack
-    dir: ./kustomize
+    desc: install the local-dev overlay
+    dir: ./examples
     cmds:
-    - "{{.KUSTOMIZE}} stacks/local"
+    - "{{.KUBEAPPLY}} -f kubeflow-appset-local-dev.yaml"

@@ -1,0 +1,54 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: kubeflow
+  namespace: argocd
+spec:
+  generators:
+  - list:
+      elements:
+      - app: katib
+        folder: apps
+        overlay: aaw
+        version: main
+
+      - app: kfserving
+        folder: apps
+        overlay: aaw
+        version: main
+
+      - app: pipeline
+        folder: apps
+        overlay: aaw
+        version: main
+
+      - app: kubeflow-namespace
+        folder: common
+        overlay: aaw
+        version: main
+
+      - app: kubeflow-roles
+        folder: common
+        overlay: aaw
+        version: main
+
+      - app: oidc-authservice
+        folder: common
+        overlay: aaw
+        version: main
+  template:
+    metadata:
+      name: 'kubeflow-{{app}}'
+      namespace: argocd
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/statcan/aaw-kubeflow-manifests.git
+        targetRevision: {{version}}
+        path: kustomize/{{folder}}/{{app}}/overlays/{{overlay}}
+      destination:
+        server: https://kubernetes.default.svc
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
