@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: centraldashboard
+  labels:
+    app: centraldashboard
+spec:
+  template:
+    spec:
+      containers:
+      - name: centraldashboard
+        env:
+        - name: UI
+          value: default
+        - name: DASHBOARD_LINKS_CONFIGMAP
+          value: centraldashboard-links-config

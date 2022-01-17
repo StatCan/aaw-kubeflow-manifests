@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: centraldashboard
+  name: centraldashboard
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+      - image: k8scc01covidacr.azurecr.io/kubeflow/centraldashboard:a96d1cd8523f895904051e122fa98db5c0017bd6
+        imagePullPolicy: IfNotPresent
+        name: centraldashboard
+      serviceAccountName: centraldashboard
+      imagePullSecrets:
+      - name: k8scc01covidacr-registry-connection
