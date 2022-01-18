@@ -3,3 +3,10 @@ kind: Kustomization
 
 resources:
 - github.com/kubeflow/manifests/common/kubeflow-namespace/base?ref=v1.3.1
+
+patches:
+- path: namespace_patch.json
+  target:
+    kind: Namespace
+    name: kubeflow
+    version: v1
