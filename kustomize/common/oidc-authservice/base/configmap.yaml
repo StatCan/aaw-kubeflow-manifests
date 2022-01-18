@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: oidc-authservice-parameters
+  namespace: istio-system
+data:
+  client_secret: 'XXXXXX'
+  client_id: XXXXXX
+  namespace: istio-system
+  oidc_auth_url: https://login.microsoftonline.com/XXXXXX/oauth2/v2.0/authorize
+  oidc_provider: https://login.microsoftonline.com/XXXXXX/v2.0
+  redirect_url: https://kubeflow.example.ca/login/oidc
+  skip_auth_uri: ""
+  userid_header: kubeflow-userid
+  userid_prefix: ""
+  userid_claim: preferred_username
+  oidc_scopes: profile email
+  port: "8080"
+  store_path: /var/lib/authservice/data.db
