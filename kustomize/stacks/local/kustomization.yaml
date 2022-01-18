@@ -9,13 +9,13 @@ resources:
 
 ## Kubeflow (common)
 
-- ../../common/kubeflow-namespace/
-- ../../common/kubeflow-roles/
-- ../../common/oidc-authservice/
+- ../../common/kubeflow-namespace/base
+- ../../common/kubeflow-roles/base
+- ../../common/oidc-authservice/base
 
 ## Kubeflow (apps)
 
-- ../../apps/centraldashboard
-- ../../apps/katib
-- ../../apps/kfserving
-- ../../apps/pipeline
+- ../../apps/centraldashboard/base
+- ../../apps/katib/base
+- ../../apps/kfserving/base
+- ../../apps/pipeline/base

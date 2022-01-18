@@ -20,7 +20,7 @@ Different type of configurations for Kubeflow and its dependencies.
 | Directory  | Purpose                                                                                        |
 | ---------- | ---------------------------------------------------------------------------------------------- |
 | `aaw`      | Installs Kubeflow on top of Statistics Canada's Cloud Native Platform (CNP)                    |
-| `argo`     | Provides ArgoCD Application Metadata on top of the `aaw` stack                                 |
+| `argo`     | Provides ArgoCD Application Metadata for the `aaw` stack                                       |
 | `local`    | Necessary adjustments for running the `aaw` stack on a local, dev, and CI environment          |
 | `upstream` | Installs Kubeflow upstream along with the AAW kustomizations without the Cloud Native Platform |
 

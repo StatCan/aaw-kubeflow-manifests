@@ -1,19 +1,57 @@
 apiVersion: argoproj.io/v1alpha1
-kind: Application
+kind: ApplicationSet
 metadata:
   name: kubeflow
   namespace: argocd
 spec:
-  project: default
-  source:
-    repoURL: 'https://github.com/StatCan/aaw-kubeflow-manifests.git'
-    targetRevision: v1.3.1
-    path: kustomize/stacks/argo
-    kustomize:
-      version: v4.0.5
-  destination:
-    server: https://kubernetes.default.svc
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+  generators:
+  - list:
+      elements:
+
+      ## Provides ArgoCD Application Metadata for the `aaw` stack
+      ##
+      ##
+
+      ## Kubeflow (common)
+
+      - app: kubeflow-namespace
+        folder: common
+        version: main
+      - app: kubeflow-roles
+        folder: common
+        version: main
+      - app: oidc-authservice
+        folder: common
+        version: main
+
+      ## Kubeflow (apps)
+
+      - app: centraldashboard
+        folder: apps
+        version: main
+      - app: katib
+        folder: apps
+        version: main
+      - app: kfserving
+        folder: apps
+        version: main
+      - app: pipeline
+        folder: apps
+        version: main
+
+  template:
+    metadata:
+      name: 'kubeflow-aaw'
+      namespace: argocd
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/statcan/aaw-kubeflow-manifests.git
+        targetRevision: {{version}}
+        path: kustomize/{{folder}}/{{app}}/base
+      destination:
+        server: https://kubernetes.default.svc
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
