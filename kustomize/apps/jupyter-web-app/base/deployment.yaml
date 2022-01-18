@@ -10,8 +10,24 @@ spec:
         sidecar.istio.io/inject: "false"
     spec:
       containers:
-      - image: k8scc01covidacr.azurecr.io/jupyter-apis:416bcb15aa542232ebc0184b97f910d5d5faa96c
-        name: jupyter-web-app
+      - name: jupyter-web-app
+        imagePullPolicy: IfNotPresent
+        image: k8scc01covidacr.azurecr.io/jupyter-apis:416bcb15aa542232ebc0184b97f910d5d5faa96c
+        env:
+        - name: UI
+          value: default
+        - name: USERID_HEADER
+          valueFrom:
+            configMapKeyRef:
+              name: kubeflow-config
+              key: userid-header
+        - name: USERID_PREFIX
+          valueFrom:
+            configMapKeyRef:
+              name: kubeflow-config
+              key: userid-prefix
+        - name: KUBECOST_URL
+          value: http://kubecost-cost-analyzer.kubecost.svc.cluster.local:9090
         ports:
         - containerPort: 5000
         volumeMounts:
