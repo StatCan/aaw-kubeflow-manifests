@@ -35,3 +35,4 @@ resources:
 - ../../apps/katib/base
 - ../../apps/kfserving/base
 - ../../apps/pipeline/base
+- ../../apps/jupyter-web-app/base
