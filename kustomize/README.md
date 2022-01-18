@@ -17,12 +17,12 @@ While the upstream location is organized under three (3) main directories we hav
 
 Different type of configurations for Kubeflow and its dependencies.
 
-| Directory  | Purpose                                                                       |
-| ---------- | ----------------------------------------------------------------------------- |
-| `aaw`      | Installs Kubeflow on top of Statistics Canada Cloud Native Platform           |
-| `argo`     | Provides ArgoCD Project Metadata to facilitate a GitOps deployment model      |
-| `local`    | Installs a Kubeflow useful for local developmment and testing                 |
-| `upstream` | Installs a generalized Kubeflow useful for testing and accessing new features |
+| Directory  | Purpose                                                                                        |
+| ---------- | ---------------------------------------------------------------------------------------------- |
+| `aaw`      | Installs Kubeflow on top of Statistics Canada's Cloud Native Platform (CNP)                    |
+| `argo`     | Provides ArgoCD Application Metadata on top of the `aaw` stack                                 |
+| `local`    | Necessary adjustments for running the `aaw` stack on a local, dev, and CI environment          |
+| `upstream` | Installs Kubeflow upstream along with the AAW kustomizations without the Cloud Native Platform |
 
 <!-- Links Referenced -->
 

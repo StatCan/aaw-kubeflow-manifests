@@ -3,6 +3,10 @@ kind: Kustomization
 
 resources:
 
+## Provides ArgoCD Application Metadata on top of the `aaw` stack
+##
+##
+
 ## Kubeflow (common)
 
 - applications/kubeflow-namespace.yaml
@@ -11,6 +15,7 @@ resources:
 
 ## Kubeflow (apps)
 
+- applications/centraldashboard
 - applications/katib.yaml
 - applications/kfserving.yaml
 - applications/pipeline.yaml
