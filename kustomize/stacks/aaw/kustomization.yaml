@@ -11,6 +11,7 @@ resources:
 
 ## Kubeflow (apps)
 
+- ../../apps/centraldashboard
 - ../../apps/katib
 - ../../apps/kfserving
 - ../../apps/pipeline
