@@ -9,7 +9,10 @@ spec:
   template:
     spec:
       containers:
-      - image: k8scc01covidacr.azurecr.io/kubeflow/centraldashboard:a96d1cd8523f895904051e122fa98db5c0017bd6
+      - env:
+        - name: REGISTRATION_FLOW
+          value: "true"
+        image: k8scc01covidacr.azurecr.io/kubeflow/centraldashboard:a96d1cd8523f895904051e122fa98db5c0017bd6
         imagePullPolicy: IfNotPresent
         name: centraldashboard
       serviceAccountName: centraldashboard
