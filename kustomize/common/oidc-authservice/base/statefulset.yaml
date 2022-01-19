@@ -13,7 +13,7 @@ spec:
       annotations:
         sidecar.istio.io/inject: "false"
       labels:
-        app: authservice 
+        app: authservice
     spec:
       containers:
       - name: authservice
@@ -22,19 +22,19 @@ spec:
         ports:
         - name: http-api
           containerPort: 8080
-        envFrom: 
+        envFrom:
           - configMapRef:
               name: oidc-authservice-parameters
         volumeMounts:
           - name: data
-            mountPath: /var/lib/authservice  
+            mountPath: /var/lib/authservice
         readinessProbe:
             httpGet:
               path: /
               port: 8081
       securityContext:
         fsGroup: 111
-      imagePullSecrets: 
+      imagePullSecrets:
         - name: k8scc01covidacr-registry-connection
       # this secret must exist in our deployment.
       volumes:
