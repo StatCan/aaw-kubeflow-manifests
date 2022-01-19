@@ -9,4 +9,16 @@ patchesStrategicMerge:
 - config-domain.yaml
 
 patches:
-- config-istio.yaml
+- path: istio-webhook-deployment-patch.json
+  target:
+    kind: Deployment
+    name: istio-webhook
+    version: v1
+
+- path: webhook-deployment-patch.json
+  target:
+    kind: Deployment
+    name: webhook
+    version: v1
+
+- path: config-istio.yaml

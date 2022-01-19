@@ -1,0 +1,5 @@
+[{
+  "op": "add",
+  "path": "/metadata/labels/sidecar.istio.io~1istio-inject",
+  "value": "false"
+}] 
