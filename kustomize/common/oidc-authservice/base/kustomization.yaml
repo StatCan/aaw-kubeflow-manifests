@@ -3,3 +3,8 @@ kind: Kustomization
 
 resources:
 - github.com/kubeflow/manifests/common/oidc-authservice/base?ref=v1.3.1
+
+patchesStrategicMerge:
+- configmap.yaml
+- envoy-filter.yaml
+- statefulset.yaml
