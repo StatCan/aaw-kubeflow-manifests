@@ -5,29 +5,31 @@ resources:
 
 ## Installs Kubeflow on top of Statistics Canada's Cloud Native Platform (CNP)
 ##
-## ├─── https://github.com/statcan/terraform-statcan-aaw-platform
-## ├─── https://github.com/statcan/terraform-statcan-azure-cloud-native-platform-infrastructure
-## │    ├─── aad_pod_identity
-## │    ├─── cert_manager
-## │    ├─── vault
-## │    └─── velero
-## ├─── https://github.com/statcan/terraform-statcan-kubernetes-core-platform
-## │    ├─── aad_pod_identity
-## │    ├─── cert_manager
-## │    ├─── fluentd
-## │    ├─── gatekeeper
-## │    ├─── kubecost
-## │    ├─── prometheus
-## │    ├─── vault_agent
-## │    └─── velero
-## └─── https://github.com/statcan/terraform-statcan-kubernetes-app-platform
-##      └─── istio
+## └─── https://github.com/statcan/terraform-statcan-aaw-platform
+##      ├─── https://github.com/statcan/terraform-statcan-azure-cloud-native-platform-infrastructure
+##      │    ├─── aad_pod_identity
+##      │    ├─── cert_manager
+##      │    ├─── vault
+##      │    └─── velero
+##      ├─── https://github.com/statcan/terraform-statcan-kubernetes-core-platform
+##      │    ├─── aad_pod_identity
+##      │    ├─── cert_manager
+##      │    ├─── fluentd
+##      │    ├─── gatekeeper
+##      │    ├─── kubecost
+##      │    ├─── prometheus
+##      │    ├─── vault_agent
+##      │    └─── velero
+##      └─── https://github.com/statcan/terraform-statcan-kubernetes-app-platform
+##           ├─── istio operator
+##           └─── istio gateway handling
 
 ## Kubeflow (common)
 
 - ../../common/kubeflow-namespace/base
 - ../../common/kubeflow-roles/base
 - ../../common/oidc-authservice/base
+- ../../common/knative/base
 
 ## Kubeflow (apps)
 

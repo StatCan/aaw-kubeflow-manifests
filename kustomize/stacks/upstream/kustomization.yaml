@@ -12,6 +12,7 @@ resources:
 - ../../common/kubeflow-namespace/
 - ../../common/kubeflow-roles/
 - ../../common/oidc-authservice/
+- ../../common/knative/
 
 ## Kubeflow (apps)
 
@@ -19,3 +20,4 @@ resources:
 - ../../apps/katib
 - ../../apps/kfserving
 - ../../apps/pipeline
+- ../../apps/jupyter-web-app/base
