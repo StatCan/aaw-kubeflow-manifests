@@ -6,5 +6,5 @@ resources:
 - configs/inferenceservice-config.yaml
 - configs/authorizationpolicy-config.yaml
 
-patchesStrategicMerge:
+patches:
 - inferenceservice-configmap.yaml

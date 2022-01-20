@@ -1,4 +1,13 @@
 apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app: kfserving
+    app.kubernetes.io/component: kfserving
+    app.kubernetes.io/name: kfserving
+    kustomize.component: kfserving
+  name: inferenceservice-config
+  namespace: kubeflow
 data:
   agent: |-
     {
@@ -173,12 +182,3 @@ data:
   transformers: |-
     {
     }
-kind: ConfigMap
-metadata:
-  labels:
-    app: kfserving
-    app.kubernetes.io/component: kfserving
-    app.kubernetes.io/name: kfserving
-    kustomize.component: kfserving
-  name: inferenceservice-config
-  namespace: kubeflow
