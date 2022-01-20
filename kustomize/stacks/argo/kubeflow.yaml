@@ -32,9 +32,6 @@ spec:
       - app: katib
         folder: apps
         version: main
-      - app: kfserving
-        folder: apps
-        version: main
       - app: pipeline
         folder: apps
         version: main
