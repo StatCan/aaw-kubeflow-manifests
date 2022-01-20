@@ -1,5 +1,5 @@
 [{
-  "op": "add",
-  "path": "/metadata/labels/sidecar.istio.io~1istio-inject",
+  "op": "replace",
+  "path": "/spec/template/metadata/annotations/sidecar.istio.io~1inject",
   "value": "false"
-}] 
+}]

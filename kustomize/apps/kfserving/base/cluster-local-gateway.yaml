@@ -1,0 +1,32 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: cluster-local-gateway
+  namespace: istio-system
+spec:
+  selector:
+    istio: ingressgateway-kfserving
+  servers:
+  - hosts:
+    - '*'
+    port:
+      name: http-kfserving
+      number: 80
+      protocol: HTTP2
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: cluster-local-gateway
+  namespace: istio-system
+spec:
+  ports:
+    - name: http2
+      protocol: TCP
+      port: 80
+      targetPort: 80
+  selector:
+    app: istio-ingressgateway
+    istio: ingressgateway-kfserving
+  type: ClusterIP
+  sessionAffinity: None

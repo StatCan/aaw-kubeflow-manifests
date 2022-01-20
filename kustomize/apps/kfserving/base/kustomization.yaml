@@ -3,8 +3,8 @@ kind: Kustomization
 
 resources:
 - github.com/kubeflow/manifests/apps/kfserving/upstream/overlays/kubeflow?ref=v1.3.1
-- configs/inferenceservice-config.yaml
-- configs/authorizationpolicy-config.yaml
+- authorizationpolicy.yaml
+- cluster-local-gateway.yaml
 
-patches:
+patchesStrategicMerge:
 - inferenceservice-configmap.yaml
