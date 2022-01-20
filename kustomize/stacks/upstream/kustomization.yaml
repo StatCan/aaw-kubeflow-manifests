@@ -18,6 +18,5 @@ resources:
 
 - ../../apps/centraldashboard
 - ../../apps/katib
-- ../../apps/kfserving
 - ../../apps/pipeline
 - ../../apps/jupyter-web-app/base
