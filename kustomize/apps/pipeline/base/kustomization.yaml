@@ -3,3 +3,37 @@ kind: Kustomization
 
 resources:
 - github.com/kubeflow/manifests/apps/pipeline/upstream/env/platform-agnostic-multi-user?ref=v1.3.1
+- github.com/argoproj/argo-workflows/manifests/base/crds/minimal?ref=v3.2.3 
+- cluster-role-argo-config.yaml
+
+
+patchesStrategicMerge:
+- deployment.yaml
+- cluster-role-ml-pipeline-config.yaml
+#- cluster-role-kf-katib-config.yaml
+
+# Workflow-controller RBAC 
+- workflow-controller-rbac/workflow-aggregate-roles.yaml
+- workflow-controller-rbac/workflow-controller-clusterrole.yaml
+- workflow-controller-rbac/workflow-controller-clusterrolebinding.yaml
+- workflow-controller-rbac/workflow-controller-role.yaml
+- workflow-controller-rbac/workflow-controller-rolebinding.yaml
+
+patches:
+- path: workflow-controller-config.json
+  target:
+    kind: ConfigMap
+    name: workflow-controller-configmap
+    version: v1
+
+- path: ml-pipeline-config.json
+  target: 
+    kind: Deployment
+    name: ml-pipeline
+    version: v1
+
+- path: ml-pipeline-persistenceagent-config.json
+  target: 
+    kind: Deployment
+    name: ml-pipeline-persistenceagent
+    version: v1

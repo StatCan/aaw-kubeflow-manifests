@@ -1,0 +1,13 @@
+[
+    {
+    "op": "replace",
+    "path": "/data/containerRuntimeExecutor",
+    "value": "emissary"
+    }, 
+
+    {
+    "op": "add",
+    "path": "/data/executorImage",
+    "value": "argoproj/argoexec:v3.2.3"
+    }
+]

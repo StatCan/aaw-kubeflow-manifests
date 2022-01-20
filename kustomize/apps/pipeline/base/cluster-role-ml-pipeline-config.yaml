@@ -1,0 +1,66 @@
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRole
+metadata:
+  name: ml-pipeline
+rules:
+  - verbs:
+      - create
+      - get
+      - list
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - kubeflow.org
+    resources:
+      - experiments
+      - runs
+      - jobs
+      - pipelines
+      - scheduledworkflows
+  - verbs:
+      - create
+      - get
+      - list
+      - watch
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - argoproj.io
+    resources:
+      - workflows
+  - verbs:
+      - delete
+    apiGroups:
+      - ''
+    resources:
+      - pods
+  - verbs:
+      - create
+      - get
+      - list
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - authorization.k8s.io
+    resources:
+      - subjectaccessreviews
+  - verbs:
+      - archive
+      - create
+      - get
+      - list
+      - retry
+      - update
+      - patch
+      - delete
+    apiGroups:
+      - pipelines.kubeflow.org
+    resources:
+      - experiments
+      - runs
+      - jobs
+      - pipelines
+      - scheduledworkflows

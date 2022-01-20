@@ -18,6 +18,6 @@ resources:
 
 - ../../apps/centraldashboard/base
 - ../../apps/katib/base
-- ../../apps/pipeline/base
+- ../../apps/pipeline/overlays
 - ../../apps/jupyter-web-app/base
 - ../../apps/kfserving/base
