@@ -22,11 +22,11 @@ resources:
 - ../../apps/jupyter-web-app/base
 - ../../apps/kfserving/base
 - ../../apps/mpi-job/base
+- ../../apps/mxnet-job/base
 - ../../apps/notebook-controller/base
 - ../../apps/profiles/base
 - ../../apps/pytorch-job/base
 - ../../apps/tf-training/base
-- ../../apps/mxnet-job/base
 
 ## Kubeflow (contrib)
 
