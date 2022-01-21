@@ -5,11 +5,10 @@ namespace: kubeflow
 resources:
 - github.com/kubeflow/manifests/apps/profiles/upstream/overlays/kubeflow?ref=v1.3.1
 
-
 patchesStrategicMerge:
 - deployment.yaml
 
 images:
-- name: gcr.io/kubeflow-images-public/kfam
+- name: public.ecr.aws/j1r0q0g6/notebooks/access-management
   newName: k8scc01covidacr.azurecr.io/kfam
   newTag: latest

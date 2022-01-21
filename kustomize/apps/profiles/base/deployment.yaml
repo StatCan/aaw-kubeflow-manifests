@@ -7,4 +7,3 @@ spec:
     spec:
       imagePullSecrets:
       - name: k8scc01covidacr-registry-connection
-    
