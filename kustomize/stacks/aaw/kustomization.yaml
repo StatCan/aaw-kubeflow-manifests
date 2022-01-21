@@ -42,3 +42,7 @@ resources:
 - ../../apps/profiles/base
 - ../../apps/pytorch-job/base
 
+
+## Kubeflow (contrib)
+
+- ../../contrib/spark/base
