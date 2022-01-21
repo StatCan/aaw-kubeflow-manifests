@@ -21,3 +21,4 @@ resources:
 - ../../apps/pipeline/base
 - ../../apps/jupyter-web-app/base
 - ../../apps/kfserving/base
+- ../../apps/profiles/base
