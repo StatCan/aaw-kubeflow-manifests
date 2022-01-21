@@ -1,0 +1,5 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- github.com/kubeflow/manifests/contrib/seldon/seldon-core-operator/base?ref=v1.3.1
