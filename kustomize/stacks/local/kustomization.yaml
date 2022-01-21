@@ -24,3 +24,4 @@ resources:
 - ../../apps/notebook-controller/base
 - ../../apps/profiles/base
 - ../../apps/pytorch-job/base
+- ../../apps/mpi-job/base
