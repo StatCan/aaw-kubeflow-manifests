@@ -43,3 +43,7 @@ resources:
 - ../../apps/profiles/base
 - ../../apps/pytorch-job/base
 - ../../apps/tf-training/base
+
+## Kubeflow (contrib)
+
+- ../../contrib/spark/base
