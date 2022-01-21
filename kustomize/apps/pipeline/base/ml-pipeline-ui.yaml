@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ml-pipeline-ui
+  name: ml-pipeline-ui
+spec:
+  template:
+    spec:
+      containers:
+      - name: ml-pipeline-ui
+        env:
+        - name: ARGO_ARCHIVE_LOGS
+          value: "true"
+        - name: ARGO_ARCHIVE_ARTIFACTORY
+          value: minio
+        - name: ARGO_ARCHIVE_BUCKETNAME
+          value: mlpipeline
+        - name: ARGO_ARCHIVE_PREFIX
+          value: artifacts
