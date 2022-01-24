@@ -7,8 +7,3 @@ resources:
 
 patchesStrategicMerge:
 - deployment.yaml
-
-images:
-- name: public.ecr.aws/j1r0q0g6/notebooks/access-management
-  newName: k8scc01covidacr.azurecr.io/kfam
-  newTag: latest
