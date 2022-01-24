@@ -23,16 +23,52 @@ spec:
       - app: oidc-authservice
         folder: common
         version: main
+      - app: knative
+        folder: common
+        version: main
 
       ## Kubeflow (apps)
 
       - app: centraldashboard
         folder: apps
         version: main
+      - app: jupyter-web-app
+        folder: apps
+        version: main
       - app: katib
         folder: apps
         version: main
+      - app: kfserving
+        folder: apps
+        version: main
+      - app: mpi-job
+        folder: apps
+        version: main
+      - app: mxnet-job
+        folder: apps
+        version: main
+      - app: notebook-controller
+        folder: apps
+        version: main
       - app: pipeline
+        folder: apps
+        version: main
+      - app: profiles
+        folder: apps
+        version: main
+      - app: pytorch-job
+        folder: apps
+        version: main
+      - app: tr-training
+        folder: apps
+        version: main
+
+      ## Kubeflow (contrib)
+
+      - app: seldon
+        folder: apps
+        version: main
+      - app: spark
         folder: apps
         version: main
 
