@@ -18,5 +18,7 @@ spec:
           value: mlpipeline
         - name: ARGO_ARCHIVE_PREFIX
           value: artifacts
+        - name: DISABLE_GKE_METADATA
+          value: 'true'
         image: k8scc01covidacr.azurecr.io/kubeflow-pipeline/kubeflow-pipeline:e1326f62
         imagePullPolicy: IfNotPresent
