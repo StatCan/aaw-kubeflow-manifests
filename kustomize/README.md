@@ -24,6 +24,33 @@ Different type of configurations for Kubeflow and its dependencies.
 | `local`    | Necessary adjustments for running the `aaw` stack on a local, dev, and CI environment          |
 | `upstream` | Installs Kubeflow upstream along with the AAW kustomizations without the Cloud Native Platform |
 
+### AAW
+
+The `aaw` stack expects to be installed on top of the Cloud Native Platform which already provides some of the base dependencies as illustrated below:
+
+```sh
+## Installs Kubeflow on top of Statistics Canada's Cloud Native Platform (CNP)
+##
+## └─── https://github.com/statcan/terraform-statcan-aaw-platform
+##      ├─── https://github.com/statcan/terraform-statcan-azure-cloud-native-platform-infrastructure
+##      │    ├─── aad_pod_identity
+##      │    ├─── cert_manager
+##      │    ├─── vault
+##      │    └─── velero
+##      ├─── https://github.com/statcan/terraform-statcan-kubernetes-core-platform
+##      │    ├─── aad_pod_identity
+##      │    ├─── cert_manager
+##      │    ├─── fluentd
+##      │    ├─── gatekeeper
+##      │    ├─── kubecost
+##      │    ├─── prometheus
+##      │    ├─── vault_agent
+##      │    └─── velero
+##      └─── https://github.com/statcan/terraform-statcan-kubernetes-app-platform
+##           ├─── istio operator
+##           └─── istio gateway handling
+```
+
 <!-- Links Referenced -->
 
 [kubeflow-manifests]: https://github.com/kubeflow/manifests
