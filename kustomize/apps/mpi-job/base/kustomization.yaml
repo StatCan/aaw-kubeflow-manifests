@@ -3,3 +3,11 @@ kind: Kustomization
 
 resources:
 - github.com/kubeflow/manifests/apps/mpi-job/upstream/overlays/kubeflow?ref=v1.3.1
+
+images:
+- name: mpioperator/mpi-operator
+  newName: mpioperator/mpi-operator
+  newTag: 0.3.0
+
+patchesStrategicMerge:
+- deployment.yaml

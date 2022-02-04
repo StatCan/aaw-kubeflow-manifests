@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: kubeflow
-  namespace: argocd
+  namespace: daaas-system
 spec:
   generators:
   - list:
@@ -75,15 +75,16 @@ spec:
   template:
     metadata:
       name: 'kubeflow-aaw'
-      namespace: argocd
+      namespace: daaas-system
     spec:
       project: default
       source:
-        repoURL: https://github.com/statcan/aaw-kubeflow-manifests.git
+        repoURL: 'https://github.com/statcan/aaw-kubeflow-manifests.git'
         targetRevision: {{version}}
         path: kustomize/{{folder}}/{{app}}/base
       destination:
-        server: https://kubernetes.default.svc
+        namespace: daaas-system
+        name: in-cluster
       syncPolicy:
         automated:
           prune: true

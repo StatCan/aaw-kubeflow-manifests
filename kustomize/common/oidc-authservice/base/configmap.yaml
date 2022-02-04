@@ -4,16 +4,16 @@ metadata:
   name: oidc-authservice-parameters
   namespace: istio-system
 data:
-  client_secret: 'XXXXXX'
-  client_id: XXXXXX
+  CLIENT_SECRET: 'XXXXXX'
+  CLIENT_ID: XXXXXX
   namespace: istio-system
-  oidc_auth_url: https://login.microsoftonline.com/XXXXXX/oauth2/v2.0/authorize
-  oidc_provider: https://login.microsoftonline.com/XXXXXX/v2.0
-  redirect_url: https://kubeflow.example.ca/login/oidc
-  skip_auth_uri: ""
-  userid_header: kubeflow-userid
-  userid_prefix: ""
-  userid_claim: preferred_username
-  oidc_scopes: profile email
-  port: "8080"
-  store_path: /var/lib/authservice/data.db
+  OIDC_AUTH_URL: https://login.microsoftonline.com/XXXXXX/oauth2/v2.0/authorize
+  OIDC_PROVIDER: https://login.microsoftonline.com/XXXXXX/v2.0
+  REDIRECT_URL: https://kubeflow.example.ca/login/oidc
+  SKIP_AUTH_URI: ""
+  USERID_HEADER: kubeflow-userid
+  USERID_PREFIX: ""
+  USERID_CLAIM: preferred_username
+  OIDC_SCOPES: profile email
+  PORT: "8080"
+  STORE_PATH: /var/lib/authservice/data.db

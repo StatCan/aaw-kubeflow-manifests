@@ -23,6 +23,8 @@ spec:
         - name: http-api
           containerPort: 8080
         envFrom:
+          - secretRef:
+              name: oidc-authservice-client
           - configMapRef:
               name: oidc-authservice-parameters
         volumeMounts:

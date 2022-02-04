@@ -17,11 +17,13 @@ spec:
         - name: UI
           value: default
         - name: USERID_HEADER
+          value: null
           valueFrom:
             configMapKeyRef:
               name: kubeflow-config
               key: userid-header
         - name: USERID_PREFIX
+          value: null
           valueFrom:
             configMapKeyRef:
               name: kubeflow-config

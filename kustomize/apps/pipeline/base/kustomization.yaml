@@ -31,6 +31,7 @@ commonLabels:
 namespace: kubeflow
 
 patchesStrategicMerge:
+- minio-pvc.yaml
 - ml-pipeline-ui.yaml
 - workflow-controller-configmap-patch.yaml
 - workflow-controller-deployment-patch.yaml
