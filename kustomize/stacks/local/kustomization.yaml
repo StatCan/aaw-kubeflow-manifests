@@ -16,6 +16,7 @@ resources:
 
 ## Kubeflow (apps)
 
+- ../../apps/admission-webhook/base
 - ../../apps/centraldashboard/base
 - ../../apps/katib/base
 - ../../apps/pipeline/base
