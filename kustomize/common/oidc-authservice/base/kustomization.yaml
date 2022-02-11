@@ -8,3 +8,10 @@ patchesStrategicMerge:
 - configmap.yaml
 - envoy-filter.yaml
 - statefulset.yaml
+
+patches:
+- path: envoyfilter-config.json
+  target:
+    kind: EnvoyFilter
+    name: authn-filter
+    version: v1alpha3

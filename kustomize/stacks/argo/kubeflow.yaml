@@ -29,6 +29,9 @@ spec:
 
       ## Kubeflow (apps)
 
+      - app: admission-webhook
+        folder: apps
+        version: main
       - app: centraldashboard
         folder: apps
         version: main

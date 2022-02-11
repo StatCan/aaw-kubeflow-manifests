@@ -1,0 +1,10 @@
+[
+  {
+    "op": "remove",
+    "path": "/spec/configPatches"
+  },
+  {
+    "op": "remove",
+    "path": "/spec/workloadSelector"
+  }
+]
