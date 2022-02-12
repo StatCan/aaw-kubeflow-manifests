@@ -56,3 +56,20 @@ patchesJson6902:
     kind: ClusterRoleBinding
     name: argo-binding
   path: workflow-controller-clusterrolebinding-patch.json
+
+- target:
+    group: metacontroller.k8s.io
+    version: v1alpha1
+    kind: CompositeController
+    name: kubeflow-pipelines-profile-controller
+  path: pipeline-profile-controller.json
+
+configMapGenerator:
+- name: kubeflow-pipelines-profile-controller-code
+  files:
+  - sync.py
+  behavior: replace
+- name: kubeflow-pipelines-profile-controller-env
+  envs:
+  - params.env
+  behavior: replace
