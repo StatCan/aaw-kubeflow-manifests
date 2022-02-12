@@ -36,7 +36,7 @@ class Controller(BaseHTTPRequestHandler):
         # Compute status based on observed state.
         desired_status = {
             "kubeflow-pipelines-ready": \
-                len(children["PodDefault.kubeflow.org/v1alpha1"]) == 1 and
+                len(children["PodDefault.kubeflow.org/v1alpha1"]) == 1 and \
                 len(children["Secret.v1"]) == 1 and \
                 len(children["ConfigMap.v1"]) == 1 and \
                 len(children["Deployment.apps/v1"]) == 2 and \
