@@ -143,8 +143,6 @@ spawnerFormDefaults:
       vendors:
         - limitsKey: "nvidia.com/gpu"
           uiName: "NVIDIA"
-        - limitsKey: "amd.com/gpu"
-          uiName: "AMD"
       # Values: "" or a `limits-key` from the vendors list
       vendor: ""
     readOnly: false
