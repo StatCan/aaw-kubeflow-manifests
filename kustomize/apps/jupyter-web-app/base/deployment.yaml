@@ -12,7 +12,7 @@ spec:
       containers:
       - name: jupyter-web-app
         imagePullPolicy: IfNotPresent
-        image: k8scc01covidacr.azurecr.io/jupyter-apis:416bcb15aa542232ebc0184b97f910d5d5faa96c
+        image: k8scc01covidacr.azurecr.io/jupyter-apis:acd0d7582bfc4accbae84cec32416bc792d1eb8e
         env:
         - name: UI
           value: default
@@ -35,10 +35,15 @@ spec:
         volumeMounts:
         - mountPath: /etc/config
           name: config-volume
+        - mountPath: /static/assets
+          name: logos-volume
       serviceAccountName: service-account
       volumes:
       - configMap:
           name: jupyter-web-app-config
         name: config-volume
+      - configMap:
+          name: jupyter-web-app-logos
+        name: logos-volume
       imagePullSecrets:
       - name: k8scc01covidacr-registry-connection

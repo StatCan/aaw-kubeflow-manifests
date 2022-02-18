@@ -31,6 +31,8 @@ rules:
   - create
   - delete
   - watch
+  - patch
+  - update
 - apiGroups:
   - ""
   resources:
@@ -45,6 +47,7 @@ rules:
   - ""
   resources:
   - events
+  - nodes
   verbs:
   - list
   - watch
