@@ -83,7 +83,7 @@ spec:
       project: default
       source:
         repoURL: 'https://github.com/statcan/aaw-kubeflow-manifests.git'
-        targetRevision: {{version}}
+        targetRevision: '{{version}}'
         path: kustomize/{{folder}}/{{app}}/base
       destination:
         namespace: daaas-system
