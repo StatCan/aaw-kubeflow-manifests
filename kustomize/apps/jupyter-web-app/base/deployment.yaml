@@ -12,7 +12,7 @@ spec:
       containers:
       - name: jupyter-web-app
         imagePullPolicy: IfNotPresent
-        image: k8scc01covidacr.azurecr.io/jupyter-apis:acd0d7582bfc4accbae84cec32416bc792d1eb8e
+        image: k8scc01covidacr.azurecr.io/jupyter-apis:813f13a1d8590d0e11364dd17322ae1caaaae1f6
         env:
         - name: UI
           value: default
@@ -29,14 +29,32 @@ spec:
               name: kubeflow-config
               key: userid-prefix
         - name: KUBECOST_URL
-          value: http://kubecost-cost-analyzer.kubecost.svc.cluster.local:9090
+          value: http://kubecost-cost-analyzer.kubecost-system.svc.cluster.local:9090
         ports:
         - containerPort: 5000
         volumeMounts:
         - mountPath: /etc/config
           name: config-volume
-        - mountPath: /static/assets
-          name: logos-volume
+        - name: logos-volume
+          mountPath: /static/assets/group-one-icon.svg
+          subPath: group-one-icon.svg
+        - name: logos-volume
+          mountPath: /static/assets/group-one-logo.svg
+          subPath: group-one-logo.svg
+        - name: logos-volume
+          mountPath: /static/assets/group-two-icon.svg
+          subPath: group-two-icon.svg
+        - name: logos-volume
+          mountPath: /static/assets/group-two-logo.svg
+          subPath: group-two-logo.svg
+        - name: logos-volume
+          mountPath: /static/assets/jupyter-icon.svg
+          subPath: jupyter-icon.svg
+        - name: logos-volume
+          mountPath: /static/assets/jupyterlab-logo.svg
+          subPath: jupyterlab-logo.svg
+        - name: logos-volume
+          mountPath: /src/apps/default/static/assets/logos
       serviceAccountName: service-account
       volumes:
       - configMap:
