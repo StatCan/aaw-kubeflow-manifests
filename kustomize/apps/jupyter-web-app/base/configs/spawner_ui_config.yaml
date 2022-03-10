@@ -17,26 +17,27 @@
 spawnerFormDefaults:
   image:
     # The container Image for the user's Jupyter Notebook
-    value: k8scc01covidacr.azurecr.io/jupyterlab-cpu:6dc965ad
+    value: k8scc01covidacr.azurecr.io/jupyterlab-cpu:16b01881
     # The list of available standard container Images
     options:
-      - k8scc01covidacr.azurecr.io/rstudio:6dc965ad
-      - k8scc01covidacr.azurecr.io/jupyterlab-cpu:6dc965ad
-      - k8scc01covidacr.azurecr.io/jupyterlab-pytorch:6dc965ad
-      - k8scc01covidacr.azurecr.io/jupyterlab-tensorflow:6dc965ad
-      - k8scc01covidacr.azurecr.io/remote-desktop:6dc965ad
+      - k8scc01covidacr.azurecr.io/rstudio:16b01881
+      - k8scc01covidacr.azurecr.io/jupyterlab-cpu:16b01881
+      - k8scc01covidacr.azurecr.io/jupyterlab-pytorch:16b01881
+      - k8scc01covidacr.azurecr.io/jupyterlab-tensorflow:16b01881
+      - k8scc01covidacr.azurecr.io/remote-desktop:16b01881
     readOnly: false
     hideRegistry: true
     hideVersion: true
+    hideTag: true
   imageGroupOne:
     # The container Image for the user's Group One Server
     # The annotation `notebooks.kubeflow.org/http-rewrite-uri: /`
     # is applied to notebook in this group, configuring
     # the Istio rewrite for containers that host their web UI at `/`
-    value: k8scc01covidacr.azurecr.io/jupyterlab-cpu:6dc965ad
+    value: k8scc01covidacr.azurecr.io/jupyterlab-cpu:16b01881
     # The list of available standard container Images
     options:
-    - k8scc01covidacr.azurecr.io/jupyterlab-cpu:6dc965ad
+    - k8scc01covidacr.azurecr.io/jupyterlab-cpu:16b01881
   imageGroupTwo:
     # The container Image for the user's Group Two Server
     # The annotation `notebooks.kubeflow.org/http-rewrite-uri: /`
@@ -45,11 +46,11 @@ spawnerFormDefaults:
     # The annotation `notebooks.kubeflow.org/http-headers-request-set`
     # is applied to notebook in this group, configuring Istio
     # to add the `X-RStudio-Root-Path` header to requests
-    value: k8scc01covidacr.azurecr.io/rstudio:6dc965ad
+    value: k8scc01covidacr.azurecr.io/rstudio:16b01881
     # The list of available standard container Images
     options:
-    - k8scc01covidacr.azurecr.io/rstudio:6dc965ad
-  allowCustomImage: false
+    - k8scc01covidacr.azurecr.io/rstudio:16b01881
+  allowCustomImage: true
   imagePullPolicy:
     value: IfNotPresent
   cpu:
