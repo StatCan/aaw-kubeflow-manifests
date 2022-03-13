@@ -8,7 +8,7 @@ data:
   links: |-
     {
      "en":
-      { 
+      {
         "menuLinks": [
         {
           "type": "item",
@@ -51,11 +51,6 @@ data:
           "link": "/pipeline/#/executions",
           "text": "Executions",
           "icon": "av:play-arrow"
-        },
-        {
-          "link": "/katib/",
-          "text": "Katib",
-          "icon": "kubeflow:katib"
         }
       ],
      "externalLinks": [],
@@ -74,11 +69,6 @@ data:
           "text": "Create a new Notebook server",
           "desc": "Notebook Servers",
           "link": "/jupyter/new?namespace=kubeflow"
-        },
-        {
-          "text": "View Katib Studies",
-          "desc": "Katib",
-          "link": "/katib/"
         }
        ],
       "documentationItems": [
@@ -148,11 +138,6 @@ data:
           "link": "/pipeline/#/executions",
           "text": "Exécutions en cours",
           "icon": "av:play-arrow"
-        },
-        {
-          "link": "/katib/",
-          "text": "Katib",
-          "icon": "kubeflow:katib"
         }
        ],
       "externalLinks": [],
@@ -171,11 +156,6 @@ data:
           "text": "Créer un nouveau serveur bloc-notes",
           "desc": "Serveur bloc-notes",
           "link": "/jupyter/new?namespace=kubeflow"
-        },
-        {
-          "text": "Voir Katib Studies",
-          "desc": "Katib",
-          "link": "/katib/"
         }
        ],
       "documentationItems": [
