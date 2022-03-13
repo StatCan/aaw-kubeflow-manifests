@@ -260,7 +260,7 @@ class Controller(BaseHTTPRequestHandler):
                         "namespace": namespace
                     },
                     "spec": {
-                        "desc": "Allow access to Kubeflow Pipelines",
+                        "desc": "Allow access to Kubeflow Pipelines / Autoriser l'accès aux pipelines Kubeflow",
                         "selector": {
                         "matchLabels": {
                             "access-ml-pipeline": "true"
