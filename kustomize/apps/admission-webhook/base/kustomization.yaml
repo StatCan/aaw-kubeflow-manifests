@@ -3,3 +3,15 @@ kind: Kustomization
 
 resources:
 - github.com/kubeflow/manifests/apps/admission-webhook/upstream/overlays/cert-manager?ref=v1.3.1
+
+## Cert Manager
+patchesJson6902:
+  - target:
+      group: cert-manager.io
+      version: v1alpha2
+      kind: 'Certificate|Issuer'
+      name: '.*'
+    patch: |-
+      - op: replace
+        path: "/apiVersion"
+        value: cert-manager.io/v1

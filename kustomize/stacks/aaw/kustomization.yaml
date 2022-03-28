@@ -50,15 +50,3 @@ resources:
 
 - ../../contrib/spark/base
 - ../../contrib/seldon/base
-
-## Cert Manager
-patchesJson6902:
-  - target:
-      group: cert-manager.io
-      version: v1alpha2
-      kind: 'Certificate|Issuer'
-      name: '.*'
-    patch: |-
-      - op: replace
-        path: "/apiVersion"
-        value: cert-manager.io/v1

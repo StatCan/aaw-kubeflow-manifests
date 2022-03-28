@@ -27,3 +27,15 @@ patches:
     kind: Deployment
     name: webhook
     version: v1
+
+## Cert Manager
+patchesJson6902:
+  - target:
+      group: cert-manager.io
+      version: v1alpha2
+      kind: 'Certificate|Issuer'
+      name: '.*'
+    patch: |-
+      - op: replace
+        path: "/apiVersion"
+        value: cert-manager.io/v1

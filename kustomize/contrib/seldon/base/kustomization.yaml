@@ -3,3 +3,15 @@ kind: Kustomization
 
 resources:
 - github.com/kubeflow/manifests/contrib/seldon/seldon-core-operator/base?ref=v1.3.1
+
+## Cert Manager
+patchesJson6902:
+  - target:
+      group: cert-manager.io
+      version: v1alpha2
+      kind: 'Certificate|Issuer'
+      name: '.*'
+    patch: |-
+      - op: replace
+        path: "/apiVersion"
+        value: cert-manager.io/v1
