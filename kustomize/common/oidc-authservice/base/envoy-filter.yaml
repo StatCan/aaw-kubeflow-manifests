@@ -37,4 +37,5 @@ spec:
                   patterns:
                     - exact: "kubeflow-userid"
   workloadLabels:
-    istio: ingressgateway-kubeflow
+    app.kubernetes.io/instance: kubeflow
+    app.kubernetes.io/name: istio-ingress-gateway
