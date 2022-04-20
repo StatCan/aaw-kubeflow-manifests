@@ -5,7 +5,8 @@ metadata:
   namespace: istio-system
 spec:
   selector:
-    istio: ingressgateway-kfserving
+    app.kubernetes.io/instance: kfserving
+    app.kubernetes.io/name: istio-ingress-gateway
   servers:
   - hosts:
     - '*'
@@ -26,7 +27,7 @@ spec:
       port: 80
       targetPort: 80
   selector:
-    app: istio-ingressgateway
-    istio: ingressgateway-kfserving
+    app.kubernetes.io/instance: kfserving
+    app.kubernetes.io/name: istio-ingress-gateway
   type: ClusterIP
   sessionAffinity: None
