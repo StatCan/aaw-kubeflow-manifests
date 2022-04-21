@@ -20,6 +20,8 @@ bases:
   - github.com/kubeflow/manifests/apps/pipeline/upstream/third-party/minio/options/istio?ref=v1.3.1
   - github.com/kubeflow/manifests/apps/pipeline/upstream/third-party/metacontroller/base?ref=v1.3.1
 
+  - metadata-grpc-service-pa.yaml
+
 # Identifier for application manager to apply ownerReference.
 # The ownerReference ensures the resources get garbage collected
 # when application is deleted.

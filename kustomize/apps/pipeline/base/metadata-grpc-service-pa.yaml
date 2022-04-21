@@ -1,0 +1,12 @@
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: metadata-grpc-service
+  namespace: kubeflow
+spec:
+  portLevelMtls:
+    '8080':
+      mode: PERMISSIVE
+  selector:
+    matchLabels:
+      component: metadata-grpc-server
