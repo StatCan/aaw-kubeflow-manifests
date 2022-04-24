@@ -4,10 +4,6 @@ kind: Kustomization
 resources:
 - github.com/kubeflow/manifests/common/oidc-authservice/base?ref=v1.3.1
 
-patchesStrategicMerge:
-- configmap.yaml
-- statefulset.yaml
-
 patchesJson6902:
 - target:
     group: networking.istio.io
@@ -15,3 +11,12 @@ patchesJson6902:
     kind: EnvoyFilter
     name: authn-filter
   path: envoyfilter-patch.json
+
+patchesStrategicMerge:
+- statefulset.yaml
+- |-
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: oidc-authservice-parameters
+  $patch: delete
