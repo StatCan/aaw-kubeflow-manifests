@@ -6,5 +6,12 @@ resources:
 
 patchesStrategicMerge:
 - configmap.yaml
-- envoy-filter.yaml
 - statefulset.yaml
+
+patchesJson6902:
+- target:
+    group: networking.istio.io
+    version: v1alpha3
+    kind: EnvoyFilter
+    name: authn-filter
+  path: envoyfilter-patch.json

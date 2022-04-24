@@ -3,6 +3,8 @@ kind: ConfigMap
 metadata:
   name: oidc-authservice-parameters
   namespace: istio-system
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
 data:
   CLIENT_SECRET: 'XXXXXX'
   CLIENT_ID: XXXXXX

@@ -1,0 +1,7 @@
+[
+  {
+    "op": "replace",
+    "path": "/spec/workloadSelector",
+    "value": {"labels":{"app.kubernetes.io/instance":"kubeflow","app.kubernetes.io/name":"istio-ingress-gateway"}}
+  }
+]
