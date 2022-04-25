@@ -17,21 +17,21 @@
 spawnerFormDefaults:
   image:
     # The container Image for the user's Jupyter Notebook
-    value: k8scc01covidacr.azurecr.io/jupyterlab-cpu:58308325
+    value: k8scc01covidacr.azurecr.io/jupyterlab-cpu:c5b7982c
     # The list of available standard container Images
     options:
-      - k8scc01covidacr.azurecr.io/jupyterlab-cpu:58308325
-      - k8scc01covidacr.azurecr.io/jupyterlab-pytorch:58308325
-      - k8scc01covidacr.azurecr.io/jupyterlab-tensorflow:58308325
+      - k8scc01covidacr.azurecr.io/jupyterlab-cpu:c5b7982c
+      - k8scc01covidacr.azurecr.io/jupyterlab-pytorch:c5b7982c
+      - k8scc01covidacr.azurecr.io/jupyterlab-tensorflow:c5b7982c
     readOnly: false
   imageGroupOne:
     # The container Image for the user's Group One Server
     # The annotation `notebooks.kubeflow.org/http-rewrite-uri: /`
     # is applied to notebook in this group, configuring
     # the Istio rewrite for containers that host their web UI at `/`
-    value: k8scc01covidacr.azurecr.io/rstudio:58308325    # The list of available standard container Images
+    value: k8scc01covidacr.azurecr.io/rstudio:c5b7982c    # The list of available standard container Images
     options:
-    - k8scc01covidacr.azurecr.io/rstudio:58308325
+    - k8scc01covidacr.azurecr.io/rstudio:c5b7982c
   imageGroupTwo:
     # The container Image for the user's Group Two Server
     # The annotation `notebooks.kubeflow.org/http-rewrite-uri: /`
@@ -40,10 +40,10 @@ spawnerFormDefaults:
     # The annotation `notebooks.kubeflow.org/http-headers-request-set`
     # is applied to notebook in this group, configuring Istio
     # to add the `X-RStudio-Root-Path` header to requests
-    value: k8scc01covidacr.azurecr.io/remote-desktop:58308325
+    value: k8scc01covidacr.azurecr.io/remote-desktop:c5b7982c
     # The list of available standard container Images
     options:
-    - k8scc01covidacr.azurecr.io/remote-desktop:58308325
+    - k8scc01covidacr.azurecr.io/remote-desktop:c5b7982c
   hideRegistry: true
   hideTag: true
   allowCustomImage: true
