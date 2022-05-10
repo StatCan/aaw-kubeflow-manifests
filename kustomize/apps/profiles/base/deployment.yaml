@@ -7,3 +7,7 @@ spec:
     spec:
       imagePullSecrets:
       - name: k8scc01covidacr-registry-connection
+      volumes:
+        - name: namespace-labels
+          configMap:
+            name: namespace-labels-data

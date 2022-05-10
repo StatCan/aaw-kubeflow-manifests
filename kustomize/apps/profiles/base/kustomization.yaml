@@ -7,3 +7,8 @@ resources:
 
 patchesStrategicMerge:
 - deployment.yaml
+
+configMapGenerator:
+  - name: namespace-labels-data
+    files:
+      - namespace-labels.yaml
