@@ -17,21 +17,21 @@
 spawnerFormDefaults:
   image:
     # The container Image for the user's Jupyter Notebook
-    value: k8scc01covidacr.azurecr.io/jupyterlab-cpu:c5b7982c
+    value: k8scc01covidacr.azurecr.io/jupyterlab-cpu:v1
     # The list of available standard container Images
     options:
-      - k8scc01covidacr.azurecr.io/jupyterlab-cpu:c5b7982c
-      - k8scc01covidacr.azurecr.io/jupyterlab-pytorch:c5b7982c
-      - k8scc01covidacr.azurecr.io/jupyterlab-tensorflow:c5b7982c
+      - k8scc01covidacr.azurecr.io/jupyterlab-cpu:v1
+      - k8scc01covidacr.azurecr.io/jupyterlab-pytorch:v1
+      - k8scc01covidacr.azurecr.io/jupyterlab-tensorflow:v1
     readOnly: false
   imageGroupOne:
     # The container Image for the user's Group One Server
     # The annotation `notebooks.kubeflow.org/http-rewrite-uri: /`
     # is applied to notebook in this group, configuring
     # the Istio rewrite for containers that host their web UI at `/`
-    value: k8scc01covidacr.azurecr.io/rstudio:c5b7982c    # The list of available standard container Images
+    value: k8scc01covidacr.azurecr.io/rstudio:v1    # The list of available standard container Images
     options:
-    - k8scc01covidacr.azurecr.io/rstudio:c5b7982c
+    - k8scc01covidacr.azurecr.io/rstudio:v1
   imageGroupTwo:
     # The container Image for the user's Group Two Server
     # The annotation `notebooks.kubeflow.org/http-rewrite-uri: /`
@@ -40,10 +40,10 @@ spawnerFormDefaults:
     # The annotation `notebooks.kubeflow.org/http-headers-request-set`
     # is applied to notebook in this group, configuring Istio
     # to add the `X-RStudio-Root-Path` header to requests
-    value: k8scc01covidacr.azurecr.io/remote-desktop:c5b7982c
+    value: k8scc01covidacr.azurecr.io/remote-desktop:v1
     # The list of available standard container Images
     options:
-    - k8scc01covidacr.azurecr.io/remote-desktop:c5b7982c
+    - k8scc01covidacr.azurecr.io/remote-desktop:v1
   hideRegistry: true
   hideTag: true
   allowCustomImage: true
