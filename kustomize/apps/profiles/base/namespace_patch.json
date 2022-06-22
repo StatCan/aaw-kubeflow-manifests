@@ -18,5 +18,5 @@
         "op": "add",
         "path": "/metadata/labels/app.kubernetes.io/part-of",
         "value": "kubeflow-profile"
-    },
+    }
 ]
