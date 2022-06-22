@@ -54,7 +54,7 @@ data:
         },
         {
           "type": "item",
-          "link": "/gitea/",
+          "link": "/gitea-unclassified/",
           "text": "Git",
           "icon": "icons:code"
         }
