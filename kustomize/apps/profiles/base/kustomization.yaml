@@ -5,12 +5,10 @@ namespace: kubeflow
 resources:
 - github.com/kubeflow/manifests/apps/profiles/upstream/overlays/kubeflow?ref=v1.3.1
 
-patches:
-- path: namespace_patch.json
-  target:
-    kind: Namespace
-    name: kubeflow
-    version: v1
+configMapGenerator:
+  - name: namespace-labels-data
+    files:
+      - namespace-labels.yaml
 
 patchesStrategicMerge:
 - deployment.yaml
