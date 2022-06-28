@@ -1,3 +1,4 @@
+istio-injection: "enabled"
 katib.kubeflow.org/metrics-collector-injection: "enabled"
 serving.kubeflow.org/inferenceservice: "enabled"
 pipelines.kubeflow.org/enabled: "true"
