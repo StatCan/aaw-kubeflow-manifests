@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
       - name: manager
-        image: gcr.io/kubeflow-images-public/notebook-controller:v1.1.0-gd3377cbd
+        image: k8scc01covidacr.azurecr.io/kubeflow/notebook-controller:0524491606c8c4477d9b2c887948a12d7660a3e4
         command:
           - /manager
         env:
