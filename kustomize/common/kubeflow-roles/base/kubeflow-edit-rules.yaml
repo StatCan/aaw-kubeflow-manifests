@@ -138,3 +138,14 @@
     - get
     - list
     - watch
+
+- op: add
+  path: /rules/-
+  value:
+  - apiGroups:
+    - argoproj.io
+    resources:
+    - workflowtaskresults
+    verbs:
+    - create
+    - patch 
