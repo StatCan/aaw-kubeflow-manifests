@@ -3,3 +3,18 @@ kind: Kustomization
 
 resources:
 - github.com/kubeflow/manifests/common/kubeflow-roles/base?ref=v1.3.1
+
+#use logical groups in order to add as many rules to the Kubeflow role
+patchesJson6902:
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRole
+    name: kubeflow-kubernetes-edit
+  path: drop-all.yaml
+- target:
+    group: rbac.authorization.k8s.io
+    version: v1
+    kind: ClusterRole
+    name: kubeflow-kubernetes-edit
+  path: kubeflow-edit-rules.yaml
