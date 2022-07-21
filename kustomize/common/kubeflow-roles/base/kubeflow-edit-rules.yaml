@@ -59,7 +59,7 @@
 - op: add
   path: /rules/-
   value:
-  - apiGroups:
+    apiGroups:
     - apps
     resources:
     - daemonsets
@@ -80,7 +80,7 @@
 - op: add
   path: /rules/-
   value:
-  - apiGroups:
+    apiGroups:
     - batch
     resources:
     - cronjobs
@@ -95,7 +95,7 @@
 - op: add
   path: /rules/-
   value:
-  - apiGroups:
+    apiGroups:
     - extensions
     resources:
     - daemonsets
@@ -115,7 +115,7 @@
 - op: add
   path: /rules/-
   value:
-  - apiGroups:
+    apiGroups:
     - policy
     resources:
     - poddisruptionbudgets
@@ -129,7 +129,7 @@
 - op: add
   path: /rules/-
   value:
-  - apiGroups:
+    apiGroups:
     - networking.k8s.io
     resources:
     - ingresses
@@ -138,3 +138,14 @@
     - get
     - list
     - watch
+
+- op: add
+  path: /rules/-
+  value:
+    apiGroups:
+    - argoproj.io
+    resources:
+    - workflows
+    verbs:
+    - create
+    - patch 
