@@ -6,7 +6,7 @@ metadata:
     app.kubernetes.io/name: knative-serving
     kustomize.component: knative
     networking.knative.dev/ingress-provider: istio
-    serving.knative.dev/release: v0.17.1
+    serving.knative.dev/release: v0.22.1
   name: config-istio
   namespace: knative-serving
 data:
