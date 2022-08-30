@@ -8,7 +8,7 @@ data:
   # * https://github.com/argoproj/argo-workflows/blob/v3.1.6/docs/workflow-controller-configmap.md
   # * https://github.com/argoproj/argo-workflows/blob/v3.1.6/docs/workflow-controller-configmap.yaml
 
-  executorImage: argoproj/argoexec:v3.2.6
+  executorImage: argoproj/argoexec:v3.3.9
 
   # Emissary Executor: https://argoproj.github.io/argo-workflows/workflow-executors/#emissary-emissary
   containerRuntimeExecutor: emissary
