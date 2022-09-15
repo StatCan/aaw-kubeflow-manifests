@@ -1,0 +1,7 @@
+[
+  {
+    "op": "add",
+    "path": "/metadata/labels/namespace.statcan.gc.ca~1purpose",
+    "value": "daaas"
+  }
+]
