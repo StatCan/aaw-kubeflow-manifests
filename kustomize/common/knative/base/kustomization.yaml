@@ -28,6 +28,18 @@ patches:
     name: webhook
     version: v1
 
+- path: namespace_patch.json
+  target:
+    kind: Namespace
+    name: knative-eventing
+    version: v1
+
+- path: namespace_patch.json
+  target:
+    kind: Namespace
+    name: knative-serving
+    version: v1
+
 ## Cert Manager
 patchesJson6902:
   - target:
