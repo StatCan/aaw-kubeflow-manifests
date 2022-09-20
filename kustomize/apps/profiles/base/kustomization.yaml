@@ -3,12 +3,20 @@ kind: Kustomization
 namespace: kubeflow
 
 resources:
-- github.com/kubeflow/manifests/apps/profiles/upstream/overlays/kubeflow?ref=v1.4.1
+- github.com/kubeflow/manifests/apps/profiles/upstream/overlays/kubeflow?ref=v1.6.0
 
+
+configMapGenerator:
+- name: namespace-labels-data
+  behavior: merge
+  files:
+  - namespace-labels.yaml
+
+      
 patchesStrategicMerge:
 - deployment.yaml
 
 images:
-- name: public.ecr.aws/j1r0q0g6/notebooks/access-management
+- name: docker.io/kubeflownotebookswg/kfam
   newName: k8scc01covidacr.azurecr.io/kfam
   newTag: latest
