@@ -38,7 +38,7 @@ patches:
   target:
     kind: Namespace
     name: knative-serving
-    version: v1    
+    version: v1
 
 ## Cert Manager
 patchesJson6902:

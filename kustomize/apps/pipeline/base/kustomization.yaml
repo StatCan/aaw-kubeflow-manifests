@@ -5,20 +5,20 @@ kind: Kustomization
 
 # https://github.com/kubeflow/manifests/blob/master/apps/pipeline/upstream/env/platform-agnostic-multi-user/kustomization.yaml
 bases:
-  - github.com/kubeflow/manifests/apps/pipeline/upstream/base/installs/multi-user?ref=v1.4.1
-  - github.com/kubeflow/manifests/apps/pipeline/upstream/base/metadata/base?ref=v1.4.1
-  - github.com/kubeflow/manifests/apps/pipeline/upstream/base/metadata/options/istio?ref=v1.4.1
+  - github.com/kubeflow/manifests/apps/pipeline/upstream/base/installs/multi-user?ref=v1.6.0
+  - github.com/kubeflow/manifests/apps/pipeline/upstream/base/metadata/base?ref=v1.6.0
+  - github.com/kubeflow/manifests/apps/pipeline/upstream/base/metadata/options/istio?ref=v1.6.0
 
   # https://github.com/kubeflow/manifests/blob/master/apps/pipeline/upstream/third-party/argo/installs/cluster/kustomization.yaml
   - github.com/argoproj/argo-workflows/manifests/base/crds?ref=v3.3.9
   - github.com/argoproj/argo-workflows/manifests/cluster-install/workflow-controller-rbac?ref=v3.3.9
-  - github.com/kubeflow/manifests/apps/pipeline/upstream/third-party/argo/base?ref=v1.4.1
+  - github.com/kubeflow/manifests/apps/pipeline/upstream/third-party/argo/base?ref=v1.6.0
 
-  - github.com/kubeflow/manifests/apps/pipeline/upstream/third-party/mysql/base?ref=v1.4.1
-  - github.com/kubeflow/manifests/apps/pipeline/upstream/third-party/mysql/options/istio?ref=v1.4.1
-  - github.com/kubeflow/manifests/apps/pipeline/upstream/third-party/minio/base?ref=v1.4.1
-  - github.com/kubeflow/manifests/apps/pipeline/upstream/third-party/minio/options/istio?ref=v1.4.1
-  - github.com/kubeflow/manifests/apps/pipeline/upstream/third-party/metacontroller/base?ref=v1.4.1
+  - github.com/kubeflow/manifests/apps/pipeline/upstream/third-party/mysql/base?ref=v1.6.0
+  - github.com/kubeflow/manifests/apps/pipeline/upstream/third-party/mysql/options/istio?ref=v1.6.0
+  - github.com/kubeflow/manifests/apps/pipeline/upstream/third-party/minio/base?ref=v1.6.0
+  - github.com/kubeflow/manifests/apps/pipeline/upstream/third-party/minio/options/istio?ref=v1.6.0
+  - github.com/kubeflow/manifests/apps/pipeline/upstream/third-party/metacontroller/base?ref=v1.6.0
 
   - metadata-grpc-service-pa.yaml
 
@@ -70,8 +70,4 @@ configMapGenerator:
 - name: kubeflow-pipelines-profile-controller-code
   files:
   - sync.py
-  behavior: replace
-- name: kubeflow-pipelines-profile-controller-env
-  envs:
-  - params.env
   behavior: replace
