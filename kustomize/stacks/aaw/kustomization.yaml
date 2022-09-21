@@ -38,11 +38,8 @@ resources:
 - ../../apps/katib/base
 - ../../apps/pipeline/base
 - ../../apps/jupyter-web-app/base
-- ../../apps/mpi-job/base
-- ../../apps/mxnet-job/base
 - ../../apps/notebook-controller/base
 - ../../apps/profiles/base
-- ../../apps/pytorch-job/base
 - ../../apps/training-operator/base
 
 ## Kubeflow (contrib)
