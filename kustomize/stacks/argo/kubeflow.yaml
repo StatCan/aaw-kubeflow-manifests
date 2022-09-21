@@ -41,9 +41,6 @@ spec:
       - app: katib
         folder: apps
         version: main
-      - app: kfserving
-        folder: apps
-        version: main
       - app: mpi-job
         folder: apps
         version: main
@@ -72,6 +69,9 @@ spec:
         folder: apps
         version: main
       - app: spark
+        folder: apps
+        version: main
+      - app: kserve
         folder: apps
         version: main
 

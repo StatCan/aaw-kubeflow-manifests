@@ -21,7 +21,6 @@ resources:
 - ../../apps/katib/base
 - ../../apps/pipeline/base
 - ../../apps/jupyter-web-app/base
-- ../../apps/kfserving/base
 - ../../apps/mpi-job/base
 - ../../apps/mxnet-job/base
 - ../../apps/notebook-controller/base
@@ -33,3 +32,4 @@ resources:
 
 - ../../contrib/spark/base
 - ../../contrib/seldon/base
+- ../../contrib/kfserve/base
