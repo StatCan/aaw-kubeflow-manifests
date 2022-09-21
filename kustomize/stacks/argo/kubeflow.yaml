@@ -59,7 +59,7 @@ spec:
       - app: pytorch-job
         folder: apps
         version: main
-      - app: tr-training
+      - app: training-operator
         folder: apps
         version: main
 
