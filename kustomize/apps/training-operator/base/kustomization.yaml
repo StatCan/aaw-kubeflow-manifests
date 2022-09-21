@@ -3,3 +3,6 @@ kind: Kustomization
 
 resources:
 - github.com/kubeflow/manifests/apps/training-operator/upstream/overlays/kubeflow?ref=v1.6.0
+
+patchesStrategicMerge:
+- deployment.yaml

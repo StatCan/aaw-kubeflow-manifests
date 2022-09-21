@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: training-operator
+spec:
+  replicas: 1
+  template:
+    spec:
+      containers:
+        - command:
+            - /manager
+          image: kubeflow/training-operator
+          name: training-operator
+          resources:
+            limits:
+              cpu: 250m
+              memory: 300Mi
+            requests:
+              cpu: 250m
+              memory: 200Mi
+      serviceAccountName: training-operator
+      terminationGracePeriodSeconds: 10
