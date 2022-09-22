@@ -20,3 +20,11 @@ patchesJson6902:
       - op: replace
         path: "/apiVersion"
         value: cert-manager.io/v1
+  - target:
+      group: admissionregistration.k8s.io
+      version: v1
+      kind: 'MutatingWebhookConfiguration'
+      name: 'inferenceservice.serving.kserve.io'
+    patch: |-
+      - op: remove
+        path: "/webhooks/1/namespaceSelector"
