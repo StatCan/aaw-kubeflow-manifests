@@ -51,12 +51,6 @@ data:
           "link": "/pipeline/#/executions",
           "text": "Executions",
           "icon": "av:play-arrow"
-        },
-        {
-          "type": "item",
-          "link": "/gitea/",
-          "text": "Git",
-          "icon": "icons:code"
         }
       ],
      "externalLinks": [],
