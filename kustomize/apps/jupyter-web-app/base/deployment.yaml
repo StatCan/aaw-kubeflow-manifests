@@ -99,4 +99,4 @@ spec:
         #     name: jupyter-web-app-logos
         #   name: logos-volume
       imagePullSecrets:
-        name: k8scc01covidacr-registry-connection
+      - name: k8scc01covidacr-registry-connection
