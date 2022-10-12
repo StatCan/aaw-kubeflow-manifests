@@ -82,7 +82,7 @@ spec:
         # image: k3d-s3proxy-registry:5050/s3proxy-dev:latest
         command: [sh, -c]
         args: ["cp -r /static/* /etc/nginx/html/"]
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         volumeMounts:
           - mountPath: /etc/nginx/html/
             name: static-files
