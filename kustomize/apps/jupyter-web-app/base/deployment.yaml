@@ -37,25 +37,25 @@ spec:
           mountPath: /etc/config
         - name: logos-volume
           mountPath: /static/assets/logos/
-        - name: nginx
-          image: docker.io/nginxinc/nginx-unprivileged:1.21-alpine
-          imagePullPolicy: IfNotPresent
-          resources:
-            limits:
-              cpu: "0.25"
-              memory: "250Mi"
-            requests:
-              cpu: "0.25"
-              memory: "250Mi"
-          volumeMounts:
-            - name: jwa-nginx-configuration
-              mountPath: /etc/nginx/nginx.conf
-              subPath: nginx.conf
-            - name: static-files
-              mountPath: /etc/nginx/html/
-          ports:
-            - name: http
-              containerPort: 8080
+      - name: nginx
+        image: docker.io/nginxinc/nginx-unprivileged:1.21-alpine
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            cpu: "0.25"
+            memory: "250Mi"
+          requests:
+            cpu: "0.25"
+            memory: "250Mi"
+        volumeMounts:
+          - name: jwa-nginx-configuration
+            mountPath: /etc/nginx/nginx.conf
+            subPath: nginx.conf
+          - name: static-files
+            mountPath: /etc/nginx/html/
+        ports:
+          - name: http
+            containerPort: 8080
       serviceAccountName: service-account
       initContainers:
       - name: copy-jwa-static-files
