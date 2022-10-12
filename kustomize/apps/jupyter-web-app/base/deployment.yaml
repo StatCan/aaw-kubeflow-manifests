@@ -36,25 +36,7 @@ spec:
         - name: config-volume
           mountPath: /etc/config
         - name: logos-volume
-          mountPath: /static/assets/logos/group-one-icon.svg
-          subPath: group-one-icon.svg
-        - name: logos-volume
-          mountPath: /static/assets/logos/group-one-logo.svg
-          subPath: group-one-logo.svg
-        - name: logos-volume
-          mountPath: /static/assets/logos/group-two-icon.svg
-          subPath: group-two-icon.svg
-        - name: logos-volume
-          mountPath: /static/assets/logos/group-two-logo.svg
-          subPath: group-two-logo.svg
-        - name: logos-volume
-          mountPath: /static/assets/logos/jupyter-icon.svg
-          subPath: jupyter-icon.svg
-        - name: logos-volume
-          mountPath: /static/assets/logos/jupyterlab-logo.svg
-          subPath: jupyterlab-logo.svg
-        - name: logos-volume
-          mountPath: /src/apps/default/static/assets/logos
+          mountPath: /static/assets/logos/
         - name: nginx
           image: docker.io/nginxinc/nginx-unprivileged:1.21-alpine
           imagePullPolicy: IfNotPresent
@@ -95,8 +77,8 @@ spec:
         - configMap:
             name: jupyter-web-app-config
           name: config-volume
-        # - configMap:
-        #     name: jupyter-web-app-logos
-        #   name: logos-volume
+        - configMap:
+            name: jupyter-web-app-logos
+          name: logos-volume
       imagePullSecrets:
       - name: k8scc01covidacr-registry-connection
