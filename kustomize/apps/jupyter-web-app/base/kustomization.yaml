@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
 - github.com/kubeflow/manifests/apps/jupyter/jupyter-web-app/upstream/overlays/istio?ref=v1.6.0
 - configs/kubeflow-config.yaml
+- configs/nginx-config.yaml
 
 patchesStrategicMerge:
 - cluster-role.yaml
