@@ -36,16 +36,15 @@ data:
 
         rewrite ^/jupyter/(.*)$ /$accept_language/$1;
 
-        # Rewrite
-        # rewrite ^/(fr|en)/api/(.*)$ /api/$2;
+        rewrite ^/(fr|en)/api/(.*)$ /api/$2;
 
         location ~ ^/(fr|en)/.*$ {
             root html;
         }
 
-        # location ~ ^/jupyter/api/.*$ {
-        #   proxy_pass http://0.0.0.0:5001;
-        # }
+        location ~ ^/api/.*$ {
+          proxy_pass http://0.0.0.0:5001;
+        }
 
       }
     }
