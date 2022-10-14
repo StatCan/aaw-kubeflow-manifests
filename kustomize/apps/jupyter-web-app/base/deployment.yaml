@@ -52,7 +52,7 @@ spec:
             mountPath: /etc/nginx/nginx.conf
             subPath: nginx.conf
           - name: static-files
-            mountPath: /etc/nginx/html/jupyter
+            mountPath: /etc/nginx/html/
         ports:
           - name: http
             containerPort: 5000
@@ -63,10 +63,10 @@ spec:
         image: k8scc01covidacr.azurecr.io/jupyter-apis:1931282e965bd08992c22ecf68473bf01233c63a
         # image: k3d-s3proxy-registry:5050/s3proxy-dev:latest
         command: [sh, -c]
-        args: ["mkdir -p /etc/nginx/html/jupyter/ && cp -r /src/dist/frontend/* /etc/nginx/html/jupyter/"]
+        args: ["cp -r /src/dist/frontend/* /etc/nginx/html/"]
         imagePullPolicy: IfNotPresent
         volumeMounts:
-          - mountPath: /etc/nginx/html/jupyter/
+          - mountPath: /etc/nginx/html/
             name: static-files
       volumes:
         - name: jwa-nginx-configuration

@@ -34,31 +34,18 @@ data:
             set $accept_language "en";
         }
 
-        # Redirect "/" to Angular application in the preferred language of the browser
-        # The permanent keyword ensured that the redirect will be a 301 Moved Permanently
-        # HTTP redirect, which means that the old address is no longer valid and will not come back online.
-        rewrite ^/jupyter/(.*)$ /jupyter/$accept_language;
-
-        # If this is a static file request initiated from the index.html file, make sure
-        # the /jupyter/ prefix is added
-        rewrite ^/$accept_language/(.*)$ /jupyter/$accept_language/$1;
+        rewrite ^/jupyter/(.*)$ /$accept_language/$1;
 
         # Rewrite
-        # rewrite ^/jupyter/(fr|en)/api/(.*)$ /jupyter/api/$2;
+        # rewrite ^/(fr|en)/api/(.*)$ /api/$2;
 
-        # Everything under the Angular application is always redirected to Angular in the
-        # correct language
-        location ~ ^/jupyter/(fr|en)$ {
-            try_files $uri/index.html $uri/index.html;
+        location ~ ^/(fr|en)/.*$ {
+            root html;
         }
 
-        location ~ ^/(fr|en)$ {
-            root jupyter;
-        }
-
-        location ~ ^/jupyter/api/.*$ {
-          proxy_pass http://0.0.0.0:5001;
-        }
+        # location ~ ^/jupyter/api/.*$ {
+        #   proxy_pass http://0.0.0.0:5001;
+        # }
 
       }
     }
