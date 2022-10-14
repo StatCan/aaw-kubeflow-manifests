@@ -2,6 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: jwa-nginx-configuration
+  namespace: kubeflow
 data:
   nginx.conf: |
     worker_processes  3;
@@ -17,7 +18,7 @@ data:
       include /etc/nginx/mime.types;
       include mime.types;
 
-      # Browser preferred language detection ( does NOT require     
+      # Browser preferred language detection ( does NOT require
       # AcceptLanguageModule)
       map $http_accept_language $accept_language {
           ~*^fr fr;
@@ -34,24 +35,30 @@ data:
         }
 
         # Redirect "/" to Angular application in the preferred language of the browser
-        # The permanent keyword ensured that the redirect will be a 301 Moved Permanently 
+        # The permanent keyword ensured that the redirect will be a 301 Moved Permanently
         # HTTP redirect, which means that the old address is no longer valid and will not come back online.
-        rewrite ^/$ /$accept_language;
-        
-        # Rewrite 
-        rewrite ^/(fr|en)/api/(.*)$ /api/$2;
+        rewrite ^/jupyter/(.*)$ /jupyter/$accept_language;
+
+        # If this is a static file request initiated from the index.html file, make sure
+        # the /jupyter/ prefix is added
+        rewrite ^/$accept_language/(.*)$ /jupyter/$accept_language/$1;
+
+        # Rewrite
+        # rewrite ^/jupyter/(fr|en)/api/(.*)$ /jupyter/api/$2;
 
         # Everything under the Angular application is always redirected to Angular in the
         # correct language
-        location ~ ^/(fr|en) {
-            try_files $uri /$1/index.html?$args;
+        location ~ ^/jupyter/(fr|en)$ {
+            try_files $uri/index.html $uri/index.html;
         }
-        # ...
 
-        location ~ ^/api/.*$ {
+        location ~ ^/(fr|en)$ {
+            root jupyter;
+        }
+
+        location ~ ^/jupyter/api/.*$ {
           proxy_pass http://0.0.0.0:5001;
         }
 
       }
     }
-    
