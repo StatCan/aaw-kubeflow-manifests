@@ -12,7 +12,7 @@ spec:
       containers:
       - name: jupyter-web-app
         imagePullPolicy: IfNotPresent
-        image: k8scc01covidacr.azurecr.io/jupyter-apis:437dd2596b033f895258e298f9c80741c19e98b8 
+        image: k8scc01covidacr.azurecr.io/jupyter-apis:6d850d61d0862ff95e0d189a128d64b632843a33
         env:
         - name: UI
           value: default
@@ -31,7 +31,7 @@ spec:
         - name: KUBECOST_URL
           value: http://kubecost-cost-analyzer.kubecost-system.svc.cluster.local:9090
         ports:
-        - containerPort: 5000
+        - containerPort: 5001
         volumeMounts:
         - name: config-volume
           mountPath: /etc/config
@@ -55,15 +55,15 @@ spec:
             mountPath: /etc/nginx/html/
         ports:
           - name: http
-            containerPort: 8080
+            containerPort: 5000
       serviceAccountName: service-account
       initContainers:
       - name: copy-jwa-static-files
         # Change for the image I just built
-        image: k8scc01covidacr.azurecr.io/jupyter-apis:437dd2596b033f895258e298f9c80741c19e98b8 
+        image: k8scc01covidacr.azurecr.io/jupyter-apis:6d850d61d0862ff95e0d189a128d64b632843a33
         # image: k3d-s3proxy-registry:5050/s3proxy-dev:latest
         command: [sh, -c]
-        args: ["cp -r /static/* /etc/nginx/html/"]
+        args: ["cp -r /src/dist/frontend/* /etc/nginx/html/"]
         imagePullPolicy: IfNotPresent
         volumeMounts:
           - mountPath: /etc/nginx/html/
