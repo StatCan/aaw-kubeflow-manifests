@@ -9,6 +9,7 @@ resources:
 patchesStrategicMerge:
 - cluster-role.yaml
 - deployment.yaml
+- vs.yaml
 
 configMapGenerator:
 - files:
