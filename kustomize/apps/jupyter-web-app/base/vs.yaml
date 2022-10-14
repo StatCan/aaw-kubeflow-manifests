@@ -19,12 +19,6 @@ spec:
         prefix: /en/
     - uri:
         prefix: /fr/
-    # - headers:
-    #     referer:
-    #       exact: https://kubeflow.aaw-dev.cloud.statcan.ca/_/s3/?ns=aaw-fc
-    # - headers:
-    #     referer:
-    #       exact: https://kubeflow.aaw-dev.cloud.statcan.ca/jupyter/
     route:
     - destination:
         host: jupyter-web-app-service.$(JWA_NAMESPACE).svc.$(JWA_CLUSTER_DOMAIN)
