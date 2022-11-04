@@ -15,8 +15,3 @@ configMapGenerator:
       
 patchesStrategicMerge:
 - deployment.yaml
-
-images:
-- name: docker.io/kubeflownotebookswg/kfam
-  newName: k8scc01covidacr.azurecr.io/kfam
-  newTag: latest
