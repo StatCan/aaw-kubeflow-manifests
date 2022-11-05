@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-- github.com/kubeflow/manifests/apps/kfserving/upstream/overlays/kubeflow?ref=v1.3.1
+- github.com/kubeflow/manifests/contrib/kserve/kserve?ref=v1.6.0
 - authorizationpolicy.yaml
 - cluster-local-gateway.yaml
 
@@ -20,3 +20,11 @@ patchesJson6902:
       - op: replace
         path: "/apiVersion"
         value: cert-manager.io/v1
+  - target:
+      group: admissionregistration.k8s.io
+      version: v1
+      kind: 'MutatingWebhookConfiguration'
+      name: 'inferenceservice.serving.kserve.io'
+    patch: |-
+      - op: remove
+        path: "/webhooks/1/namespaceSelector"

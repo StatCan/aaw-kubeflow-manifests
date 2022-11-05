@@ -12,7 +12,7 @@ spec:
       containers:
       - name: jupyter-web-app
         imagePullPolicy: IfNotPresent
-        image: k8scc01covidacr.azurecr.io/jupyter-apis:5eef1a0cd7bc4478baeb0fd4be3eecac07ccd328
+        image: k8scc01covidacr.azurecr.io/jupyter-apis:76e7415a48478fedc0b0b1c52506e1c475dd9798
         env:
         - name: UI
           value: default
@@ -31,37 +31,54 @@ spec:
         - name: KUBECOST_URL
           value: http://kubecost-cost-analyzer.kubecost-system.svc.cluster.local:9090
         ports:
-        - containerPort: 5000
+        - containerPort: 5001
         volumeMounts:
-        - mountPath: /etc/config
-          name: config-volume
+        - name: config-volume
+          mountPath: /etc/config
         - name: logos-volume
-          mountPath: /static/assets/group-one-icon.svg
-          subPath: group-one-icon.svg
-        - name: logos-volume
-          mountPath: /static/assets/group-one-logo.svg
-          subPath: group-one-logo.svg
-        - name: logos-volume
-          mountPath: /static/assets/group-two-icon.svg
-          subPath: group-two-icon.svg
-        - name: logos-volume
-          mountPath: /static/assets/group-two-logo.svg
-          subPath: group-two-logo.svg
-        - name: logos-volume
-          mountPath: /static/assets/jupyter-icon.svg
-          subPath: jupyter-icon.svg
-        - name: logos-volume
-          mountPath: /static/assets/jupyterlab-logo.svg
-          subPath: jupyterlab-logo.svg
-        - name: logos-volume
-          mountPath: /src/apps/default/static/assets/logos
+          mountPath: /static/assets/logos/
+      - name: nginx
+        image: docker.io/nginxinc/nginx-unprivileged:1.21-alpine
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            cpu: "0.25"
+            memory: "250Mi"
+          requests:
+            cpu: "0.25"
+            memory: "250Mi"
+        volumeMounts:
+          - name: jwa-nginx-configuration
+            mountPath: /etc/nginx/nginx.conf
+            subPath: nginx.conf
+          - name: static-files
+            mountPath: /etc/nginx/html/
+        ports:
+          - name: http
+            containerPort: 5000
       serviceAccountName: service-account
+      initContainers:
+      - name: copy-jwa-static-files
+        # Change for the image I just built
+        image: k8scc01covidacr.azurecr.io/jupyter-apis:76e7415a48478fedc0b0b1c52506e1c475dd9798
+        # image: k3d-s3proxy-registry:5050/s3proxy-dev:latest
+        command: [sh, -c]
+        args: ["cp -r /src/dist/frontend/* /etc/nginx/html/"]
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+          - mountPath: /etc/nginx/html/
+            name: static-files
       volumes:
-      - configMap:
-          name: jupyter-web-app-config
-        name: config-volume
-      - configMap:
-          name: jupyter-web-app-logos
-        name: logos-volume
+        - name: jwa-nginx-configuration
+          configMap:
+            name: jwa-nginx-configuration
+        - name: static-files
+          emptyDir: {}
+        - configMap:
+            name: jupyter-web-app-config
+          name: config-volume
+        - configMap:
+            name: jupyter-web-app-logos
+          name: logos-volume
       imagePullSecrets:
       - name: k8scc01covidacr-registry-connection

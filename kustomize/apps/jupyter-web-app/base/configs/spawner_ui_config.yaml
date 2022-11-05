@@ -79,34 +79,18 @@ spawnerFormDefaults:
     readOnly: false
   workspaceVolume:
     # Workspace Volume to be attached to user's Notebook
-    # Each Workspace Volume is declared with the following attributes:
-    # Type, Name, Size, MountPath and Access Mode
+    # This must be updated in dev and prod to reflect new config.go
     value:
-      type:
-        # The Type of the Workspace Volume
-        # Supported values: 'New', 'Existing'
-        value: New
-      name:
-        # The Name of the Workspace Volume
-        # Note that this is a templated value. Special values:
-        # {notebook-name}: Replaced with the name of the Notebook. The frontend
-        #                  will replace this value as the user types the name
-        value: 'workspace-{notebook-name}'
-      size:
-        # The Size of the Workspace Volume (in Gi)
-        value: '16Gi'
-      mountPath:
-        # The Path that the Workspace Volume will be mounted
-        value: /home/jovyan
-      accessModes:
-        # The Access Mode of the Workspace Volume
-        # Supported values: 'ReadWriteOnce', 'ReadWriteMany', 'ReadOnlyMany'
-        value: ReadWriteOnce
-      class:
-        # The StorageClass the PVC will use if type is New. Special values are:
-        # {none}: default StorageClass
-        # {empty}: empty string ""
-        value: '{none}'
+      mount: /home/jovyan
+      newPvc:
+        metadata:
+          name: '{notebook-name}-workspace'
+        spec:
+          resources:
+            requests:
+              storage: 16Gi
+          accessModes:
+            - ReadWriteOnce
     readOnly: false
   dataVolumes:
     # List of additional Data Volumes to be attached to the user's Notebook
@@ -155,7 +139,7 @@ spawnerFormDefaults:
         - limitsKey: "nvidia.com/gpu"
           uiName: "NVIDIA"
       # Values: "" or a `limits-key` from the vendors list
-      vendor: ""
+      vendor: "nvidia.com/gpu"
     readOnly: false
   shm:
     value: false

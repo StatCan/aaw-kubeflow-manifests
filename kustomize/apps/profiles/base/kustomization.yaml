@@ -3,7 +3,15 @@ kind: Kustomization
 namespace: kubeflow
 
 resources:
-- github.com/kubeflow/manifests/apps/profiles/upstream/overlays/kubeflow?ref=v1.3.1
+- github.com/kubeflow/manifests/apps/profiles/upstream/overlays/kubeflow?ref=v1.6.0
 
+
+configMapGenerator:
+- name: namespace-labels-data
+  behavior: merge
+  files:
+  - namespace-labels.yaml
+
+      
 patchesStrategicMerge:
 - deployment.yaml

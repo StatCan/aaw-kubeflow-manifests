@@ -7,12 +7,12 @@ spec:
     spec:
       containers:
         - name: workflow-controller
-          image: quay.io/argoproj/workflow-controller:v3.2.6
+          image: quay.io/argoproj/workflow-controller:v3.3.9
           args:
             - --configmap
             - workflow-controller-configmap
             - --executor-image
-            - quay.io/argoproj/argoexec:v3.2.6
+            - quay.io/argoproj/argoexec:v3.3.9
           env:
             - name: ARGO_NAMESPACE
               valueFrom:
