@@ -20,5 +20,5 @@ spec:
           value: artifacts
         - name: DISABLE_GKE_METADATA
           value: 'true'
-        image: k8scc01covidacr.azurecr.io/kubeflow-pipeline/kubeflow-pipeline:e1326f62
+        image: k8scc01covidacr.azurecr.io/kubeflow-pipeline/kubeflow-pipeline:cea700eb
         imagePullPolicy: IfNotPresent

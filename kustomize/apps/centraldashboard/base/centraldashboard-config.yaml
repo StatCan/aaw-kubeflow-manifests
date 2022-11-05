@@ -12,7 +12,7 @@ data:
         "menuLinks": [
         {
           "type": "item",
-          "link": "/jupyter/",
+          "link": "/en/",
           "text": "Notebooks",
           "icon": "book"
         },
@@ -51,6 +51,12 @@ data:
           "link": "/pipeline/#/executions",
           "text": "Executions",
           "icon": "av:play-arrow"
+        },
+        {
+          "type": "item",
+          "link": "/gitea-unclassified/",
+          "text": "Git",
+          "icon": "icons:code"
         }
       ],
      "externalLinks": [],
@@ -99,7 +105,7 @@ data:
         "menuLinks": [
         {
           "type": "item",
-          "link": "/jupyter/",
+          "link": "/fr/",
           "text": "Serveur Bloc-notes",
           "icon": "book"
         },

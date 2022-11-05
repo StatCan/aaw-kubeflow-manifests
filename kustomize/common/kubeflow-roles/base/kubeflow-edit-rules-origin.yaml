@@ -1,8 +1,7 @@
-#indentation is weird because we are appending each "group" or rules
-- op: add
-  path: /rules/-
+- op: replace
+  path: /rules
   value:
-    apiGroups:
+  - apiGroups:
     - ""
     resources:
     - pods/attach
@@ -15,11 +14,13 @@
     - get
     - list
     - watch
-
-- op: add
-  path: /rules/-
-  value:
-    apiGroups:
+  - apiGroups:
+    - ""
+    resources:
+    - serviceaccounts
+    verbs:
+    - impersonate
+  - apiGroups:
     - ""
     resources:
     - pods
@@ -33,11 +34,7 @@
     - deletecollection
     - patch
     - update
-
-- op: add
-  path: /rules/-
-  value:
-    apiGroups:
+  - apiGroups:
     - ""
     resources:
     - configmaps
@@ -55,11 +52,7 @@
     - deletecollection
     - patch
     - update
-
-- op: add
-  path: /rules/-
-  value:
-    apiGroups:
+  - apiGroups:
     - apps
     resources:
     - daemonsets
@@ -76,11 +69,17 @@
     - deletecollection
     - patch
     - update
-
-- op: add
-  path: /rules/-
-  value:
-    apiGroups:
+  - apiGroups:
+    - autoscaling
+    resources:
+    - horizontalpodautoscalers
+    verbs:
+    - create
+    - delete
+    - deletecollection
+    - patch
+    - update
+  - apiGroups:
     - batch
     resources:
     - cronjobs
@@ -91,17 +90,15 @@
     - deletecollection
     - patch
     - update
-
-- op: add
-  path: /rules/-
-  value:
-    apiGroups:
+  - apiGroups:
     - extensions
     resources:
     - daemonsets
     - deployments
     - deployments/rollback
     - deployments/scale
+    - ingresses
+    - networkpolicies
     - replicasets
     - replicasets/scale
     - replicationcontrollers/scale
@@ -111,11 +108,7 @@
     - deletecollection
     - patch
     - update
-
-- op: add
-  path: /rules/-
-  value:
-    apiGroups:
+  - apiGroups:
     - policy
     resources:
     - poddisruptionbudgets
@@ -125,27 +118,14 @@
     - deletecollection
     - patch
     - update
-
-- op: add
-  path: /rules/-
-  value:
-    apiGroups:
+  - apiGroups:
     - networking.k8s.io
     resources:
     - ingresses
     - networkpolicies
     verbs:
-    - get
-    - list
-    - watch
-
-- op: add
-  path: /rules/-
-  value:
-    apiGroups:
-    - argoproj.io
-    resources:
-    - workflows
-    verbs:
     - create
+    - delete
+    - deletecollection
     - patch
+    - update

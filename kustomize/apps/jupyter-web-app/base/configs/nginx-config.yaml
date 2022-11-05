@@ -1,0 +1,50 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jwa-nginx-configuration
+  namespace: kubeflow
+data:
+  nginx.conf: |
+    worker_processes  3;
+    pid /tmp/nginx.pid; # Changed from /var/run/nginx.pid
+    error_log  /var/log/nginx/error.log;
+    events {
+      worker_connections  1024;
+    }
+    http {
+      types {
+        module;
+      }
+      include /etc/nginx/mime.types;
+      include mime.types;
+
+      # Browser preferred language detection ( does NOT require
+      # AcceptLanguageModule)
+      map $http_accept_language $accept_language {
+          ~*^fr fr;
+          ~*^en en;
+      }
+      server {
+        listen 5000;
+        server_name localhost;
+        root /etc/nginx/html/;
+
+        # Fallback to default language if no preference defined by browser
+        if ($accept_language ~ "^$") {
+            set $accept_language "en";
+        }
+
+        rewrite ^/jupyter/(.*)$ /$accept_language/$1;
+
+        rewrite ^/(fr|en)/api/(.*)$ /api/$2;
+
+        location ~ ^/(fr|en)/.*$ {
+            root html;
+        }
+
+        location ~ ^/api/.*$ {
+          proxy_pass http://0.0.0.0:5001;
+        }
+
+      }
+    }

@@ -1,5 +1,5 @@
 [{
   "op": "replace",
   "path": "/spec/template/spec/containers/0/image",
-  "value": "gcr.io/ml-pipeline/persistenceagent:1.7.0"
+  "value": "gcr.io/ml-pipeline/persistenceagent:2.0.0-alpha.3"
 }]
