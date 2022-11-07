@@ -15,5 +15,7 @@ spec:
             value: "true"
           - name: IDLE_TIME
             value: "10080"
+          - name: CULL_IDLE_TIME
+            value: "10080"
           - name: CULLING_CHECK_PERIOD
             value: "1"
