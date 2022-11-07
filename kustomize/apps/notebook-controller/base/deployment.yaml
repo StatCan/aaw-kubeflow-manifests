@@ -18,4 +18,6 @@ spec:
           - name: CULL_IDLE_TIME
             value: "10080"
           - name: CULLING_CHECK_PERIOD
-            value: "1"
+            value: "120"
+          - name: IDLENESS_CHECK_PERIOD
+            value: "180"
