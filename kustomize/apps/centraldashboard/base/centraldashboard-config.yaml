@@ -15,62 +15,10 @@ data:
           "link": "/en/",
           "text": "Notebooks",
           "icon": "book"
-        },
-        {
-          "type": "item",
-          "link": "/pipeline/",
-          "text": "Pipelines",
-          "icon": "kubeflow:pipeline-centered"
-        },
-        {
-          "type": "item",
-          "text": "Experiments (KFP)",
-          "link": "/pipeline/#/experiments",
-          "icon": "done-all"
-        },
-        {
-          "type": "item",
-          "link": "/pipeline/#/runs",
-          "text": "Runs",
-          "icon": "maps:directions-run"
-        },
-        {
-          "type": "item",
-          "link": "/pipeline/#/recurringruns",
-          "text": "Recurring Runs",
-          "icon": "device:access-alarm"
-        },
-        {
-          "type": "item",
-          "link": "/pipeline/#/artifacts",
-          "text": "Artifacts",
-          "icon": "editor:bubble-chart"
-        },
-        {
-          "type": "item",
-          "link": "/pipeline/#/executions",
-          "text": "Executions",
-          "icon": "av:play-arrow"
-        },
-        {
-          "type": "item",
-          "link": "/gitea-unclassified/",
-          "text": "Git",
-          "icon": "icons:code"
         }
       ],
      "externalLinks": [],
      "quickLinks": [
-        {
-          "text": "Upload a pipeline",
-          "desc": "Pipelines",
-          "link": "/pipeline/"
-        },
-        {
-          "text": "View all pipeline runs",
-          "desc": "Pipelines",
-          "link": "/pipeline/#/runs"
-        },
         {
           "text": "Create a new Notebook server",
           "desc": "Notebook Servers",
@@ -108,56 +56,10 @@ data:
           "link": "/fr/",
           "text": "Serveur Bloc-notes",
           "icon": "book"
-        },
-        {
-          "type": "item",
-          "link": "/pipeline/",
-          "text": "Pipelines",
-          "icon": "kubeflow:pipeline-centered"
-        },
-        {
-          "type": "item",
-          "text": "Expériences (KFP)",
-          "link": "/pipeline/#/experiments",
-          "icon": "done-all"
-        },
-        {
-          "type": "item",
-          "link": "/pipeline/#/runs",
-          "text": "Exécutions",
-          "icon": "maps:directions-run"
-        },
-        {
-          "type": "item",
-          "link": "/pipeline/#/recurringruns",
-          "text": "Exécutions récurrentes",
-          "icon": "device:access-alarm"
-        },
-        {
-          "type": "item",
-          "link": "/pipeline/#/artifacts",
-          "text": "Artefacts",
-          "icon": "editor:bubble-chart"
-        },
-        {
-          "type": "item",
-          "link": "/pipeline/#/executions",
-          "text": "Exécutions en cours",
-          "icon": "av:play-arrow"
         }
        ],
       "externalLinks": [],
       "quickLinks": [
-        {
-          "text": "Télécharger un pipeline",
-          "desc": "Pipelines",
-          "link": "/pipeline/"
-        },
-        {
-          "text": "Voir tous les pipelines exécutés",
-          "desc": "Pipelines",
-          "link": "/pipeline/#/runs"
-        },
         {
           "text": "Créer un nouveau serveur bloc-notes",
           "desc": "Serveur bloc-notes",
