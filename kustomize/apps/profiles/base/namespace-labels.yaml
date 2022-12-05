@@ -1,5 +1,4 @@
 istio-injection:                       'enabled'
 katib-metricscollector-injection:      'enabled'
 serving.kubeflow.org/inferenceservice: 'enabled'
-pipelines.kubeflow.org/enabled:        'false'
 app.kubernetes.io/part-of:             'kubeflow-profile'
