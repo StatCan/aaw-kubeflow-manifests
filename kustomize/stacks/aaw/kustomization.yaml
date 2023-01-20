@@ -36,7 +36,6 @@ resources:
 - ../../apps/admission-webhook/base
 - ../../apps/centraldashboard/base
 - ../../apps/katib/base
-- ../../apps/pipeline/base
 - ../../apps/jupyter-web-app/base
 - ../../apps/notebook-controller/base
 - ../../apps/profiles/base

@@ -149,8 +149,6 @@ spawnerFormDefaults:
     # value:
     #   - add-gcp-secret
     #   - default-editor
-    value:
-      - access-ml-pipeline
     readOnly: false
   affinityConfig:
     # The default `configKey` from the options list

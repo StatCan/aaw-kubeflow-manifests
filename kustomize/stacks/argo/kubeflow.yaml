@@ -44,9 +44,6 @@ spec:
       - app: notebook-controller
         folder: apps
         version: main
-      - app: pipeline
-        folder: apps
-        version: main
       - app: profiles
         folder: apps
         version: main
