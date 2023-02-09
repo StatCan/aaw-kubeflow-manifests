@@ -15,6 +15,12 @@ data:
           "link": "/en/",
           "text": "Notebooks",
           "icon": "book"
+        },
+        {
+          "type": "item",
+          "link": "/s3/{ns}/",
+          "text": "S3",
+          "icon": "device:storage"
         }
       ],
      "externalLinks": [],
@@ -56,6 +62,12 @@ data:
           "link": "/fr/",
           "text": "Serveur Bloc-notes",
           "icon": "book"
+        },
+        {
+          "type": "item",
+          "link": "/s3/{ns}/",
+          "text": "S3",
+          "icon": "device:storage"
         }
        ],
       "externalLinks": [],
