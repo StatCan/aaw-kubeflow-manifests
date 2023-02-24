@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: deployment
 spec:
+  selector:
+    matchLabels:
+      app: jupyter-web-app
   replicas: 3
   template:
     metadata:
@@ -10,6 +13,10 @@ spec:
         sidecar.istio.io/inject: "false"
         data.statcan.gc.ca/inject-blob-volumes: "true"
     spec:
+      template:
+        metadata:
+          annotations:
+            data.statcan.gc.ca/inject-blob-volumes: "true"
       containers:
       - name: jupyter-web-app
         imagePullPolicy: IfNotPresent
