@@ -8,6 +8,7 @@ spec:
     metadata:
       annotations:
         sidecar.istio.io/inject: "false"
+        data.statcan.gc.ca/inject-blob-volumes: "true"
     spec:
       containers:
       - name: jupyter-web-app
