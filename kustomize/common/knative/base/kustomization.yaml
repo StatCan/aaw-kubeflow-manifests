@@ -7,7 +7,7 @@ resources:
 
 patchesStrategicMerge:
 - config-domain.yaml
-- config-istio.yaml
+# - config-istio.yaml
 
 patches:
 - path: istio-webhook-deployment-patch.json
@@ -60,3 +60,15 @@ patchesJson6902:
       - op: replace
         path: "/spec/minReplicas"
         value: 3
+
+configMapGenerator:
+- name: config-istio
+  namespace: knative-serving
+  behavior: replace
+  options:
+    disableNameSuffixHash: true
+  literals:
+  - gateway.ingress-general-system.general-istio-ingress-gateway-https=general.ingress-general-system.svc.cluster.local
+  - gateway.istio-system.kubeflow-istio-ingress-gateway-https=kubeflow.istio-system.svc.cluster.local
+  - local-gateway.istio-system.cluster-local-gateway=cluster-local-gateway.istio-system.svc.cluster.local
+  - local-gateway.mesh=mesh

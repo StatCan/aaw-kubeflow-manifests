@@ -12,6 +12,14 @@ configMapGenerator:
   files:
   - namespace-labels.yaml
 
-      
 patchesStrategicMerge:
 - deployment.yaml
+
+patches:
+  - patch: |-
+      - op: replace
+        path: /spec/gateways
+        value: ["istio-system/kubeflow-istio-ingress-gateway-https"]
+    target:
+      group: networking.istio.io
+      kind: VirtualService
