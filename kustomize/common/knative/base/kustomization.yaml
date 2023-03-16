@@ -7,7 +7,6 @@ resources:
 
 patchesStrategicMerge:
 - config-domain.yaml
-# - config-istio.yaml
 
 patches:
 - path: istio-webhook-deployment-patch.json
