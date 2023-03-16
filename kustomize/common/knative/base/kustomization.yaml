@@ -61,6 +61,9 @@ patchesJson6902:
         value: 3
 
 configMapGenerator:
+# Replace the example ConfigMap and the patch coming in:
+#  https://github.com/kubeflow/manifests/blob/c2795524afd97dc0776b804521bb7d937646e98f/common/knative/knative-serving/base/patches/configmap-patch.yaml#L8
+#  https://github.com/kubeflow/manifests/blob/c2795524afd97dc0776b804521bb7d937646e98f/common/knative/knative-serving/base/upstream/net-istio.yaml#L63
 - name: config-istio
   namespace: knative-serving
   behavior: replace

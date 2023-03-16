@@ -7,8 +7,9 @@ resources:
 patchesStrategicMerge:
 - deployment.yaml
 
-# Update the link to the Gateway to use.
 configMapGenerator:
+# Update the link to the Gateway to use.
+# https://github.com/kubeflow/manifests/blob/c2795524afd97dc0776b804521bb7d937646e98f/apps/jupyter/notebook-controller/upstream/manager/kustomization.yaml#L5
 - name: config
   behavior: merge
   literals:

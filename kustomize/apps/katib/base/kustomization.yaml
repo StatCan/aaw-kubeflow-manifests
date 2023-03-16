@@ -22,6 +22,7 @@ patchesJson6902:
         value: cert-manager.io/v1
 
 patches:
+  # Patch all VirtualServices to use centralized Kubeflow ingress gateway
   - patch: |-
       - op: replace
         path: /spec/gateways

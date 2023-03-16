@@ -16,6 +16,7 @@ patchesStrategicMerge:
 - deployment.yaml
 
 patches:
+  # Patch all VirtualServices to use centralized Kubeflow ingress gateway
   - patch: |-
       - op: replace
         path: /spec/gateways
