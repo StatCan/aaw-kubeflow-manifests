@@ -11,6 +11,12 @@ spec:
             - /manager
           image: kubeflow/training-operator
           name: training-operator
+          livenessProbe:
+            initialDelaySeconds: 35
+            timeoutSeconds: 10
+          readinessProbe:
+            initialDelaySeconds: 30
+            timeoutSeconds: 10
           resources:
             limits:
               cpu: 250m
