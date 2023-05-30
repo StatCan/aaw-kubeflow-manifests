@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  ingressGateway: istio-system/kubeflow-istio-ingress-gateway-https
+kind: ConfigMap
+metadata:
+  name: kserve-config
+  namespace: kubeflow

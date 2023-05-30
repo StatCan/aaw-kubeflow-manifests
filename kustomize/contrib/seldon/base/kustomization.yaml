@@ -15,3 +15,19 @@ patchesJson6902:
       - op: replace
         path: "/apiVersion"
         value: cert-manager.io/v1
+
+patches:
+  - patch: |-
+      apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: seldon-controller-manager
+        namespace: kubeflow
+      spec:
+        template:
+          spec:
+            containers:
+            - name: manager
+              env:
+              - name: ISTIO_GATEWAY
+                value: istio-system/kubeflow-istio-ingress-gateway-https

@@ -8,6 +8,7 @@ resources:
 
 patchesStrategicMerge:
 - inferenceservice-configmap.yaml
+- kfserve-config-configmap.yaml
 
 ## Cert Manager
 patchesJson6902:

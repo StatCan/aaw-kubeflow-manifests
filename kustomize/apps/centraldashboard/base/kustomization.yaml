@@ -8,3 +8,13 @@ patchesStrategicMerge:
 - deployment.yaml
 - centraldashboard-config.yaml
 - authorizationpolicy.yaml
+
+patches:
+  # Patch all VirtualServices to use centralized Kubeflow ingress gateway
+  - patch: |-
+      - op: replace
+        path: /spec/gateways
+        value: ["istio-system/kubeflow-istio-ingress-gateway-https"]
+    target:
+      group: networking.istio.io
+      kind: VirtualService
