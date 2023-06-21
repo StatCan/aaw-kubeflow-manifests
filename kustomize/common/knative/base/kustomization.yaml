@@ -64,7 +64,7 @@ patchesJson6902:
       group: policy
       version: v1
       kind: PodDisruptionBudget
-      name: 'activator-pdb|webhook-pdb'
+      name: 'activator-pdb|webhook-pdb|eventing-webhook'
     patch: |-
       - op: replace
         path: "/spec/minAvailable"
