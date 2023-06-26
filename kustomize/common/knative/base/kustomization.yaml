@@ -60,3 +60,12 @@ patchesJson6902:
       - op: replace
         path: "/spec/minReplicas"
         value: 3
+  - target:
+      group: policy
+      version: 'v1beta1|v1'
+      kind: PodDisruptionBudget
+      name: 'activator-pdb|webhook-pdb|eventing-webhook'
+    patch: |-
+      - op: replace
+        path: "/spec/minAvailable"
+        value: 2
