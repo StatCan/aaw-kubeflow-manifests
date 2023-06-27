@@ -15,6 +15,7 @@ spec:
       labels:
         app: authservice
     spec:
+    serviceAccountName: authservice
       containers:
       - name: authservice
         image: k8scc01covidacr.azurecr.io/oidc-authservice:latest
