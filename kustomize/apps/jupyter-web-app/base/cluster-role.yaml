@@ -59,7 +59,7 @@ rules:
   - get
   - list
   - watch
-  - apiGroups:
+- apiGroups:
   - ""
   resources:
   - pods
