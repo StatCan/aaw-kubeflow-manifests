@@ -13,13 +13,13 @@ patches:
 - path: istio-webhook-deployment-patch.json
   target:
     kind: Deployment
-    name: istio-webhook
+    name: net-istio-webhook
     version: v1
 
 - path: networking-istio-deployment-patch.json
   target:
     kind: Deployment
-    name: networking-istio
+    name: net-istio-controller
     version: v1
 
 - path: webhook-deployment-patch.json
