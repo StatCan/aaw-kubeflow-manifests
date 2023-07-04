@@ -9,11 +9,8 @@ spec:
   template:
     spec:
       containers:
-      - env:
-        - name: REGISTRATION_FLOW
-          value: "true"
+      - name: kfam
         image: k8scc01covidacrdev.azurecr.io/kubeflow/kfam:c7ec240f7c41fa821e4a5c75a64456ce16b8abb3
         imagePullPolicy: IfNotPresent
-        name: kfam
       imagePullSecrets:
       - name: k8scc01covidacr-registry-connection

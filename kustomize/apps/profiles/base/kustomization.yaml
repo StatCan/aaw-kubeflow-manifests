@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: kubeflow
 
 resources:
-- github.com/kubeflow/manifests/apps/profiles/upstream/overlays/kubeflow?ref=v1.6.0
+- github.com/kubeflow/manifests/apps/profiles/upstream/overlays/kubeflow?ref=v1.7.0
 
 
 configMapGenerator:
