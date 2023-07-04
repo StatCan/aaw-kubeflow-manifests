@@ -1,9 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    app: access-management
   name: deployment
 spec:
+  replicas: 1
   template:
     spec:
+      containers:
+      - name: kfam
+        image: k8scc01covidacrdev.azurecr.io/kubeflow/kfam:c7ec240f7c41fa821e4a5c75a64456ce16b8abb3
+        imagePullPolicy: IfNotPresent
       imagePullSecrets:
       - name: k8scc01covidacr-registry-connection
