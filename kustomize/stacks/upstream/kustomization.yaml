@@ -28,4 +28,4 @@ resources:
 
 - ../../contrib/spark/base
 - ../../contrib/seldon/base
-- ../../contrib/kfserve/base
+- ../../contrib/kserve/base
