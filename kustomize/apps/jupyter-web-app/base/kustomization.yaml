@@ -10,6 +10,7 @@ patchesStrategicMerge:
 - cluster-role.yaml
 - deployment.yaml
 - vs.yaml
+- authorizationpolicy.yaml
 
 configMapGenerator:
 - files:
