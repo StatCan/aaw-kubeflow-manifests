@@ -6,3 +6,9 @@ resources:
 
 patchesStrategicMerge:
 - deployment.yaml
+
+configMapGenerator:
+- name: config
+  behavior: merge
+  envs:
+  - params.env
