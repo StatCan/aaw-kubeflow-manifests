@@ -43,6 +43,5 @@ resources:
 
 ## Kubeflow (contrib)
 
-- ../../contrib/spark/base
 - ../../contrib/seldon/base
 - ../../contrib/kserve/base

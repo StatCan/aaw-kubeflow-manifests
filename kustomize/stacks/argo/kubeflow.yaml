@@ -56,9 +56,6 @@ spec:
       - app: seldon
         folder: apps
         version: main
-      - app: spark
-        folder: apps
-        version: main
       - app: kserve
         folder: apps
         version: main
