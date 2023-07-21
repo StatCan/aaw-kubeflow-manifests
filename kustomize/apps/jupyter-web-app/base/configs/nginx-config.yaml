@@ -21,8 +21,8 @@ data:
       # Browser preferred language detection ( does NOT require
       # AcceptLanguageModule)
       map $http_accept_language $accept_language {
-          ~*^fr fr;
-          ~*^en en;
+        ~*^fr fr;
+        ~*^en en;
       }
       server {
         listen 5000;
@@ -31,15 +31,21 @@ data:
 
         # Fallback to default language if no preference defined by browser
         if ($accept_language ~ "^$") {
-            set $accept_language "en";
+          set $accept_language "en";
         }
 
         rewrite ^/jupyter/(.*)$ /$accept_language/$1;
 
         rewrite ^/(fr|en)/api/(.*)$ /api/$2;
 
-        location ~ ^/(fr|en)/.*$ {
-            root html;
+        location /en/ {
+          alias /etc/nginx/html/en/;
+          try_files $uri $uri/ /index.html index.html =404;
+        }
+
+        location /fr/ {
+          alias /etc/nginx/html/fr/;
+          try_files $uri $uri/ /index.html index.html =404;
         }
 
         location ~ ^/api/.*$ {
