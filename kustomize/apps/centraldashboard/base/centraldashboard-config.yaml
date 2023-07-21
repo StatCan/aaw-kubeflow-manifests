@@ -28,7 +28,7 @@ data:
         {
           "text": "Create a new Notebook server",
           "desc": "Notebook Servers",
-          "link": "/jupyter/new?namespace=kubeflow"
+          "link": "/en/new?ns={ns}"
         }
        ],
       "documentationItems": [
@@ -75,7 +75,7 @@ data:
         {
           "text": "Créer un nouveau serveur bloc-notes",
           "desc": "Serveur bloc-notes",
-          "link": "/jupyter/new?namespace=kubeflow"
+          "link": "/fr/new?ns={ns}"
         }
        ],
       "documentationItems": [
