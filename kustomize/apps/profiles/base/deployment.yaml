@@ -10,7 +10,7 @@ spec:
     spec:
       containers:
       - name: kfam
-        image: k8scc01covidacrdev.azurecr.io/kubeflow/kfam:f72dcfe7f2ca6db278636417e8540703e6a091bb
+        image: k8scc01covidacr.azurecr.io/kubeflow/kfam:f72dcfe7f2ca6db278636417e8540703e6a091bb
         imagePullPolicy: IfNotPresent
       imagePullSecrets:
       - name: k8scc01covidacr-registry-connection
