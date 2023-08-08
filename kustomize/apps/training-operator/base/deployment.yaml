@@ -9,7 +9,7 @@ spec:
       containers:
         - command:
             - /manager
-            - --mpi-kubectl-delivery-image=k8scc01covidacr.azurecr.io/mpioperator/kubectl-delivery:latest
+            - --mpi-kubectl-delivery-image=k8scc01covidacrdev.azurecr.io/mpioperator/kubectl-delivery:latest
           image: kubeflow/training-operator:v1-e1434f6
           name: training-operator
           livenessProbe:

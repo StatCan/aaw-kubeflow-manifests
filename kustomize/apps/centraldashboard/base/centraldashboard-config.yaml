@@ -15,6 +15,12 @@ data:
           "link": "/en/",
           "text": "Notebooks",
           "icon": "book"
+        },
+        {
+          "type": "item",
+          "link": "/s3/{ns}/",
+          "text": "Storage",
+          "icon": "device:storage"
         }
       ],
      "externalLinks": [],
@@ -22,14 +28,14 @@ data:
         {
           "text": "Create a new Notebook server",
           "desc": "Notebook Servers",
-          "link": "/jupyter/new?namespace=kubeflow"
+          "link": "/en/new?ns={ns}"
         }
        ],
       "documentationItems": [
         {
           "text": "Advanced Analytics Workspace Docs",
           "desc": "Helpful guides about our data and analysis tools",
-          "link": "https://statcan.github.io/daaas/"
+          "link": "https://statcan.github.io/aaw/"
         },
         {
           "text": "Video Tutorial Series",
@@ -56,6 +62,12 @@ data:
           "link": "/fr/",
           "text": "Serveur Bloc-notes",
           "icon": "book"
+        },
+        {
+          "type": "item",
+          "link": "/s3/{ns}/",
+          "text": "Stockage",
+          "icon": "device:storage"
         }
        ],
       "externalLinks": [],
@@ -63,14 +75,14 @@ data:
         {
           "text": "Créer un nouveau serveur bloc-notes",
           "desc": "Serveur bloc-notes",
-          "link": "/jupyter/new?namespace=kubeflow"
+          "link": "/fr/new?ns={ns}"
         }
        ],
       "documentationItems": [
         {
           "text": "Documents de l'espace d'analyses avancées",
           "desc": "Guides utiles pour nos données et outils d'analyse",
-          "link": "https://statcan.github.io/daaas/"
+          "link": "https://statcan.github.io/aaw/"
         },
         {
           "text": "Série de didacticiels vidéos",
