@@ -56,12 +56,6 @@ data:
           "link": "/fr/",
           "text": "Serveur Bloc-notes",
           "icon": "book"
-        },
-        {
-          "type": "item",
-          "link": "/s3/{ns}/",
-          "text": "Stockage",
-          "icon": "device:storage"
         }
        ],
       "externalLinks": [],
