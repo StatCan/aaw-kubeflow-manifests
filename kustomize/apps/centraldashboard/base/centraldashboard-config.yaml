@@ -15,12 +15,6 @@ data:
           "link": "/en/",
           "text": "Notebooks",
           "icon": "book"
-        },
-        {
-          "type": "item",
-          "link": "/s3/{ns}/",
-          "text": "Storage",
-          "icon": "device:storage"
         }
       ],
      "externalLinks": [],
