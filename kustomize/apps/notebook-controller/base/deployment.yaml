@@ -7,17 +7,3 @@ spec:
     metadata:
       annotations:
         sidecar.istio.io/inject: "true"
-    spec:
-      containers:
-      - name: manager
-        env:
-          - name: ENABLE_CULLING
-            value: "true"
-          - name: IDLE_TIME
-            value: "10080"
-          - name: CULL_IDLE_TIME
-            value: "10080"
-          - name: CULLING_CHECK_PERIOD
-            value: "120"
-          - name: IDLENESS_CHECK_PERIOD
-            value: "180"

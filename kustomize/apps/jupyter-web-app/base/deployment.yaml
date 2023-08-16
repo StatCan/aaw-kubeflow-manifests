@@ -5,14 +5,11 @@ metadata:
 spec:
   replicas: 3
   template:
-    metadata:
-      annotations:
-        sidecar.istio.io/inject: "false"
     spec:
       containers:
       - name: jupyter-web-app
         imagePullPolicy: IfNotPresent
-        image: k8scc01covidacr.azurecr.io/jupyter-apis:b94d20577244d7c80277d0f5bbc0afd7f0ccbfb3
+        image: k8scc01covidacr.azurecr.io/jupyter-apis:fc72a756aff5abb65b5017728381ea276e7ad1ff
         env:
         - name: UI
           value: default
@@ -60,7 +57,7 @@ spec:
       initContainers:
       - name: copy-jwa-static-files
         # Change for the image I just built
-        image: k8scc01covidacr.azurecr.io/jupyter-apis:b94d20577244d7c80277d0f5bbc0afd7f0ccbfb3
+        image: k8scc01covidacr.azurecr.io/jupyter-apis:fc72a756aff5abb65b5017728381ea276e7ad1ff
         # image: k3d-s3proxy-registry:5050/s3proxy-dev:latest
         command: [sh, -c]
         args: ["cp -r /src/dist/frontend/* /etc/nginx/html/"]

@@ -7,5 +7,5 @@ data:
   ingress: |-
     {
         "ingressGateway" : "ingress-general-system/general-istio-ingress-gateway-https",
-        "ingressService" : "general.ingress-general-system.svc.cluster.local",
+        "ingressService" : "general.ingress-general-system.svc.cluster.local"
     }
