@@ -46,7 +46,10 @@ data:
           "desc": "Advanced documentation for installing, running, and using Kubeflow",
           "link": "https://www.kubeflow.org/docs/"
         }
-       ]
+       ],
+      "securityMessages": [
+        "Statistics Canada networks are routinely monitored to ensure user compliance with the DAS Terms and Conditions. Inappropriate or unauthorized use of DAS will result in removal of all privileges and access to the DAS environments."
+      ]
      },
      "fr":
       {
@@ -87,7 +90,10 @@ data:
           "desc": "Documentation avancé pour installer, exécuter et utiliser Kubeflow",
           "link": "https://www.kubeflow.org/docs/"
         }
-       ]
+       ],
+      "securityMessages": [
+        "Les réseaux de Statistique Canada font l'objet d'une surveillance régulière afin de s'assurer que les utilisateurs respectent les modalités du SAD. L'utilisation inappropriée ou non autorisée du SAD entraînera la suppression de tous les privilèges et de l'accès aux environnements SAD."
+      ]
      }
     }
 kind: ConfigMap
