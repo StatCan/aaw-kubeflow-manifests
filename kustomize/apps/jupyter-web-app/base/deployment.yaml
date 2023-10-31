@@ -9,7 +9,7 @@ spec:
       containers:
       - name: jupyter-web-app
         imagePullPolicy: IfNotPresent
-        image: k8scc01covidacr.azurecr.io/jupyter-apis:4ef32003c7cff90f25b18c4cdbe57b94a239010f
+        image: k8scc01covidacr.azurecr.io/jupyter-apis:9160bf5ad24f0aecccf0b3e5ff670b57f62ab0dc
         env:
         - name: UI
           value: default
