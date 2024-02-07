@@ -12,7 +12,7 @@ spec:
       - env:
         - name: REGISTRATION_FLOW
           value: "true"
-        image: k8scc01covidacr.azurecr.io/kubeflow/centraldashboard:0f9cd33e745d252b1b72fc9c4c884ead4675a689
+        image: k8scc01covidacr.azurecr.io/kubeflow/centraldashboard:1f90fce949acba7dbda238fd49c108f6f27d5ebf
         imagePullPolicy: IfNotPresent
         name: centraldashboard
       serviceAccountName: centraldashboard
