@@ -65,7 +65,7 @@ spawnerFormDefaults:
     value: Always
   cpu:
     # CPU for user's Notebook
-    value: '0.5'
+    value: '0.1'
     # AAW: default value when a GPU is selected
     gpuDefault: '4.0'
     # Factor by with to multiply request to calculate limit
@@ -76,7 +76,7 @@ spawnerFormDefaults:
     readOnly: false
   memory:
     # Memory for user's Notebook
-    value: '2.0'
+    value: '0.5'
     # AAW: default value when a GPU is selected
     gpuDefault: '96.0'
     # Factor by with to multiply request to calculate limit
