@@ -9,7 +9,7 @@ spec:
       containers:
       - name: jupyter-web-app
         imagePullPolicy: IfNotPresent
-        image: k8scc01covidacr.azurecr.io/jupyter-apis:86f92d8dcf96a894b6be0fd0d5570bb290f5e53b
+        image: k8scc01covidacr.azurecr.io/jupyter-apis:694a5a217a0274b2c3b6704921f9a0878fd8cdaf
         env:
         - name: UI
           value: default
@@ -57,7 +57,7 @@ spec:
       initContainers:
       - name: copy-jwa-static-files
         # Change for the image I just built
-        image: k8scc01covidacr.azurecr.io/jupyter-apis:86f92d8dcf96a894b6be0fd0d5570bb290f5e53b
+        image: k8scc01covidacr.azurecr.io/jupyter-apis:694a5a217a0274b2c3b6704921f9a0878fd8cdaf
         # image: k3d-s3proxy-registry:5050/s3proxy-dev:latest
         command: [sh, -c]
         args: ["cp -r /src/dist/frontend/* /etc/nginx/html/"]
